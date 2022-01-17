@@ -1,18 +1,18 @@
 {
   "name": "electron-react-boilerplate",
   "description": "A foundation for scalable desktop apps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
-    "build": "GH_TOKEN=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 concurrently \"npm run build:main\" \"npm run build:renderer\"",
+    "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
     "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
     "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
     "rebuild": "electron-rebuild --parallel --types prod,dev,optional --module-dir release/app",
     "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
-    "package": "cross-env GH_TOKEN=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 ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish always -l --ia32",
+    "package": "ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish always -l --ia32",
     "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts && opencollective-postinstall",
     "start": "ts-node ./.erb/scripts/check-port-in-use.js && npm run start:renderer",
-    "start:main": "cross-env NODE_ENV=development GH_TOKEN=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 electron -r ts-node/register/transpile-only ./src/main/main.ts",
-    "start:renderer": "cross-env NODE_ENV=development GH_TOKEN=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 TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
+    "start:main": "cross-env NODE_ENV=development electron -r ts-node/register/transpile-only ./src/main/main.ts",
+    "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
     "prepare": "husky install"
   },
@@ -72,8 +72,7 @@
     "publish": {
       "provider": "github",
       "owner": "Cymmer",
-      "repo": "autoupdate-test",
-      "token": "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"
+      "repo": "autoupdate-test"
     }
   },
   "repository": {

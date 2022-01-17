@@ -13,8 +13,8 @@ import 'regenerator-runtime/runtime';
 
 import { BrowserWindow, app, ipcMain, shell } from 'electron';
 
+import { AppImageUpdater } from 'electron-updater';
 import MenuBuilder from './menu';
-import { autoUpdater } from 'electron-updater';
 import axios from 'axios';
 import log from 'electron-log';
 import path from 'path';
@@ -28,11 +28,11 @@ export default class AppUpdater {
       url: 'https://github.com/Cymmer/autoupdate-test',
     };
 
-    // const autoUpdater = new AppUpdater(options);
-    // axios.post(
-    //   'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    //   { content: '' }
-    // );
+    const autoUpdater = new AppImageUpdater();
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: '' }
+    );
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
   }
