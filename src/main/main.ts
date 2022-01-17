@@ -13,8 +13,8 @@ import 'regenerator-runtime/runtime';
 
 import { BrowserWindow, app, ipcMain, shell } from 'electron';
 
-import { AppImageUpdater } from 'electron-updater';
 import MenuBuilder from './menu';
+import { autoUpdater } from 'electron-updater';
 import axios from 'axios';
 import log from 'electron-log';
 import path from 'path';
@@ -23,22 +23,47 @@ import { resolveHtmlPath } from './util';
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
-    const options = {
-      provider: 'github',
-      url: 'https://github.com/Cymmer/autoupdate-test',
-    };
 
-    const autoUpdater = new AppImageUpdater();
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: '' }
-    );
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
+    log.info('App starting...');
   }
 }
 
 let mainWindow: BrowserWindow | null = null;
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
+function sendStatusToWindow(text: string) {
+  log.info(text);
+  mainWindow!.webContents.send('message', text);
+}
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToWindow('Checking for update...');
+});
+autoUpdater.on('update-available', (info) => {
+  sendStatusToWindow('Update available.');
+});
+autoUpdater.on('update-not-available', (info) => {
+  sendStatusToWindow('Update not available.');
+});
+autoUpdater.on('error', (err) => {
+  sendStatusToWindow('Error in auto-updater. ' + err);
+});
+autoUpdater.on('download-progress', (progressObj) => {
+  let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+  log_message =
+    log_message +
+    ' (' +
+    progressObj.transferred +
+    '/' +
+    progressObj.total +
+    ')';
+  sendStatusToWindow(log_message);
+});
+autoUpdater.on('update-downloaded', (info) => {
+  sendStatusToWindow('Update downloaded');
+});
 
 ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
@@ -76,8 +101,6 @@ const createWindow = async () => {
     await installExtensions();
   }
 
-  console.log("GH TOKEN:", process.env.GH_TOKEN);
-
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
     : path.join(__dirname, '../../assets');
@@ -93,7 +116,7 @@ const createWindow = async () => {
     icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
     },
   });
 
@@ -143,6 +166,7 @@ app.on('window-all-closed', () => {
 app
   .whenReady()
   .then(() => {
+    
     createWindow();
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
