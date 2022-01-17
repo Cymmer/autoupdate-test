@@ -7,11 +7,11 @@
     "build:renderer": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.prod.ts",
     "rebuild": "electron-rebuild --parallel --types prod,dev,optional --module-dir release/app",
     "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
-    "package": "ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish never -l --ia32",
+    "package": "cross-env GH_TOKEN=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 ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish always -l --ia32",
     "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts && opencollective-postinstall",
     "start": "ts-node ./.erb/scripts/check-port-in-use.js && npm run start:renderer",
-    "start:main": "cross-env NODE_ENV=development electron -r ts-node/register/transpile-only ./src/main/main.ts",
-    "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
+    "start:main": "cross-env NODE_ENV=development GH_TOKEN=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 electron -r ts-node/register/transpile-only ./src/main/main.ts",
+    "start:renderer": "cross-env NODE_ENV=development GH_TOKEN=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 TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
     "prepare": "husky install"
   },
@@ -30,8 +30,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "AutoUpdate",
+    "appId": "org.erb.AutoUpdate",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -54,25 +54,6 @@
       "entitlementsInherit": "assets/entitlements.mac.plist",
       "gatekeeperAssess": false
     },
-    "dmg": {
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ]
-    },
     "linux": {
       "target": [
         "AppImage"
@@ -89,29 +70,24 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "Cymmer",
+      "repo": "autoupdate-test"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "https://github.com/Cymmer/autoupdate-test"
   },
   "author": {
     "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "email": "cymmer4@gmail.com",
+    "url": "https://github.com/Cymmer"
   },
   "contributors": [
     {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    },
-    {
-      "name": "John Tran",
-      "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
+      "name": "Cymmer John Maranga",
+      "email": "cymmer4@gmail.com",
+      "url": "https://github.com/Cymmer"
     }
   ],
   "license": "MIT",
@@ -226,6 +202,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.4",
     "electron-updater": "^4.6.4",

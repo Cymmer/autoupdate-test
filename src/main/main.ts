@@ -10,16 +10,29 @@
  */
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
-import { autoUpdater } from 'electron-updater';
-import log from 'electron-log';
+
+import { BrowserWindow, app, ipcMain, shell } from 'electron';
+
 import MenuBuilder from './menu';
+import { autoUpdater } from 'electron-updater';
+import axios from 'axios';
+import log from 'electron-log';
+import path from 'path';
 import { resolveHtmlPath } from './util';
 
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
+    const options = {
+      provider: 'github',
+      url: 'https://github.com/Cymmer/autoupdate-test',
+    };
+
+    // const autoUpdater = new AppUpdater(options);
+    // axios.post(
+    //   'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    //   { content: '' }
+    // );
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
   }
@@ -62,6 +75,8 @@ const createWindow = async () => {
   if (isDevelopment) {
     await installExtensions();
   }
+
+  console.log("GH TOKEN:", process.env.GH_TOKEN);
 
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
