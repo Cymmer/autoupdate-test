@@ -20,28 +20,22 @@ import axios from 'axios';
 import log from 'electron-log';
 import path from 'path';
 import { resolveHtmlPath } from './util';
+import { update } from 'lodash';
 
 let mainWindow: BrowserWindow | null = null;
 const controller = new AbortController();
 const { signal } = controller;
 
 const autoUpdater = new AppImageUpdater();
-autoUpdater.autoDownload = true;
-autoUpdater.checkForUpdatesAndNotify({ body: '123', title: 'abc' });
-
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-
-ipcMain.on('ipc-example', async (event, arg) => {
-  const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
-  console.log(msgTemplate(arg));
-  event.reply('ipc-example', msgTemplate('pong'));
-});
+autoUpdater.autoDownload = false; // We allow users to choose whether to download or not
+// assuming the update is optional
+autoUpdater.autoInstallOnAppQuit = false; // set to `true` if there is a crucial update
+autoUpdater.checkForUpdatesAndNotify();
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();
 }
-
 const isDevelopment =
   process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true';
 
@@ -66,13 +60,14 @@ const createWindow = async () => {
   if (isDevelopment) {
     await installExtensions();
   }
-  
+
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
     : path.join(__dirname, '../../assets');
   const getAssetPath = (...paths: string[]): string => {
     return path.join(RESOURCES_PATH, ...paths);
   };
+
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
@@ -85,8 +80,6 @@ const createWindow = async () => {
       webSecurity: false,
     },
   });
-
-  autoUpdater.quitAndInstall(undefined, true);
 
   function sendStatusToWindow(text: string) {
     log.info(text);
@@ -101,24 +94,18 @@ const createWindow = async () => {
     sendStatusToWindow('Checking for update...');
   });
 
-
+  let updateAvailable = false;
+  const win = new BrowserWindow({ width: 800, height: 600 });
+  win.loadURL('https://github.com');
   autoUpdater.on('update-available', (info: any) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
       { content: `AutoUpdater: Update available.` + info }
     );
     sendStatusToWindow('Update available.');
-    const win = new BrowserWindow({ width: 800, height: 600 });
-    win.loadURL('https://github.com');
-    win.on('ready-to-show', () => {
-      if(!win) {
-        throw new Error("subwindow not defined");
-      }
-      win.show();
-    })
-
-    
+    updateAvailable = true;
   });
+
   autoUpdater.on('update-not-available', (info: any) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
@@ -163,11 +150,21 @@ const createWindow = async () => {
       { content: `AutoUpdater: Update downloaded ` + info }
     );
     sendStatusToWindow('Update downloaded');
+    autoUpdater.quitAndInstall(undefined, true);
   });
 
   mainWindow!.loadURL(resolveHtmlPath('index.html'));
 
   mainWindow!.on('ready-to-show', () => {
+    if (updateAvailable) {
+      win.on('ready-to-show', () => {
+        if (!win) {
+          throw new Error('subwindow not defined');
+        }
+        win.show();
+      });
+      return;
+    }
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
