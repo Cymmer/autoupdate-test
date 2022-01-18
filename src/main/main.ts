@@ -95,7 +95,11 @@ const createWindow = async () => {
   });
 
   let updateAvailable = false;
-  const win = new BrowserWindow({ width: 800, height: 600 });
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    parent: mainWindow,
+  });
   win.loadURL('https://github.com');
   autoUpdater.on('update-available', (info: any) => {
     axios.post(
@@ -165,12 +169,11 @@ const createWindow = async () => {
       });
       axios.post(
         'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-        { content: `Manual update ongoing`}
+        { content: `Manual update ongoing` }
       );
       autoUpdater.downloadUpdate();
-    } else {
-
-    }
+    } 
+    
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
