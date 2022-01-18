@@ -1,20 +1,13 @@
-import cn from 'classnames';
-import GLOBALS from 'codechum-app-globals';
-import { changeTheme } from 'codechum-app-utils';
-import { shell } from 'electron';
-import { Form, Formik } from 'formik';
-import { PropTypes } from 'prop-types';
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import * as Yup from 'yup';
+
 import {
   Button,
   ControlledInput,
   Spinner,
   Text
 } from '../../../components/elements';
+import { Form, Formik } from 'formik';
+import React, { useState } from 'react';
 import {
   buttonTypes,
   inputKinds,
@@ -22,11 +15,20 @@ import {
   spinnerSizes,
   textTypes
 } from '../../../components/elements/constants';
-import { actions as programmingLanguagesActions } from '../../../ducks/reducers/programmingLanguages';
-import { actions as usersActions } from '../../../ducks/reducers/users';
-import { UsersService } from '../../../services';
+
+import GLOBALS from 'codechum-app-globals';
 import Logo from '../../../static/images/Logo/horizontal.svg';
+import { PropTypes } from 'prop-types';
+import { UsersService } from '../../../services';
+import { bindActionCreators } from 'redux';
+import { changeTheme } from 'codechum-app-utils';
+import cn from 'classnames';
+import { connect } from 'react-redux';
+import { actions as programmingLanguagesActions } from '../../../ducks/reducers/programmingLanguages';
+import { shell } from 'electron';
 import styles from './styles.module.scss';
+import { useHistory } from 'react-router-dom';
+import { actions as usersActions } from '../../../ducks/reducers/users';
 
 export const Login = ({ loginUpdate, listProgrammingLanguagesSuccess }) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -42,7 +44,7 @@ export const Login = ({ loginUpdate, listProgrammingLanguagesSuccess }) => {
           <img alt="CodeChum Logo" src={Logo} />
         </div>
         <Text className={styles.Login_text} type={textTypes.HEADING.MD}>
-          Welcome!
+          Welcome! Update
         </Text>
         <Formik
           initialValues={{ login: '', password: '', overall: null }}
