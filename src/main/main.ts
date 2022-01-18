@@ -37,19 +37,39 @@ function sendStatusToWindow(text: string) {
   mainWindow!.webContents.send('message', text);
 }
 autoUpdater.on('checking-for-update', () => {
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: `AutoUpdater: Checking for update.` }
+  );
   sendStatusToWindow('Checking for update...');
 });
 autoUpdater.on('update-available', (info: any) => {
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: `AutoUpdater: Update available.` }
+  );
   sendStatusToWindow('Update available.');
 });
 autoUpdater.on('update-not-available', (info: any) => {
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: `Update not available` }
+  );
   sendStatusToWindow('Update not available.');
 });
 autoUpdater.on('error', (err: string) => {
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: `AutoUpdater: Error in auto-updater: ` + err }
+  );
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
 autoUpdater.on('download-progress', (progressObj: { bytesPerSecond: string; percent: string; transferred: string; total: string; }) => {
   let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: log_message + ' - Downloaded ' + progressObj.percent + '%'}
+  );
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message =
     log_message +
@@ -61,6 +81,10 @@ autoUpdater.on('download-progress', (progressObj: { bytesPerSecond: string; perc
   sendStatusToWindow(log_message);
 });
 autoUpdater.on('update-downloaded', (info) => {
+  axios.post(
+    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+    { content: `AutoUpdater: Update downloaded `}
+  );
   sendStatusToWindow('Update downloaded');
 });
 
