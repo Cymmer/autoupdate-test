@@ -105,7 +105,7 @@ const createWindow = async () => {
   autoUpdater.on('update-available', (info: any) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Update available.` }
+      { content: `AutoUpdater: Update available.` + info }
     );
     sendStatusToWindow('Update available.');
     const win = new BrowserWindow({ width: 800, height: 600 });
@@ -122,7 +122,7 @@ const createWindow = async () => {
   autoUpdater.on('update-not-available', (info: any) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `Update not available` }
+      { content: `Update not available: ` + info }
     );
     sendStatusToWindow('Update not available.');
   });
@@ -160,7 +160,7 @@ const createWindow = async () => {
   autoUpdater.on('update-downloaded', (info) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Update downloaded ` }
+      { content: `AutoUpdater: Update downloaded ` + info }
     );
     sendStatusToWindow('Update downloaded');
   });
