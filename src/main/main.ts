@@ -172,6 +172,7 @@ const createWindow = async () => {
         { content: `Manual update ongoing` }
       );
       autoUpdater.downloadUpdate();
+      updateAvailable = false;
     } 
     
     if (!mainWindow) {

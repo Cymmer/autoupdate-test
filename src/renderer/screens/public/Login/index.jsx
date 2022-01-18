@@ -44,7 +44,7 @@ export const Login = ({ loginUpdate, listProgrammingLanguagesSuccess }) => {
           <img alt="CodeChum Logo" src={Logo} />
         </div>
         <Text className={styles.Login_text} type={textTypes.HEADING.MD}>
-          Welcome! Update 10
+          Welcome! Update 11
         </Text>
         <Formik
           initialValues={{ login: '', password: '', overall: null }}
