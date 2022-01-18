@@ -25,11 +25,29 @@ const controller = new AbortController();
 const { signal } = controller;
 
 const autoUpdater = new AppImageUpdater();
- 
+
 autoUpdater.autoDownload = true;
 autoUpdater.checkForUpdatesAndNotify({ body: '123', title: 'abc' });
 
-let mainWindow: BrowserWindow | null = null;
+let mainWindow: BrowserWindow | null = new BrowserWindow();
+const RESOURCES_PATH = app.isPackaged
+  ? path.join(process.resourcesPath, 'assets')
+  : path.join(__dirname, '../../assets');
+const getAssetPath = (...paths: string[]): string => {
+  return path.join(RESOURCES_PATH, ...paths);
+};
+mainWindow = new BrowserWindow({
+  show: false,
+  width: 1024,
+  height: 728,
+  icon: getAssetPath('icon.png'),
+  webPreferences: {
+    preload: path.join(__dirname, 'preload.js'),
+    nodeIntegration: true,
+    contextIsolation: false,
+    webSecurity: false,
+  },
+});
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 
 function sendStatusToWindow(text: string) {
@@ -64,26 +82,34 @@ autoUpdater.on('error', (err: string) => {
   );
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
-autoUpdater.on('download-progress', (progressObj: { bytesPerSecond: string; percent: string; transferred: string; total: string; }) => {
-  let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: log_message + ' - Downloaded ' + progressObj.percent + '%'}
-  );
-  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-  log_message =
-    log_message +
-    ' (' +
-    progressObj.transferred +
-    '/' +
-    progressObj.total +
-    ')';
-  sendStatusToWindow(log_message);
-});
+autoUpdater.on(
+  'download-progress',
+  (progressObj: {
+    bytesPerSecond: string;
+    percent: string;
+    transferred: string;
+    total: string;
+  }) => {
+    let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: log_message + ' - Downloaded ' + progressObj.percent + '%' }
+    );
+    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+    log_message =
+      log_message +
+      ' (' +
+      progressObj.transferred +
+      '/' +
+      progressObj.total +
+      ')';
+    sendStatusToWindow(log_message);
+  }
+);
 autoUpdater.on('update-downloaded', (info) => {
   axios.post(
     'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `AutoUpdater: Update downloaded `}
+    { content: `AutoUpdater: Update downloaded ` }
   );
   sendStatusToWindow('Update downloaded');
 });
@@ -124,30 +150,9 @@ const createWindow = async () => {
     await installExtensions();
   }
 
-  const RESOURCES_PATH = app.isPackaged
-    ? path.join(process.resourcesPath, 'assets')
-    : path.join(__dirname, '../../assets');
+  mainWindow!.loadURL(resolveHtmlPath('index.html'));
 
-  const getAssetPath = (...paths: string[]): string => {
-    return path.join(RESOURCES_PATH, ...paths);
-  };
-
-  mainWindow = new BrowserWindow({
-    show: false,
-    width: 1024,
-    height: 728,
-    icon: getAssetPath('icon.png'),
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true,
-      contextIsolation: false,
-      webSecurity: false,
-    },
-  });
-
-  mainWindow.loadURL(resolveHtmlPath('index.html'));
-
-  mainWindow.on('ready-to-show', () => {
+  mainWindow!.on('ready-to-show', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
@@ -158,16 +163,16 @@ const createWindow = async () => {
     }
   });
 
-  mainWindow.on('closed', () => {
+  mainWindow!.on('closed', () => {
     controller.abort();
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow);
+  const menuBuilder = new MenuBuilder(mainWindow!);
   menuBuilder.buildMenu();
 
   // Open urls in the user's browser
-  mainWindow.webContents.on('new-window', (event, url) => {
+  mainWindow!.webContents.on('new-window', (event, url) => {
     event.preventDefault();
     shell.openExternal(url);
   });
