@@ -13,22 +13,17 @@ import 'regenerator-runtime/runtime';
 
 import { BrowserWindow, app, ipcMain, shell } from 'electron';
 
+import { AppImageUpdater } from 'electron-updater';
 import MenuBuilder from './menu';
-import { autoUpdater } from 'electron-updater';
 import axios from 'axios';
 import log from 'electron-log';
 import path from 'path';
 import { resolveHtmlPath } from './util';
 
-export default class AppUpdater {
-  constructor() {
-    log.transports.file.level = 'info';
+const autoUpdater = new AppImageUpdater();
 
-    autoUpdater.logger = log;
-    autoUpdater.checkForUpdatesAndNotify();
-    log.info('App starting...');
-  }
-}
+autoUpdater.autoDownload = true;
+autoUpdater.checkForUpdatesAndNotify({ body: '123', title: 'abc' });
 
 let mainWindow: BrowserWindow | null = null;
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -148,7 +143,6 @@ const createWindow = async () => {
 
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
-  new AppUpdater();
 };
 
 /**
@@ -166,7 +160,6 @@ app.on('window-all-closed', () => {
 app
   .whenReady()
   .then(() => {
-    
     createWindow();
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the

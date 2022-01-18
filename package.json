@@ -31,8 +31,8 @@
     ]
   },
   "build": {
-    "productName": "AutoUpdate",
-    "appId": "org.erb.AutoUpdate",
+    "productName": "CodeChum",
+    "appId": "org.erb.CodeChum",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -59,7 +59,10 @@
       "target": [
         "AppImage"
       ],
-      "category": "Development"
+      "category": "Development",
+      "artifactName": "CodeChum",
+      "executableName": "CodeChum",
+      "desktop": "CodeChum"
     },
     "directories": {
       "app": "release/app",

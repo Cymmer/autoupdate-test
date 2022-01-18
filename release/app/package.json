@@ -1,6 +1,6 @@
 {
   "name": "electron-react-boilerplate",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "A foundation for scalable desktop apps",
   "main": "./dist/main/main.js",
   "author": {
