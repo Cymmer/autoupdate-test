@@ -1,0 +1,210 @@
+@use '../../../../scss' as *;
+
+.InputOutput {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 8px 0 3px;
+
+  @include breakpoint(sm) {
+    padding: 0 8px 80px 8px;
+  }
+
+  &_main {
+    width: 100%;
+    height: 100%;
+    min-height: 60px;
+    margin: 8px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(sm) {
+      height: 400px;
+    }
+
+    &___active_onboarding {
+      box-shadow: $shadow-highlight-purple;
+    }
+
+    &___sideBySide {
+      margin: 0 0 8px 6px;
+    }
+  }
+
+  &_tabs {
+    @include flex-between;
+    border-bottom: 1px solid;
+    @include theme {
+      border-color: t('borderColor');
+      background-color: t('cardBackgroundColor');
+    }
+    padding: 0 12px 0 0;
+
+    &_button {
+      margin: 0 16px;
+      padding: 4px 12px;
+
+      &___sideBySideContainer {
+        margin: 24px 0 16px;
+        width: calc(100% - 32px);
+      }
+
+      &___sideBySide {
+        padding: 10px 24px;
+      }
+
+      &_wrapper {
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
+
+      &_lockedIcon {
+        font-size: 16px !important;
+        right: 10px;
+        bottom: -2px;
+      }
+    }
+
+    &_actions {
+      display: flex;
+      align-items: center;
+    }
+
+    &___loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  }
+
+  &_testCases {
+    padding: 6px 12px;
+    @include theme {
+      background-color: t('inputBackgroundColor');
+    }
+    height: max-content;
+  }
+
+  &_latestExecutions {
+    padding: 6px 12px;
+    @include theme {
+      background-color: t('inputBackgroundColor');
+    }
+    height: max-content;
+  }
+
+  &_content {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    @include theme {
+      background-color: t('inputBackgroundColor');
+    }
+
+    &_body {
+      height: 100%;
+    }
+
+    &___loading {
+      overflow: hidden;
+    }
+  }
+
+  &_loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+
+    &_spinner {
+      height: 100%;
+    }
+  }
+
+  &___loading {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &_code {
+    height: 100%;
+    border-radius: 0;
+  }
+
+  &_actions {
+    padding: 12px;
+    @include flex-between;
+
+    &___sideBySide {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+    }
+
+    &_button {
+      margin: 0 8px;
+      width: 179px;
+
+      &_hotkey {
+        font-family: Inter;
+        font-size: 0.625rem;
+        font-weight: 700;
+        color: $neutral-400;
+
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
+
+      @include breakpoint(sm) {
+        margin: 8px 0;
+        width: 100%;
+      }
+
+      &___active_onboarding {
+        box-shadow: $shadow-highlight-purple;
+      }
+    }
+
+    &_buttonsContainer {
+      display: grid;
+      grid-template-columns: auto auto;
+
+      @include breakpoint(sm) {
+        grid-template-columns: auto;
+        width: 100%;
+      }
+    }
+
+    @include breakpoint(sm) {
+      margin: 8px 0 0 0;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &_switch {
+    display: flex;
+    align-items: center;
+
+    &_label {
+      margin: 0 0 0 8px;
+    }
+
+    &_helper {
+      display: flex;
+      @include theme {
+        color: t('textColor-400');
+      }
+      margin: 0 0 0 8px;
+      cursor: default;
+    }
+
+    @include breakpoint(sm) {
+      margin: 8px 0 0 0;
+    }
+  }
+}

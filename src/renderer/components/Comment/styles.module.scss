@@ -1,0 +1,57 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/themes';
+
+@mixin link($color) {
+  @include heading(0.75rem, 1.67);
+  color: $color;
+  text-decoration: none;
+  padding: 6px 0;
+
+  &:hover {
+    color: darken($color, 10%);
+  }
+}
+
+.Comment {
+  display: flex;
+  margin: 0 0 24px 0;
+
+  &_userImage {
+    width: 36px;
+    margin: 0 12px 0 0;
+  }
+
+  &_time {
+    &___teacher {
+      margin: 0 0 8px 0;
+    }
+
+    &___student {
+      margin: 0 0 0 8px;
+    }
+  }
+
+  &_user {
+    display: flex;
+    align-items: center;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &_content {
+    margin: 4px 0 0 0;
+    padding: 6px 16px;
+    border-radius: 16px;
+    width: auto;
+    border: 1px solid;
+    @include theme {
+      background-color: t('cardBackgroundColor');
+      border-color: t('borderColor');
+    }
+  }
+}

@@ -1,0 +1,1356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Compiler should not render the output display if readonly and has initial output 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={true}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should not render the output display if readonly and has output 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render a "Code" label and action buttons if not readOnly 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the custom input field if hasInput is true 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div>
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Custom Input
+    </Text>
+    <ControlledTextArea
+      className={null}
+      data-test="customInput"
+      disabled={false}
+      error={null}
+      helperText={null}
+      icon={null}
+      id={null}
+      inputClassName={null}
+      name="custom_input"
+      onChange={[Function]}
+      placeholder="Enter custom input here"
+      readOnly={false}
+      success={null}
+      type="code"
+      value={null}
+    />
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the custom input field if hasInput is true 2`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={true}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div>
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Custom Input
+    </Text>
+    <ControlledTextArea
+      className={null}
+      data-test="customInput"
+      disabled={false}
+      error={null}
+      helperText={null}
+      icon={null}
+      id={null}
+      inputClassName={null}
+      name="custom_input"
+      onChange={[Function]}
+      placeholder="Enter custom input here"
+      readOnly={false}
+      success={null}
+      type="code"
+      value={null}
+    />
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the custom input field if it has initialCustomInput 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div>
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Custom Input
+    </Text>
+    <ControlledTextArea
+      className={null}
+      data-test="customInput"
+      disabled={false}
+      error={null}
+      helperText={null}
+      icon={null}
+      id={null}
+      inputClassName={null}
+      name="custom_input"
+      onChange={[Function]}
+      placeholder="Enter custom input here"
+      readOnly={false}
+      success={null}
+      type="code"
+      value="Test Input"
+    />
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the custom input field if it has initialCustomInput 2`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={true}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div>
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Custom Input
+    </Text>
+    <ControlledTextArea
+      className={null}
+      data-test="customInput"
+      disabled={false}
+      error={null}
+      helperText={null}
+      icon={null}
+      id={null}
+      inputClassName={null}
+      name="custom_input"
+      onChange={[Function]}
+      placeholder="Enter custom input here"
+      readOnly={false}
+      success={null}
+      type="code"
+      value="Test Input"
+    />
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the output display if not readonly and has initial output 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div>
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Output
+    </Text>
+    <Connect(Code)
+      data-test="output"
+    >
+      Test Output
+    </Connect(Code)>
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render the output display if not readonly and has output 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Compiler should render with default props 1`] = `
+<div
+  className="Compiler"
+>
+  <div
+    className="Compiler_editorContainer"
+  >
+    <Text
+      className="Compiler_label"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Code
+    </Text>
+    <div
+      className="Compiler_editor"
+    >
+      <div
+        className="Compiler_editor_tabs"
+      >
+        <Tabs
+          activeTab="file1.c"
+          className={null}
+          data-test="tabs"
+          isLoading={false}
+          tabClassName="Compiler_editor_tabs_tab"
+          tabs={
+            Array [
+              Object {
+                "action": [Function],
+                "closeAction": null,
+                "kind": "button",
+                "name": "file1.c",
+                "value": "file1.c",
+              },
+            ]
+          }
+          type="horizontal___sm"
+        />
+        <div
+          className="Compiler_editor_tabs_actions"
+        >
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="leftTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_left"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+          <IconButton
+            className="Compiler_editor_tabs_button"
+            colorName="blue"
+            data-test="rightTabNavigation"
+            disabled={true}
+            icon="keyboard_arrow_right"
+            iconClassName={null}
+            id={null}
+            isLocked={false}
+            kind="button"
+            onClick={[Function]}
+            style={null}
+            tabIndex={0}
+            type="solid___sm"
+          />
+        </div>
+      </div>
+      <Connect(Component)
+        data-test="codeEditor"
+        editorOptionsOverride={
+          Object {
+            "lineNumbers": false,
+            "scrollBeyondLastLine": false,
+          }
+        }
+        height="320px"
+        key="file1.c"
+        languageExtension="c"
+        onCodeChange={[Function]}
+        readOnly={false}
+        sourceCode="Test Code 1"
+      />
+    </div>
+  </div>
+  <div
+    className="Compiler_buttons"
+  >
+    <Tooltip
+      className={null}
+      content="Revert back to the initial code"
+      placement="bottom"
+    >
+      <IconButton
+        className={null}
+        colorName="blue"
+        disabled={false}
+        icon="restore"
+        iconClassName={null}
+        id={null}
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      />
+    </Tooltip>
+    <Button
+      className="Compiler_run"
+      data-test="runCode"
+      dataTestId={null}
+      disabled={false}
+      icon="play_arrow"
+      id={null}
+      isLoading={false}
+      isLocked={false}
+      kind="button"
+      lockedIconClassName={null}
+      onClick={[Function]}
+      tabIndex={0}
+      type="primary___blue"
+      wrapperClassName={null}
+    >
+      Execute Code
+    </Button>
+  </div>
+</div>
+`;

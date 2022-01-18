@@ -1,0 +1,115 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/themes';
+
+@mixin horizontal($color) {
+  width: calc(50% - 500px);
+  height: 4px;
+  border-radius: 8px;
+  background-color: $color;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  @content;
+}
+
+@mixin vertical($color, $height) {
+  width: 4px;
+  height: $height;
+  background-color: $color;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin lesson {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: -36px 0 0 0;
+
+  @include breakpoint(lg) {
+    justify-content: center;
+    margin: 32px 0;
+  }
+
+  @content;
+}
+
+.SectionCourseTimeline {
+  overflow: hidden;
+  margin: 0 0 32px 0;
+
+  &_card {
+    z-index: 1;
+  }
+
+  &_cody {
+    position: relative;
+    margin: 12px 0 0 0;
+    display: flex;
+    justify-content: center;
+
+    &_link {
+      position: relative;
+      z-index: 1;
+    }
+
+    &_image {
+      width: 200px;
+    }
+  }
+
+  &_lesson {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &___even {
+      @include lesson;
+    }
+
+    &___odd {
+      @include lesson {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &___withSpace {
+      margin: 8px 0 8px;
+    }
+
+    &___next {
+      @include lesson {
+        justify-content: center;
+        margin: 40px 0 80px;
+      }
+    }
+  }
+
+  &_vertical {
+    &___blue {
+      @include vertical($blue-300, calc(100% + 8px));
+    }
+
+    &___gray {
+      @include theme {
+        @include vertical(t('textColor-200'), calc(100% - 34px));
+      }
+    }
+  }
+
+  &_horizontal {
+    &___blue {
+      @include horizontal($blue-300);
+    }
+
+    &___gray {
+      @include theme {
+        @include horizontal(t('textColor-200'));
+      }
+    }
+  }
+}

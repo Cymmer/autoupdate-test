@@ -1,0 +1,11 @@
+@import '../../../scss/mixins';
+
+.Data {
+  @include flex-center;
+  flex-direction: column;
+
+  &_text {
+    line-height: 1.2;
+    text-align: center;
+  }
+}

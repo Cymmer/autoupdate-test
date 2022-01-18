@@ -1,0 +1,43 @@
+@use '../../../scss' as *;
+
+.RadioGroup {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_label {
+    margin: 0 0 6px 0;
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &___small {
+    &_radio {
+      margin: 8px 16px 8px 0;
+    }
+  }
+
+  &___large {
+    &_radio {
+      margin: 0 32px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &_helperTextContainer {
+    margin: 8px 0 0 16px;
+  }
+
+  &_newBadge {
+    margin: 0 0 0 8px;
+    padding: 0.25em 0.5em;
+    color: $neutral-0;
+    background: $bg-gradient;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,15 @@
+.GlossaryList {
+  margin: 0 0 64px 0;
+
+  &_title {
+    margin: 0 0 24px 0;
+  }
+
+  &_notes {
+    margin: 24px 0 0 0;
+
+    &_note {
+      margin: 0 0 8px 0;
+    }
+  }
+}

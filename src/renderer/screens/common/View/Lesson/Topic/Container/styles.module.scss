@@ -1,0 +1,58 @@
+@import '../../../../../../scss/variables';
+@import '../../../../../../scss/mixins';
+@import '../../../../../../scss/themes';
+
+.TopicContainer {
+  padding: 56px 1rem;
+
+  @include breakpoint(md) {
+    padding: 56px 1rem 96px;
+  }
+
+  &_topic {
+    margin: 0 0 48px 0;
+  }
+
+  &_title {
+    display: flex;
+
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+
+    &_cody {
+      height: 100%;
+      width: 100%;
+      max-width: 240px;
+      margin: 0 48px 24px 0;
+
+      @include breakpoint(sm) {
+        max-width: 160px;
+      }
+    }
+
+    &_content {
+      width: calc(100% - 288px);
+
+      @include breakpoint(md) {
+        width: 100%;
+      }
+
+      > p {
+        margin: 0 0 16px 0;
+
+        > code {
+          color: $red-300;
+        }
+      }
+
+      > div > pre {
+        margin: 16px 0 !important;
+      }
+    }
+
+    &_text {
+      margin: 0 0 16px 0;
+    }
+  }
+}

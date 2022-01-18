@@ -1,0 +1,35 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin syntax($font-size, $padding) {
+  @include code($font-size !important, 1.5);
+  color: $neutral-700;
+  border-radius: 8px;
+  padding: $padding;
+  white-space: pre;
+  @include theme {
+    background-color: t('inputBackgroundColor') !important;
+  }
+  margin: 0 !important;
+
+  @content;
+}
+
+.Code {
+  &_label {
+    margin-bottom: 8px;
+  }
+
+  &___md {
+    &_text {
+      @include syntax(1rem, 12px);
+    }
+  }
+
+  &___sm {
+    &_text {
+      @include syntax(0.875rem, 8px);
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@use '../../../../scss' as *;
+
+@mixin base {
+  display: grid;
+  grid-template-columns: 3fr 4fr 3fr;
+  grid-gap: 16px;
+  border-bottom: 1px solid;
+  @include theme {
+    border-color: t('borderColor');
+    background-color: t('cardBackgroundColor');
+  }
+  height: 60px;
+  width: 100%;
+  padding: 0 40px;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 4fr 1fr;
+    padding: 0 16px;
+  }
+
+  @content;
+}
+
+@mixin save($color) {
+  display: flex;
+  align-items: center;
+  margin: 0 48px 0 8px;
+  color: $color;
+
+  @include breakpoint(sm) {
+    margin: 0 8px 0 0;
+  }
+}
+
+.Navbar {
+  @include base;
+
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+  }
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_button {
+    margin: 0 8px 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0;
+    }
+
+    &_icon {
+      transform: scaleX(-1) rotate(45deg);
+    }
+  }
+
+  &_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    align-items: center;
+
+    &_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(md) {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &_label {
+        margin: 0 4px 0 0;
+
+        @include breakpoint(md) {
+          margin: 0;
+        }
+
+        &___locked {
+          opacity: 0.4;
+        }
+      }
+
+      &_lockedIcon {
+        color: $yellow-400;
+
+        &_link {
+          display: flex;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &_user {
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  &_saveIndicator {
+    &___saving {
+      @include save($neutral-500);
+    }
+
+    &___saved {
+      @include save($green-300);
+    }
+
+    &_icon {
+      margin: 0 4px 0 0;
+    }
+
+    &_text {
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &_back {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 48px;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    &_text {
+      margin: 0 0 0 8px;
+    }
+  }
+
+  &_answerTaskLayout {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    &_dropdown {
+      width: 165px;
+      margin: 0 0 0 12px;
+    }
+  }
+}

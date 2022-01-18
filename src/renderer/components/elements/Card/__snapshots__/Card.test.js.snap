@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Card should render its children 1`] = `
+<div
+  className="Card"
+  data-test="card"
+  id={null}
+  onClick={null}
+  onKeyPress={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+  role={null}
+  tabIndex={null}
+>
+  Test
+</div>
+`;
+
+exports[`RENDERING - Card should render with default props 1`] = `
+<div
+  className="Card"
+  data-test="card"
+  id={null}
+  onClick={null}
+  onKeyPress={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+  role={null}
+  tabIndex={null}
+/>
+`;

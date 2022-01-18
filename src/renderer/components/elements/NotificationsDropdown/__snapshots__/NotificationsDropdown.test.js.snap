@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - NotificationsDropdown should render with default props 1`] = `
+<div
+  className="NotificationsDropdown"
+>
+  <IconButton
+    className="NotificationsDropdown_button"
+    colorName="blue"
+    disabled={false}
+    icon="notifications"
+    iconClassName={null}
+    id={null}
+    isLocked={false}
+    kind="button"
+    onClick={[Function]}
+    style={null}
+    tabIndex={0}
+    type="solid___md"
+  />
+  <Card
+    className="NotificationsDropdown_dropdown"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="NotificationsDropdown_head"
+    >
+      <Text
+        className={null}
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="data___sm"
+      >
+        Notifications
+      </Text>
+    </div>
+    <div
+      className="NotificationsDropdown_body"
+    >
+      <div
+        className="NotificationsDropdown_empty"
+      >
+        <Text
+          className={null}
+          colorClass="n___400"
+          element={null}
+          id={null}
+          type="body___sm"
+        >
+          No Notifications
+        </Text>
+      </div>
+    </div>
+  </Card>
+</div>
+`;

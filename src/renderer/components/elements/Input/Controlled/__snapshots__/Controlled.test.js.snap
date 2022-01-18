@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Input > Controlled should not render a label if it has a label and the type is not SLIM 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___form"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should not render a placeholder if it has a placeholder and the type is not FORM 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder="Test Label"
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render a label if it has a label and the type is SLIM 1`] = `
+<div
+  className="Input_container"
+>
+  <Text
+    className="Input___slim_label"
+    colorClass="n___400"
+    element="label"
+    id={null}
+    type="body___md"
+  >
+    Test Label
+  </Text>
+  <input
+    autoComplete={null}
+    className="Input___slim"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render a placeholder if it has a placeholder and the type is FORM 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___form"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+  <Text
+    className="Input___form_label"
+    colorClass="n___500"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    Test Label
+  </Text>
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render an icon if it has an icon 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim Input___slim___icon"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+  <Icon
+    className="Input___slim_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render the error message if it has an error message 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim Input___error"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+  <div
+    className="Input_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="r___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render the helper text if it has a helper text 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+  <div
+    className="Input_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="n___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render the success message if it has an success message 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim Input___success"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+  <div
+    className="Input_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="g___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Input > Controlled should render with default props 1`] = `
+<div
+  className="Input_container"
+>
+  <input
+    autoComplete={null}
+    className="Input___slim"
+    data-test="input"
+    disabled={false}
+    id="test"
+    max={null}
+    maxLength={null}
+    min={null}
+    name="test"
+    onChange={[Function]}
+    placeholder={null}
+    step={null}
+    tabIndex={null}
+    type="text"
+    value=""
+  />
+</div>
+`;

@@ -1,0 +1,67 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.Action {
+  @include body(0.875rem, 1.2);
+  @include ease(0.3s);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include theme {
+    color: t('textColor-700');
+
+    &:hover {
+      background-color: t('cardBackgroundColor--hover');
+    }
+
+    &:focus,
+    &:active {
+      background-color: t('cardBackgroundColor--active');
+    }
+  }
+
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+
+  &___disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &_icon {
+    margin-right: 8px;
+    @include theme {
+      color: t('textColor-400');
+    }
+  }
+
+  &___delete {
+    color: $red-300 !important;
+
+    .Action_icon {
+      color: $red-300 !important;
+    }
+  }
+
+  &___lock {
+    .Action_icon {
+      color: $yellow-400 !important;
+    }
+  }
+}

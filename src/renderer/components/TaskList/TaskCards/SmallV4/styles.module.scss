@@ -1,0 +1,94 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+@mixin accent($color) {
+  width: 104px;
+  background-color: $color;
+  @include flex-center;
+
+  @include breakpoint(xs) {
+    width: 10px;
+  }
+}
+
+@mixin content($padding: 12px 24px) {
+  width: calc(100% - 104px);
+  padding: $padding;
+  @include flex-between;
+
+  @include breakpoint(xs) {
+    width: calc(100% - 10px);
+  }
+
+  @content;
+}
+
+.TaskCardSmall {
+  position: relative;
+  overflow: hidden;
+
+  &_link {
+    display: flex;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    height: 100%;
+    cursor: pointer;
+
+    @include theme {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: t('cardBackgroundColor--hover');
+      }
+    }
+  }
+
+  &_accent {
+    &___blue {
+      @include accent($blue-300);
+    }
+
+    &___green {
+      @include accent($green-300);
+    }
+
+    &___red {
+      @include accent($red-300);
+    }
+  }
+
+  &_data {
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+
+  &_content {
+    &___student {
+      @include content(12px 80px 12px 24px);
+    }
+
+    &___teacher {
+      @include content;
+    }
+  }
+
+  &_title {
+    margin-bottom: 4px;
+  }
+
+  &_buttonContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 24px;
+
+    &_button {
+      &:nth-child(2) {
+        margin-left: 8px;
+      }
+    }
+  }
+}

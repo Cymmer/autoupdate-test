@@ -1,0 +1,129 @@
+@import './variables';
+
+$themes: (
+  default: (
+    /* General */ backgroundColor: $neutral-50,
+    borderColor: $neutral-200,
+    textColor-900: $neutral-900,
+    textColor-800: $neutral-800,
+    textColor-700: $neutral-700,
+    textColor-600: $neutral-600,
+    textColor-500: $neutral-500,
+    textColor-400: $neutral-400,
+    textColor-300: $neutral-300,
+    textColor-200: $neutral-200,
+    textColor-100: $neutral-100,
+    textColor-50: $neutral-50,
+    textColor-0: $neutral-0,
+    /* Card */ cardBackgroundColor: $neutral-0,
+    cardBackgroundColor--hover: transparentize($neutral-0, 0.6),
+    cardBackgroundColor--active: $neutral-50,
+    /* Modal */ modalOverlayColor: transparentize($neutral-700, 0.5),
+    /* Editor */ editorBackgroundColor: $neutral-0,
+    /* Tabs */ tabTextColor: $neutral-400,
+    tabTextColor--active: $neutral-700,
+    /* Buttons */ buttonTertiaryColor: $neutral-700,
+    buttonTertiaryBackgroundColor: $neutral-100,
+    buttonTertiaryBackgroundColor--hover: $neutral-200,
+    buttonTertiaryBackgroundColor--active: $neutral-300,
+    /* Tags */ tagColor: $neutral-700,
+    tagBackgroundColor: $neutral-100,
+    tagColorBlue: $neutral-50,
+    tagBackgroundColorBlue: $blue-300,
+    tagColorLightBlue: $blue-300,
+    tagBackgroundColorLightBlue: rgba(151, 226, 252, 0.5),
+    /* Icon Buttons */ iconButtonColor: $neutral-400,
+    iconButtonColor--hover: $neutral-700,
+    iconButtonBackgroundColor--hover: transparentize($neutral-200, 0.75),
+    iconButtonBackgroundColor--active: $neutral-200,
+    /* Inputs */ inputColor: $neutral-700,
+    inputBackgroundColor: $neutral-50,
+    /* Shine */ shineBackgroundColor: $neutral-50,
+    shineBackgroundImage:
+      linear-gradient(
+        to right,
+        $neutral-50 0%,
+        $neutral-100 20%,
+        $neutral-50 40%,
+        $neutral-50 100%
+      ),
+    /* Problem Card */ problemCardCover:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $neutral-0 70%),
+    problemCardCover--hover:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $neutral-50 70%),
+    /* Expiry Notification */ expiryNotificationText: $neutral-700,
+    /* Terminal Modal */ terminalModalBackgroundColor: $neutral-700,
+  ),
+  dark: (
+    /* General */ backgroundColor: $neutral-900,
+    borderColor: $neutral-600,
+    textColor-900: $neutral-0,
+    textColor-800: $neutral-0,
+    textColor-700: $neutral-0,
+    textColor-600: $neutral-100,
+    textColor-500: $neutral-200,
+    textColor-400: $neutral-300,
+    textColor-300: $neutral-400,
+    textColor-200: $neutral-500,
+    textColor-100: $neutral-600,
+    textColor-50: $neutral-700,
+    textColor-0: $neutral-0,
+    /* Card */ cardBackgroundColor: $neutral-800,
+    cardBackgroundColor--hover: $neutral-700,
+    cardBackgroundColor--active: $neutral-600,
+    /* Modal */ modalOverlayColor: transparentize($neutral-500, 0.5),
+    /* Editor */ editorBackgroundColor: #202124,
+    /* Tabs */ tabTextColor: $neutral-300,
+    tabTextColor--active: $neutral-0,
+    /* Buttons */ buttonTertiaryColor: $neutral-100,
+    buttonTertiaryBackgroundColor: $neutral-700,
+    buttonTertiaryBackgroundColor--hover: $neutral-600,
+    buttonTertiaryBackgroundColor--active: $neutral-500,
+    /* Tags */ tagColor: $neutral-0,
+    tagBackgroundColor: $neutral-600,
+    /* Icon Buttons */ iconButtonColor: $neutral-200,
+    iconButtonColor--hover: $neutral-0,
+    iconButtonBackgroundColor--hover: transparentize($neutral-500, 0.75),
+    iconButtonBackgroundColor--active: $neutral-500,
+    /* Inputs */ inputColor: $neutral-0,
+    inputBackgroundColor: $neutral-700,
+    /* Shine */ shineBackgroundColor: $neutral-700,
+    shineBackgroundImage:
+      linear-gradient(
+        to right,
+        $neutral-700 0%,
+        $neutral-600 20%,
+        $neutral-700 40%,
+        $neutral-700 100%
+      ),
+    /* Problem Card */ problemCardCover:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $neutral-800 70%),
+    problemCardCover--hover:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $neutral-700 70%),
+    /* Expiry Notification */ expiryNotificationText: $neutral-700,
+    /* Terminal Modal */ terminalModalBackgroundColor: $neutral-0,
+  ),
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    body[class^='theme--#{$theme}'] & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

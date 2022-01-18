@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Cody should render with default props 1`] = `
+<img
+  alt="Cody"
+  className={null}
+  data-test="image"
+  src="test-file-stub"
+/>
+`;

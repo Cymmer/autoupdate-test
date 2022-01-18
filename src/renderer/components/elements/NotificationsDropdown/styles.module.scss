@@ -1,0 +1,73 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin dropdown($display) {
+  display: $display;
+  flex-direction: column;
+  position: absolute;
+  top: 52px;
+  right: 0;
+  box-shadow: $shadow-raised;
+  width: 300px;
+  border: none;
+  overflow: hidden;
+
+  @include breakpoint(sm) {
+    width: 240px;
+    right: -60px;
+  }
+
+  @content;
+}
+
+.NotificationsDropdown {
+  position: relative;
+
+  &_dropdown {
+    @include dropdown(none);
+
+    &___toggled {
+      @include dropdown(flex);
+    }
+  }
+
+  &_head {
+    padding: 8px 20px 4px 20px;
+    border-bottom: 1px solid;
+    @include theme {
+      border-color: t('borderColor');
+    }
+  }
+
+  &_body {
+    overflow: auto;
+    max-height: 240px;
+  }
+
+  &_button {
+    position: relative;
+
+    &___hasNotifications {
+      &:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: $red-300;
+        border-radius: 100%;
+        border: 2px solid;
+        @include theme {
+          border-color: t('cardBackgroundColor');
+        }
+        position: absolute;
+        top: 4px;
+        right: 2px;
+      }
+    }
+  }
+
+  &_empty {
+    padding: 20px;
+    text-align: center;
+  }
+}

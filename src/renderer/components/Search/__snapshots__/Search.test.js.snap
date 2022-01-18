@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Search should render the filter options if there is/are filter option/s 1`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    />
+    <div
+      className="Search_upper_right"
+    >
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Search should render the filter options if there is/are filter option/s 2`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    >
+      <Button
+        className="Search_button___large"
+        data-test="openFiltersButton"
+        dataTestId={null}
+        disabled={false}
+        icon="tune"
+        id="filtersButton"
+        isLoading={false}
+        isLocked={false}
+        kind="button"
+        lockedIconClassName={null}
+        onClick={[Function]}
+        tabIndex={0}
+        type="text___blue"
+        wrapperClassName={null}
+      >
+        Filters
+      </Button>
+    </div>
+    <div
+      className="Search_upper_right"
+    >
+      <IconButton
+        className="Search_button___small"
+        colorName="blue"
+        data-test="closeFiltersButton"
+        disabled={false}
+        icon="tune"
+        iconClassName={null}
+        id="filtersButton"
+        isLocked={false}
+        kind="button"
+        onClick={[Function]}
+        style={null}
+        tabIndex={0}
+        type="outline___md"
+      >
+        Filters
+      </IconButton>
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Search should render the search filter if it has a search filter 1`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    />
+    <div
+      className="Search_upper_right"
+    >
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Search should render the sort options if there is/are sort option/s 1`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    />
+    <div
+      className="Search_upper_right"
+    >
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Search should render the sort options if there is/are sort option/s 2`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    >
+      <div
+        className="Search_group"
+      >
+        <Text
+          className="Search_label"
+          colorClass="n___400"
+          element={null}
+          id={null}
+          type="body___md"
+        >
+          Sort by:
+        </Text>
+        <Connect(ControlledDropdown)
+          className="Search_upper_dropdown"
+          data-test="sortDropdown"
+          name="sort"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "Dummy Label",
+                "value": 1,
+              },
+            ]
+          }
+          type="slim"
+        />
+      </div>
+    </div>
+    <div
+      className="Search_upper_right"
+    >
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Search should render with default props 1`] = `
+<div
+  className="Search___card"
+>
+  <div
+    className="Search_upper"
+  >
+    <div
+      className="Search_upper_left"
+    />
+    <div
+      className="Search_upper_right"
+    >
+      <ControlledInput
+        autoComplete={null}
+        className="Search_search"
+        data-test="searchFilterInput"
+        disabled={false}
+        error={null}
+        helperText={null}
+        icon="search"
+        id={null}
+        kind="text"
+        label={null}
+        max={null}
+        maxLength={null}
+        min={null}
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        step={null}
+        success={null}
+        tabIndex={null}
+        type="slim"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

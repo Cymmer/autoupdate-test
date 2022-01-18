@@ -1,0 +1,57 @@
+@import '../../../../../../scss/mixins';
+
+.Slide {
+  @include flex-center;
+  height: calc(100vh - 120px);
+  padding: 16px;
+
+  &_card {
+    height: 640px;
+    padding: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 16px 0;
+
+    @include breakpoint(md) {
+      height: 100%;
+      padding: 32px;
+    }
+  }
+
+  &_content {
+    @include flex-between;
+
+    &_cody {
+      max-width: 320px;
+      width: 100%;
+      margin: 0 56px 0 0;
+
+      @include breakpoint(md) {
+        flex-direction: column;
+        margin: 0 0 32px 0;
+      }
+    }
+
+    &_title {
+      margin: 0 0 16px 0;
+    }
+
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &_buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+
+    &_button {
+      min-width: 180px;
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+    }
+  }
+}

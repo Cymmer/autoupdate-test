@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - UserImage should render with default props 1`] = `
+<div
+  className={null}
+>
+  <img
+    alt="User"
+    className="UserImage_image"
+    data-test="image"
+    id={null}
+    src="test-file-stub"
+  />
+</div>
+`;

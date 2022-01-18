@@ -1,0 +1,44 @@
+@use '../../../scss' as *;
+
+.Switch {
+  display: flex;
+
+  &_input {
+    display: none;
+
+    &:checked + .Switch_slider {
+      background: $bg-gradient;
+    }
+
+    &:checked + .Switch_slider::after {
+      left: unset;
+      right: 3px;
+    }
+  }
+
+  &_slider {
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    height: 21px;
+    width: 36px;
+    @include theme {
+      background: t('textColor-300');
+    }
+    border-radius: 24px;
+    cursor: pointer;
+    transition: ease 0.2s all;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 2px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $neutral-0;
+    }
+  }
+}

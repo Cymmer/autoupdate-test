@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Tooltip should render with default props 1`] = `
+<ForwardRef(TippyWrapper)
+  allowHTML={true}
+  animation="fade"
+  className="Tooltip"
+  content="Test"
+  delay={0}
+  duration={300}
+  placement="bottom"
+  theme="light"
+>
+  <span
+    className={null}
+    tabIndex={-1}
+  >
+    <p>
+      Test
+    </p>
+  </span>
+</ForwardRef(TippyWrapper)>
+`;
+
+exports[`RENDERING - Tooltip should set its placement appropriately 1`] = `
+<ForwardRef(TippyWrapper)
+  allowHTML={true}
+  animation="fade"
+  className="Tooltip"
+  content="Test"
+  delay={0}
+  duration={300}
+  placement="bottom"
+  theme="light"
+>
+  <span
+    className={null}
+    tabIndex={-1}
+  >
+    <p>
+      Test
+    </p>
+  </span>
+</ForwardRef(TippyWrapper)>
+`;
+
+exports[`RENDERING - Tooltip should set its placement appropriately 2`] = `
+<ForwardRef(TippyWrapper)
+  allowHTML={true}
+  animation="fade"
+  className="Tooltip"
+  content="Test"
+  delay={0}
+  duration={300}
+  placement="left"
+  theme="light"
+>
+  <span
+    className={null}
+    tabIndex={-1}
+  >
+    <p>
+      Test
+    </p>
+  </span>
+</ForwardRef(TippyWrapper)>
+`;
+
+exports[`RENDERING - Tooltip should set its placement appropriately 3`] = `
+<ForwardRef(TippyWrapper)
+  allowHTML={true}
+  animation="fade"
+  className="Tooltip"
+  content="Test"
+  delay={0}
+  duration={300}
+  placement="right"
+  theme="light"
+>
+  <span
+    className={null}
+    tabIndex={-1}
+  >
+    <p>
+      Test
+    </p>
+  </span>
+</ForwardRef(TippyWrapper)>
+`;

@@ -1,0 +1,18 @@
+.Summary {
+  &_title {
+    display: flex;
+    align-items: center;
+
+    &_image {
+      height: 88px;
+      width: 88px;
+      background-size: 56px;
+      border-radius: 16px;
+      margin: 0 32px 0 0;
+    }
+  }
+
+  &_container {
+    padding: 24px 1rem 120px 1rem;
+  }
+}

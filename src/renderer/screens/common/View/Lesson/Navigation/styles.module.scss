@@ -1,0 +1,43 @@
+@import '../../../../../scss/mixins';
+@import '../../../../../scss/themes';
+
+.Navigation {
+  @include theme {
+    background-color: t('cardBackgroundColor');
+    border-top: 1px solid t('borderColor');
+  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 0 0 72px;
+  text-align: center;
+  z-index: 3;
+
+  @include breakpoint(sm) {
+    margin: 0 0 0 56px;
+  }
+
+  &___active_onboarding {
+    right: 316px;
+  }
+
+  &_container {
+    @include flex-between;
+    padding: 12px 1rem;
+  }
+
+  &_button {
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    &___icon {
+      display: none;
+
+      @include breakpoint(sm) {
+        display: flex;
+      }
+    }
+  }
+}

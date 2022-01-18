@@ -1,0 +1,12 @@
+@import '../../../scss/variables';
+@import '../../../scss/themes';
+
+.Separator {
+  border: none;
+  border-top: 1px solid;
+  @include theme {
+    border-color: t('borderColor');
+  }
+  margin: 0;
+  width: 100%;
+}

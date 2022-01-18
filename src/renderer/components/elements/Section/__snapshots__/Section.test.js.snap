@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Section should render a title if it has a title 1`] = `
+<section
+  className="Section"
+  id={null}
+>
+  <Text
+    className="Section_title"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="heading___xxxs"
+  >
+    Test
+  </Text>
+</section>
+`;
+
+exports[`RENDERING - Section should render its children if it has children 1`] = `
+<section
+  className="Section"
+  id={null}
+>
+  Test
+</section>
+`;
+
+exports[`RENDERING - Section should render with default props 1`] = `
+<section
+  className="Section"
+  id={null}
+/>
+`;

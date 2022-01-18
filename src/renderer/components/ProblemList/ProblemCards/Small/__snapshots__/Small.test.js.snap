@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ProblemList > ProblemCards > Small should render the used in badge if the problem has already been used in other activities 1`] = `
+<Card
+  className="ProblemCardSmall"
+  data-test="problemCardSmallContainer"
+  id="problemCardSmall_undefined"
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="ProblemCardSmall_score"
+  >
+    <Data
+      className={null}
+      colorClass="b___300"
+      id={null}
+      label="Score"
+      labelColorClass="n___400"
+      size="md"
+    >
+      10
+    </Data>
+  </div>
+  <div
+    className="ProblemCardSmall_title"
+  >
+    <Text
+      className={null}
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Problem
+    </Text>
+    <Tags
+      className="ProblemCardSmall_tags"
+      id={
+        Array [
+          1,
+          2,
+        ]
+      }
+      tags={
+        Array [
+          Object {
+            "name": "DummyTag1",
+          },
+          Object {
+            "name": "DummyTag2",
+          },
+        ]
+      }
+    />
+    <Badge
+      className="ProblemCardSmall_badge"
+      colorName="red"
+      icon={null}
+      id={null}
+      text="Used in 1 activity"
+    />
+  </div>
+</Card>
+`;
+
+exports[`RENDERING - ProblemList > ProblemCards > Small should render with default props 1`] = `
+<Card
+  className="ProblemCardSmall"
+  data-test="problemCardSmallContainer"
+  id="problemCardSmall_undefined"
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="ProblemCardSmall_score"
+  >
+    <Data
+      className={null}
+      colorClass="b___300"
+      id={null}
+      label="Score"
+      labelColorClass="n___400"
+      size="md"
+    >
+      10
+    </Data>
+  </div>
+  <div
+    className="ProblemCardSmall_title"
+  >
+    <Text
+      className={null}
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Problem
+    </Text>
+    <Tags
+      className="ProblemCardSmall_tags"
+      id={
+        Array [
+          1,
+          2,
+        ]
+      }
+      tags={
+        Array [
+          Object {
+            "name": "DummyTag1",
+          },
+          Object {
+            "name": "DummyTag2",
+          },
+        ]
+      }
+    />
+  </div>
+</Card>
+`;

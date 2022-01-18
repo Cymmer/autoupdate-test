@@ -1,0 +1,17 @@
+.TaskInfo {
+  height: 100%;
+  width: 100%;
+
+  &_card {
+    padding: 24px 16px;
+    margin: 0 0 8px 0;
+  }
+
+  &_problems {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 8px;
+    overflow: auto;
+    max-height: calc(100vh - 240px);
+  }
+}

@@ -1,0 +1,60 @@
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+.ExecutionResultsModal {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    width: 320px;
+  }
+
+  &_cody {
+    @include flex-center;
+    padding: 48px 40px;
+    border-left: 1px solid;
+    @include theme {
+      border-color: t('borderColor');
+    }
+
+    @include breakpoint(xs) {
+      padding: 40px 40px 0 40px;
+      justify-content: flex-start;
+      border-left: none;
+    }
+
+    &_image {
+      width: 192px;
+
+      @include breakpoint(xs) {
+        width: 120px;
+      }
+    }
+  }
+
+  &_title {
+    margin: 0 0 16px 0;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    width: 100%;
+
+    @include breakpoint(xs) {
+      padding: 16px 40px 40px 40px;
+    }
+
+    &_text {
+      margin: 0 0 32px 0;
+    }
+  }
+
+  &_data {
+    @include flex-between;
+    margin: 0 0 4px 0;
+  }
+}

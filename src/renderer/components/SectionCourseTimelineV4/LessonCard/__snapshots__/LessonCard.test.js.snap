@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - SectionCourseTimelineV4 > LessonCard should render with default props 1`] = `
+<Card
+  className="LessonCard___unlocked"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <LessonImage
+    className="LessonCard___unlocked_image"
+    colorName="blue"
+    image={null}
+  />
+  <div
+    className="LessonCard___unlocked_content___lesson"
+  >
+    <div>
+      <Text
+        className="LessonCard_title"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xxs"
+      >
+        How to Print
+      </Text>
+      <Text
+        className={null}
+        colorClass="n___500"
+        element={null}
+        id={null}
+        type="body___sm"
+      >
+        How to Print · 5 Topics
+      </Text>
+      <div
+        className="LessonCard_finished_container"
+        data-test="finishedTag"
+      >
+        <Span
+          className="LessonCard_finished"
+          colorClass={null}
+          type={null}
+        >
+          Completed
+        </Span>
+      </div>
+      <Text
+        className="LessonCard_progress"
+        colorClass="b___300"
+        element={null}
+        id={null}
+        type="body___sm"
+      >
+        <Span
+          className={null}
+          colorClass={null}
+          type="data___sm"
+        >
+          50
+          %
+        </Span>
+         
+        of students have finished
+      </Text>
+    </div>
+    <div
+      className=""
+    />
+  </div>
+</Card>
+`;

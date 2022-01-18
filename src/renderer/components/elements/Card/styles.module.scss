@@ -1,0 +1,25 @@
+@import '../../../scss/variables';
+@import '../../../scss/themes';
+
+.Card {
+  @include theme {
+    background-color: t('cardBackgroundColor');
+    border-color: t('borderColor');
+  }
+  border-radius: 16px;
+  border: 1px solid;
+  text-decoration: none;
+
+  &___clickable {
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    @include theme {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: t('cardBackgroundColor--hover');
+      }
+    }
+  }
+}

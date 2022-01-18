@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - SubInfo should render the correct number of data passed if not loading 1`] = `
+<div
+  className="SubInfo_container"
+>
+  <div
+    className="SubInfo"
+    key="Test 1"
+  >
+    <Icon
+      className="SubInfo_icon"
+      icon="test1"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+    <Text
+      className={null}
+      colorClass="b___300"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Test 1
+    </Text>
+  </div>
+  <div
+    className="SubInfo"
+    key="Test 2"
+  >
+    <Icon
+      className="SubInfo_icon"
+      icon="test2"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+    <Text
+      className={null}
+      colorClass="r___300"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      Test 2
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - SubInfo should render the loading state if it is loading 1`] = `
+<div
+  className="SubInfo_container"
+>
+  <Shine
+    className="SubInfo_shine"
+  />
+  <Shine
+    className="SubInfo_shine"
+  />
+</div>
+`;
+
+exports[`RENDERING - SubInfo should render with default props 1`] = `
+<div
+  className="SubInfo_container"
+/>
+`;

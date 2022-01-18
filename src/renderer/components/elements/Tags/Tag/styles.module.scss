@@ -1,0 +1,40 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+@mixin base {
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  padding: 4px 8px;
+  border-radius: 16px;
+  height: fit-content;
+  font-weight: 600;
+  @include theme {
+    color: t('tagColor');
+    background-color: t('tagBackgroundColor');
+  }
+}
+
+.Tag {
+  @include base;
+
+  &___withIcon {
+    padding: 4px 12px;
+    display: flex;
+  }
+
+  &___blue {
+    @include theme {
+      color: t('tagColorBlue');
+      background-color: t('tagBackgroundColorBlue');
+    }
+  }
+
+  &___lightBlue {
+    @include theme {
+      color: t('tagColorLightBlue');
+      background-color: t('tagBackgroundColorLightBlue');
+    }
+  }
+}

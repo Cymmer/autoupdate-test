@@ -1,0 +1,25 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.SectionCardAdd {
+  @include flex-center;
+  background-color: transparent;
+  border: 4px dashed;
+  @include theme {
+    border-color: t('textColor-200');
+  }
+  border-radius: 16px;
+  min-height: 207px;
+  height: 100%;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &_link {
+    text-decoration: none;
+  }
+}

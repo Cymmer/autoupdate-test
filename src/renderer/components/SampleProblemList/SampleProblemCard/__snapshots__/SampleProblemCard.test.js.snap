@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - SampleProblemList > SampleProblemCard should render with default props 1`] = `
+<Card
+  className="SampleProblemCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="SampleProblemCard_description"
+  >
+    <Text
+      className={null}
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___md"
+    >
+      Sample Problem 
+      1
+    </Text>
+    <Text
+      className={null}
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___sm"
+    >
+      Dummy Title
+    </Text>
+  </div>
+  <h1>
+    Dummy Child1
+  </h1>
+  <p>
+    Dummy Child2
+  </p>
+</Card>
+`;

@@ -1,0 +1,98 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+@mixin status($color) {
+  margin: 0 0 0 16px;
+  @include flex-center;
+
+  &:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: $color;
+    border-radius: 100%;
+    display: block;
+    margin: 0 8px 0 0;
+  }
+}
+
+.ViewSection {
+  &_header {
+    @include flex-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &_image {
+    width: 80px;
+    height: 80px;
+    background-size: 48px;
+    border-radius: 16px;
+
+    @include breakpoint(sm) {
+      margin: 0 0 16px 0;
+      width: 100%;
+      height: 96px;
+      background-size: 96px;
+    }
+  }
+
+  &_info {
+    @include flex-center;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+
+  &_name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &_text {
+    margin: 0 0 0 24px;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+  }
+
+  &_status {
+    &___active {
+      @include status($green-300);
+    }
+
+    &___inactive {
+      @include status($red-300);
+    }
+  }
+
+  &_download {
+    > i {
+      color: $yellow-300;
+    }
+
+    &:disabled {
+      @include theme {
+        color: t('textColor-300');
+        background-color: t('textColor-50');
+      }
+
+      > i {
+        @include theme {
+          color: t('textColor-300');
+        }
+      }
+    }
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}

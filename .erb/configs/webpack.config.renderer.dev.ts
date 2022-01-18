@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const port = process.env.PORT || 1212;
 const manifest = path.resolve(webpackPaths.dllPath, 'renderer.json');
-const requiredByDLLConfig = module.parent!.filename.includes(
+const requiredByDLLConfig = module.parent.filename.includes(
   'webpack.config.renderer.dev.dll'
 );
 
@@ -37,12 +37,12 @@ if (
   execSync('npm run postinstall');
 }
 
-const configuration: webpack.Configuration = {
+export default merge(baseConfig, {
   devtool: 'inline-source-map',
 
   mode: 'development',
 
-  target: ['web', 'electron-renderer'],
+  target: 'electron-renderer',
 
   entry: [
     `webpack-dev-server/client?http://localhost:${port}/dist`,
@@ -56,9 +56,6 @@ const configuration: webpack.Configuration = {
     path: webpackPaths.distRendererPath,
     publicPath: '/',
     filename: 'renderer.dev.js',
-    library: {
-      type: 'umd',
-    },
   },
 
   module: {
@@ -97,15 +94,13 @@ const configuration: webpack.Configuration = {
     ],
   },
   plugins: [
-    ...(requiredByDLLConfig
-      ? []
-      : [
-          new webpack.DllReferencePlugin({
-            context: webpackPaths.dllPath,
-            manifest: require(manifest),
-            sourceType: 'var',
-          }),
-        ]),
+    requiredByDLLConfig
+      ? null
+      : new webpack.DllReferencePlugin({
+          context: webpackPaths.dllPath,
+          manifest: require(manifest),
+          sourceType: 'var',
+        }),
 
     new webpack.NoEmitOnErrorsPlugin(),
 
@@ -151,7 +146,6 @@ const configuration: webpack.Configuration = {
     __filename: false,
   },
 
-  // @ts-ignore
   devServer: {
     port,
     compress: true,
@@ -162,6 +156,7 @@ const configuration: webpack.Configuration = {
     },
     historyApiFallback: {
       verbose: true,
+      disableDotRule: false,
     },
     onBeforeSetupMiddleware() {
       console.log('Starting Main Process...');
@@ -170,10 +165,8 @@ const configuration: webpack.Configuration = {
         env: process.env,
         stdio: 'inherit',
       })
-        .on('close', (code: number) => process.exit(code!))
+        .on('close', (code) => process.exit(code))
         .on('error', (spawnError) => console.error(spawnError));
     },
   },
-};
-
-export default merge(baseConfig, configuration);
+});

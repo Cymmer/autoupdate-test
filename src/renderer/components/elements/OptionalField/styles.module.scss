@@ -1,0 +1,34 @@
+@use '../../../scss' as *;
+
+.OptionalField {
+  @include theme {
+    border: 1px solid t('borderColor');
+  }
+  border-radius: 12px;
+  padding: 1em;
+
+  &_info {
+    @include flex-between;
+  }
+
+  &_input {
+    &___open {
+      margin: 0.5em 0 0;
+      display: block;
+    }
+
+    &___closed {
+      display: none;
+    }
+  }
+
+  &_icon {
+    &___open {
+      color: $red-300;
+    }
+
+    &___closed {
+      color: $blue-300;
+    }
+  }
+}

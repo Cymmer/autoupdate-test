@@ -1,0 +1,28 @@
+@import '../../../../scss/mixins';
+
+.Info {
+  @include flex-between;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px;
+  min-width: 300px;
+  max-height: calc(100vh - 60px);
+
+  @include breakpoint(sm) {
+    max-height: none;
+  }
+
+  &_content {
+    height: 100%;
+    width: 100%;
+  }
+
+  &_actions {
+    width: 100%;
+    margin: 8px 0 0 0;
+
+    @include breakpoint(sm) {
+      padding: 0 0 80px 0;
+    }
+  }
+}

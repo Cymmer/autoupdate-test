@@ -1,0 +1,22 @@
+@import '../../../../../scss/variables';
+@import '../../../../../scss/mixins';
+
+.Navigation {
+  @include flex-between;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+
+  &_nav {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 8px;
+
+    &_text {
+      margin: 0 24px;
+
+      @include breakpoint(sm) {
+        margin: 0 8px;
+      }
+    }
+  }
+}

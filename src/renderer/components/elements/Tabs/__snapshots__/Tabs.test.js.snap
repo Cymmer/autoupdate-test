@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Tabs should render its children appropriately if it is not loading 1`] = `
+<div
+  className="Tabs___horizontal___lg"
+>
+  <TabButton
+    active={false}
+    className="Tabs_button"
+    closeAction={null}
+    hasNewData={false}
+    id={null}
+    key="test1"
+    onClick={[Function]}
+    type="horizontal___lg"
+  >
+    Test 1
+  </TabButton>
+  <TabButton
+    active={false}
+    className="Tabs_button"
+    closeAction={null}
+    hasNewData={false}
+    id={null}
+    key="test2"
+    onClick={[Function]}
+    type="horizontal___lg"
+  >
+    Test 2
+  </TabButton>
+  <TabLink
+    active={false}
+    className="Tabs_link"
+    closeAction={null}
+    hasNewData={false}
+    id={null}
+    isLocked={false}
+    key="test3"
+    to="www.codechum.com"
+    type="horizontal___lg"
+  >
+    Test 3
+  </TabLink>
+  <TabLink
+    active={false}
+    className="Tabs_link"
+    closeAction={null}
+    hasNewData={false}
+    id={null}
+    isLocked={false}
+    key="test4"
+    to="www.codechum.com/privacy-policy"
+    type="horizontal___lg"
+  >
+    Test 4
+  </TabLink>
+  <TabLink
+    active={false}
+    className="Tabs_link"
+    closeAction={null}
+    hasNewData={false}
+    id={null}
+    isLocked={true}
+    key="test5"
+    to={[Function]}
+    type="horizontal___lg"
+  >
+    Test 5
+  </TabLink>
+</div>
+`;
+
+exports[`RENDERING - Tabs should render the loading state if it is loading 1`] = `
+<div
+  className="Tabs___horizontal___lg Tabs___loading"
+>
+  <Shine
+    className="Tabs_shine"
+  />
+  <Shine
+    className="Tabs_shine"
+  />
+</div>
+`;
+
+exports[`RENDERING - Tabs should render with default props 1`] = `
+<div
+  className="Tabs___horizontal___lg"
+/>
+`;

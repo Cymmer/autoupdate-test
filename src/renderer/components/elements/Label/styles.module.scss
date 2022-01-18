@@ -1,0 +1,20 @@
+@use '../../../scss' as *;
+
+@mixin base {
+  @include body(0.875rem, 1.25);
+  @include theme {
+    color: t('textColor-700');
+  }
+
+  @content;
+}
+
+.Label {
+  @include base;
+
+  &___disabled {
+    @include base {
+      opacity: 0.5;
+    }
+  }
+}

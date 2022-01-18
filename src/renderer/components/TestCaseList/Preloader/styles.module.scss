@@ -1,0 +1,25 @@
+@import '../../../scss/mixins';
+@import '../../../scss/animations';
+
+.Preloader {
+  display: flex;
+  overflow: hidden;
+  @include ease(0.4s);
+
+  &_info {
+    display: flex;
+    width: 100%;
+    @include ease(0.2s);
+  }
+
+  &_shineHolder {
+    padding: 20px 24px;
+    width: 100%;
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &_shine {
+    margin: 7px 0;
+  }
+}

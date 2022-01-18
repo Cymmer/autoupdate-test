@@ -1,0 +1,55 @@
+@import '../../scss/mixins';
+@import '../../scss/themes';
+
+.FunFactCard {
+  padding: 40px;
+
+  @include breakpoint(sm) {
+    padding: 24px;
+  }
+
+  &_text {
+    display: flex;
+    margin: 0 0 12px 0;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &_title {
+    margin: 0 0 8px 0;
+  }
+
+  &_cody {
+    width: 100%;
+    max-width: 96px;
+    margin: 0 32px 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0 0 24px 0;
+    }
+
+    &_image {
+      width: 100%;
+    }
+  }
+
+  &_info {
+    > div > pre {
+      margin: 12px 0 0 0 !important;
+    }
+
+    p {
+      @include theme {
+        color: t('textColor-500');
+      }
+    }
+  }
+
+  p {
+    @include theme {
+      color: t('textColor-500');
+    }
+  }
+}

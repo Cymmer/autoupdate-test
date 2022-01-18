@@ -1,0 +1,32 @@
+@import '../../../scss/mixins';
+
+.NoResults {
+  &___large {
+    @include flex-between;
+    flex-direction: column;
+    margin: 25vh 1rem;
+    text-align: center;
+  }
+
+  &___small {
+    @include flex-between;
+    flex-direction: column;
+    margin: 32px;
+    text-align: center;
+  }
+
+  &_imageContainer {
+    @include flex-center;
+    margin: 0 0 16px 0;
+  }
+
+  &_image {
+    height: 200px;
+    width: 100%;
+    min-width: 200px;
+  }
+
+  &_button {
+    margin: 32px 0 0 0;
+  }
+}

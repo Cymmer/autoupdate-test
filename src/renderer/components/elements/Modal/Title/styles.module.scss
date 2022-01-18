@@ -1,0 +1,62 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+@mixin icon($size) {
+  padding: 10px;
+  border-radius: 100%;
+  height: $size;
+  width: $size;
+
+  @content;
+}
+
+.ModalTitle {
+  display: flex;
+  align-items: center;
+
+  &___large {
+    &_icon {
+      @include icon(52px) {
+        font-size: 2rem;
+        color: $blue-300;
+        background-color: transparentize($blue-100, 0.8);
+      }
+    }
+
+    &_title {
+      margin: 0 0 8px 0;
+    }
+
+    &_info {
+      margin: 0 0 0 16px;
+
+      @include breakpoint(sm) {
+        margin: 4px 0 0 16px;
+      }
+    }
+  }
+
+  &___small {
+    &_icon {
+      @include icon(36px) {
+        color: $blue-300;
+        background-color: transparentize($blue-100, 0.8);
+      }
+    }
+  }
+
+  &_title {
+    margin: 0 0 0 16px;
+  }
+
+  &_info {
+    display: flex;
+    align-items: flex-end;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

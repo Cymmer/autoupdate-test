@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - FunFactCard should render its childrenJsx 1`] = `
+<Card
+  className="FunFactCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="FunFactCard_text"
+  >
+    <div
+      className="FunFactCard_cody"
+    >
+      <Cody
+        className="FunFactCard_cody_image"
+        src={null}
+        type="thinking"
+      />
+    </div>
+    <div
+      className="FunFactCard_info"
+    >
+      <Text
+        className="FunFactCard_title"
+        colorClass="b___300"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Did you know?
+      </Text>
+      <h1>
+        Main Dummy
+      </h1>
+    </div>
+  </div>
+  <p>
+    Children Dummy
+  </p>
+</Card>
+`;
+
+exports[`RENDERING - FunFactCard should render with default props 1`] = `
+<Card
+  className="FunFactCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="FunFactCard_text"
+  >
+    <div
+      className="FunFactCard_cody"
+    >
+      <Cody
+        className="FunFactCard_cody_image"
+        src={null}
+        type="thinking"
+      />
+    </div>
+    <div
+      className="FunFactCard_info"
+    >
+      <Text
+        className="FunFactCard_title"
+        colorClass="b___300"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Did you know?
+      </Text>
+      <h1>
+        Main Dummy
+      </h1>
+    </div>
+  </div>
+</Card>
+`;

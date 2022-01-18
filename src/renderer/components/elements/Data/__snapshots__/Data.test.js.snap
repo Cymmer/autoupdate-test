@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Data should render with default props 1`] = `
+<div
+  className="Data"
+  id={null}
+>
+  <Text
+    className="Data_text"
+    colorClass="n___700"
+    element={null}
+    id={null}
+    type="data___md"
+  >
+    15/15
+  </Text>
+  <Text
+    className="Data_text"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="body___sm"
+  >
+    Test
+  </Text>
+</div>
+`;

@@ -1,0 +1,60 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.FullScreenClosedScreen {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include theme {
+    background-color: t('cardBackgroundColor');
+  }
+
+  &_container {
+    @include flex-center;
+    height: 100%;
+    max-width: 1000px;
+
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
+
+    &_image {
+      width: 380px;
+
+      @include breakpoint(md) {
+        width: 280px;
+      }
+    }
+
+    &_content {
+      margin: 0 0 0 120px;
+
+      @include breakpoint(md) {
+        margin: 0 0 0 64px;
+      }
+
+      @include breakpoint(sm) {
+        margin: 32px 0 0 0;
+      }
+
+      &_title {
+        margin: 0 0 12px 0;
+      }
+
+      &_description {
+        margin: 0 0 16px 0;
+      }
+
+      &_button {
+        width: 180px;
+
+        @include breakpoint(sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

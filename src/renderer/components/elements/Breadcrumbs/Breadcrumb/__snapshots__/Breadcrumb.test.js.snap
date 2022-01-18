@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Breadcrumbs > Breadcrumb should not render an icon if it is active 1`] = `
+<Link
+  className="Breadcrumb___active"
+  to="www.codechum.com"
+>
+  <span
+    className="Breadcrumb_text"
+  >
+    Test
+  </span>
+</Link>
+`;
+
+exports[`RENDERING - Breadcrumbs > Breadcrumb should render with default props 1`] = `
+<Link
+  className="Breadcrumb"
+  to="www.codechum.com"
+>
+  <span
+    className="Breadcrumb_text"
+  >
+    Test
+  </span>
+  <Icon
+    className="Breadcrumb_icon"
+    icon="chevron_right"
+    id="chevronRight"
+    isPulsating={false}
+    style={null}
+  />
+</Link>
+`;

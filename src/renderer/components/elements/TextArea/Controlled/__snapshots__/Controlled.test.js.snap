@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - TextArea > Controlled should render the error message if it has an error message 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form TextArea___error"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+  <div
+    className="TextArea_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="r___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render the helper text if it has a helper text 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+  <div
+    className="TextArea_helperTextContainer"
+  >
+    <Text
+      className="TextArea_helperText"
+      colorClass="n___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render the icon if it has an icond 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form TextArea___icon"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+  <Icon
+    className="TextArea_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render the placeholder if it has a placeholder appropriately 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+  <Text
+    className="TextArea___form_placeholder"
+    colorClass="n___500"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    Test
+  </Text>
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render the placeholder if it has a placeholder appropriately 2`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___code"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder="Test"
+    readOnly={false}
+    value=""
+  />
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render the success message if it has an success message 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form TextArea___success"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+  <div
+    className="TextArea_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="g___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - TextArea > Controlled should render with default props 1`] = `
+<div
+  className="TextArea_container"
+>
+  <textarea
+    className="TextArea___form"
+    data-test="textArea"
+    disabled={false}
+    id={null}
+    name="test"
+    onChange={[Function]}
+    placeholder=""
+    readOnly={false}
+    value=""
+  />
+</div>
+`;

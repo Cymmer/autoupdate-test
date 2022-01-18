@@ -1,0 +1,30 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.Notification {
+  @include ease(0.2s);
+  display: grid;
+  grid-template-columns: 36px auto;
+  grid-gap: 12px;
+  align-items: center;
+  padding: 12px 20px;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid;
+  cursor: pointer;
+
+  @include theme {
+    border-color: t('borderColor');
+    background-color: t('cardBackgroundColor');
+
+    &:hover,
+    &:focus {
+      background-color: t('cardBackgroundColor--hover');
+    }
+
+    &:active {
+      background-color: t('cardBackgroundColor--active');
+    }
+  }
+}

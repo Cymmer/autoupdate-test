@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - GlossaryList should render the description if it has some description 1`] = `
+<div
+  className="GlossaryList"
+>
+  <Text
+    className="GlossaryList_title"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="heading___xxs"
+  >
+    Dummy Title
+  </Text>
+  <Text
+    className={null}
+    colorClass="n___800"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    This is a dummmy description
+    <br />
+    <br />
+  </Text>
+  <Grid
+    className={null}
+    rowGap={16}
+    type="one"
+  >
+    <p>
+      Dummy Child1
+    </p>
+    <p>
+      Dummy Child2
+    </p>
+  </Grid>
+  <div
+    className="GlossaryList_notes"
+  >
+    <Text
+      className="GlossaryList_notes_note"
+      colorClass="n___500"
+      element={null}
+      id={null}
+      key="0"
+      type="body___sm"
+    >
+      *
+      Dummy Notes1
+    </Text>
+    <Text
+      className="GlossaryList_notes_note"
+      colorClass="n___500"
+      element={null}
+      id={null}
+      key="1"
+      type="body___sm"
+    >
+      *
+      Dummy Notes2
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - GlossaryList should render the notes if it has some notes 1`] = `
+<div
+  className="GlossaryList"
+>
+  <Text
+    className="GlossaryList_title"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="heading___xxs"
+  >
+    Dummy Title
+  </Text>
+  <Text
+    className={null}
+    colorClass="n___800"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    <br />
+    <br />
+  </Text>
+  <Grid
+    className={null}
+    rowGap={16}
+    type="one"
+  >
+    <p>
+      Dummy Child1
+    </p>
+    <p>
+      Dummy Child2
+    </p>
+  </Grid>
+  <div
+    className="GlossaryList_notes"
+  >
+    <Text
+      className="GlossaryList_notes_note"
+      colorClass="n___500"
+      element={null}
+      id={null}
+      key="0"
+      type="body___sm"
+    >
+      *
+      Dummy Notes1
+    </Text>
+    <Text
+      className="GlossaryList_notes_note"
+      colorClass="n___500"
+      element={null}
+      id={null}
+      key="1"
+      type="body___sm"
+    >
+      *
+      Dummy Notes2
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - GlossaryList should render with default props 1`] = `
+<div
+  className="GlossaryList"
+>
+  <Text
+    className="GlossaryList_title"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="heading___xxs"
+  >
+    Dummy Title
+  </Text>
+  <Text
+    className={null}
+    colorClass="n___800"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    <br />
+    <br />
+  </Text>
+  <Grid
+    className={null}
+    rowGap={16}
+    type="one"
+  >
+    <p>
+      Dummy Child1
+    </p>
+    <p>
+      Dummy Child2
+    </p>
+  </Grid>
+</div>
+`;

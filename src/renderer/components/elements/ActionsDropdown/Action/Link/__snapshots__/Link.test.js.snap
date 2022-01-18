@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ActionsDropdown > Action > Link should render with default props 1`] = `
+<Link
+  className="Action"
+  to="www.codechum.com"
+>
+  <Icon
+    className="Action_icon"
+    icon="icon"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  Test
+</Link>
+`;
+
+exports[`RENDERING - ActionsDropdown > Action > Link should render with tooltip 1`] = `
+<Tooltip
+  className={null}
+  content="Test Tooltip"
+  placement="left"
+>
+  <Link
+    className="Action"
+    to="www.codechum.com"
+  >
+    <Icon
+      className="Action_icon"
+      icon="icon"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+    Test
+  </Link>
+</Tooltip>
+`;
+
+exports[`RENDERING - ActionsDropdown > Action > Link should render without tooltip 1`] = `
+<Link
+  className="Action"
+  to="www.codechum.com"
+>
+  <Icon
+    className="Action_icon"
+    icon="icon"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  Test
+</Link>
+`;

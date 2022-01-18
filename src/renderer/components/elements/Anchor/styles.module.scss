@@ -1,0 +1,30 @@
+@import '../../../scss/variables';
+
+.Anchor {
+  font-family: Montserrat, sans-serif;
+  color: $blue-300;
+  background: none;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($blue-300, 5%);
+  }
+
+  &:focus,
+  &:active {
+    color: darken($blue-300, 15%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      color: $blue-300 !important;
+    }
+  }
+}

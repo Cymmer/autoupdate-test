@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ProblemList > Preloader > Small should render with default props 1`] = `
+<Card
+  className="PreloaderSmall"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="PreloaderSmall_shineHolder"
+  >
+    <Shine
+      className="PreloaderSmall_shine"
+    />
+  </div>
+</Card>
+`;

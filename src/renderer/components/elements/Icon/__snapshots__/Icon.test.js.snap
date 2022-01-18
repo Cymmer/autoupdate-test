@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Icon should render the proper class for the pulsating if isPulsating 1`] = `
+<i
+  className="Icon Icon___pulsating"
+  data-test="icon"
+  id={null}
+  style={null}
+>
+  test
+</i>
+`;
+
+exports[`RENDERING - Icon should render with default props 1`] = `
+<i
+  className="Icon"
+  data-test="icon"
+  id={null}
+  style={null}
+>
+  test
+</i>
+`;

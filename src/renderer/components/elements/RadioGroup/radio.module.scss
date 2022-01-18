@@ -1,0 +1,105 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+.Radio {
+  &___small {
+    &___disabled {
+      opacity: 0.5;
+    }
+
+    &_label {
+      display: flex;
+      position: relative;
+      padding-left: 26px;
+      user-select: none;
+      font-size: 1rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin: -1px 0 0 0;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        border: 2px solid;
+        @include theme {
+          border-color: t('textColor-400');
+        }
+        background-color: transparent;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        &::before {
+          border-color: $blue-300 !important;
+        }
+      }
+    }
+
+    &_input {
+      display: none;
+
+      &:checked + .Radio___small_label::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $blue-300;
+      }
+
+      &:checked + .Radio___small_label::before {
+        border-color: $blue-300;
+      }
+    }
+  }
+
+  &___large {
+    @include flex-center;
+
+    &___disabled {
+      opacity: 0.5;
+    }
+
+    &_label {
+      @include ease(0.2s);
+      @include flex-center;
+      flex-direction: column;
+      @include heading(1rem, 1.25rem);
+      margin: 8px 0 0 0;
+      width: 180px;
+      height: 192px;
+      border-radius: 16px;
+      border: 1px solid;
+      @include theme {
+        border-color: t('borderColor');
+        color: t('textColor-400');
+      }
+
+      &:hover {
+        color: $blue-300 !important;
+      }
+    }
+
+    &_icon {
+      font-size: 6rem;
+      color: inherit;
+    }
+
+    &_input {
+      display: none;
+
+      &:checked + .Radio___large_label {
+        background-color: transparentize($blue-300, 0.9);
+        color: $blue-300;
+        border: 1px solid $blue-300;
+      }
+    }
+  }
+}

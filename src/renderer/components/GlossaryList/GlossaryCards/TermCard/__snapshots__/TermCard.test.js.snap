@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - GlossaryList > GlossaryCards > TermCard should render with default props 1`] = `
+<Card
+  className="GlossaryCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="GlossaryCard_title"
+  >
+    <Text
+      className="GlossaryCard_title_text"
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Title
+    </Text>
+  </div>
+  <div
+    className="GlossaryCard_content"
+  >
+    <Text
+      className={null}
+      colorClass="n___600"
+      element={null}
+      id={null}
+      type="body___sm"
+    >
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Dummy Description",
+          }
+        }
+      />
+    </Text>
+  </div>
+</Card>
+`;

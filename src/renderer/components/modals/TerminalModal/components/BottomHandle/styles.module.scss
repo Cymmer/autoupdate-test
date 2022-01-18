@@ -1,0 +1,25 @@
+@use '../../../../../scss' as *;
+
+.BottomHandle {
+  @include flex-center;
+  height: 10px;
+  width: 100%;
+  @include theme {
+    background: t('textColor-500');
+  }
+
+  &_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4px;
+  }
+
+  &_dot {
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    @include theme {
+      background: t('textColor-300');
+    }
+  }
+}

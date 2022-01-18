@@ -1,0 +1,23 @@
+@import '../../../scss/mixins';
+
+.Container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include breakpoint(xl) {
+    max-width: 1165px;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 960px;
+  }
+
+  @include breakpoint(md) {
+    max-width: 720px;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 540px;
+  }
+}

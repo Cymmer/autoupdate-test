@@ -1,0 +1,45 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/animations';
+
+.PreloaderSmall {
+  display: flex;
+  overflow: hidden;
+  @include ease(0.4s);
+
+  &_textContainer {
+    display: flex;
+    max-width: 80%;
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+      margin-bottom: 16px;
+      max-width: 100%;
+    }
+  }
+
+  &_image {
+    width: 112px;
+    @include image-preloader;
+  }
+
+  &_content {
+    padding: 16px 24px;
+    width: calc(100% - 112px);
+  }
+
+  &_info {
+    display: flex;
+    width: 100%;
+    @include ease(0.2s);
+  }
+
+  &_shineHolder {
+    width: 100%;
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &_shine {
+    margin: 7px 0;
+  }
+}

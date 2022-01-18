@@ -1,0 +1,86 @@
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+@import '../../../scss/animations';
+
+@mixin cody($direction) {
+  @include flex-center;
+  padding: 48px 40px;
+
+  @if $direction == left {
+    border-left: 1px solid;
+  } @else {
+    border-right: 1px solid;
+  }
+
+  @include theme {
+    border-color: t('borderColor');
+  }
+
+  @include breakpoint(xs) {
+    padding: 40px 40px 0 40px;
+    justify-content: flex-start;
+    border: none;
+  }
+
+  @content;
+}
+
+.CodyModal {
+  display: flex;
+  animation: zoomIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    width: 320px;
+  }
+
+  &___reversed {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+      width: 320px;
+    }
+  }
+
+  &_cody {
+    @include cody(right);
+
+    &___reversed {
+      @include cody(left);
+    }
+
+    &_image {
+      width: 192px;
+
+      @include breakpoint(xs) {
+        width: 120px;
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    width: 100%;
+
+    @include breakpoint(xs) {
+      padding: 16px 40px 40px 40px;
+    }
+  }
+
+  &_text {
+    margin: 0 0 32px 0;
+
+    &_title {
+      margin: 0 0 16px 0;
+    }
+
+    &_info {
+      word-break: break-word;
+    }
+  }
+}

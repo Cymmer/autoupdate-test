@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Button > IconLink should render with default props 1`] = `
+<Link
+  className="IconButton___solid___sm"
+  data-test="link"
+  onClick={null}
+  tabIndex={0}
+  to="www.codechum.com"
+>
+  <Icon
+    className="IconButton_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+</Link>
+`;

@@ -1,0 +1,33 @@
+@import '../../../scss/themes';
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+/* here */
+.MobileEditor {
+  min-height: 420px;
+  counter-reset: line;
+  @include theme {
+    background-color: t('editorBackgroundColor');
+  }
+  border-radius: 0 0 16px 16px;
+}
+
+.MobileEditor #codeArea {
+  outline: none;
+  padding-left: 48px !important;
+}
+
+.MobileEditor pre {
+  padding-left: 48px !important;
+}
+
+.MobileEditor .editorLineNumber {
+  position: absolute;
+  left: 0;
+  @include theme {
+    color: t('textColor-300');
+  }
+  text-align: right;
+  width: 32px;
+  font-weight: 100;
+}

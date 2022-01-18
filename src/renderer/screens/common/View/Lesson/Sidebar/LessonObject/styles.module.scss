@@ -1,0 +1,95 @@
+@use '../../../../../../scss' as *;
+
+@mixin base {
+  width: 100%;
+  padding: 0 25px;
+  text-decoration: none;
+  @include heading(0.75rem, 1.67);
+  position: relative;
+  z-index: 4;
+
+  @include breakpoint(md) {
+    padding: 0 17.5px;
+  }
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  @content;
+}
+
+.LessonObject {
+  @include base {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &_topic {
+    display: flex;
+    align-items: center;
+    @include theme {
+      color: t('textColor-500');
+    }
+
+    &___active {
+      color: $green-300 !important;
+    }
+  }
+
+  .LessonObject_topic {
+    display: none;
+  }
+
+  &___toggled {
+    @include base {
+      @include flex-between;
+    }
+
+    .LessonObject_topic {
+      display: flex;
+    }
+  }
+
+  &___locked {
+    pointer-events: none;
+
+    span,
+    i {
+      opacity: 0.5;
+    }
+  }
+
+  &_lock {
+    margin: 0 8px 0 0;
+  }
+
+  &_shape {
+    &___locked {
+      @include theme {
+        fill: t('textColor-200');
+      }
+    }
+
+    &___unlocked {
+      @include theme {
+        fill: t('textColor-400');
+      }
+    }
+
+    &___active {
+      fill: $green-300;
+    }
+
+    &_stroke {
+      @include theme {
+        stroke: t('cardBackgroundColor');
+      }
+    }
+  }
+}

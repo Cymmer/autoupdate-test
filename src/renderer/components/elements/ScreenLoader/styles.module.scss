@@ -1,0 +1,7 @@
+@import '../../../scss/mixins';
+
+.ScreenLoader {
+  height: 90vh;
+  width: 100%;
+  @include flex-center;
+}

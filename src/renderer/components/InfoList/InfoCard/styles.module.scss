@@ -1,0 +1,62 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.InfoCard {
+  display: flex;
+  overflow: hidden;
+
+  &_accent {
+    width: 16px;
+    background-color: $blue-100;
+  }
+
+  &_content {
+    padding: 24px 32px;
+    width: calc(100% - 16px);
+
+    @include breakpoint(sm) {
+      padding: 24px;
+    }
+  }
+
+  &_subject {
+    margin: 0 0 12px 0;
+  }
+
+  &_additional {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    background-color: lighten($yellow-100, 5%) !important;
+
+    &_icon {
+      font-size: 2rem;
+      color: $yellow-300;
+      margin: 0 32px 0 0;
+    }
+
+    &_text {
+      color: $neutral-700 !important;
+    }
+  }
+
+  &_syntax {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 12px 0 0 0;
+
+    &_code {
+      margin: 4px;
+      width: max-content;
+      overflow: auto;
+    }
+  }
+
+  &_code {
+    margin: 16px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+}

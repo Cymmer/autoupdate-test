@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Anchor should render with default props 1`] = `
+<a
+  className="Anchor"
+  data-test="anchor"
+  href="#"
+  onClick={null}
+  rel={null}
+  target="_self"
+>
+  Test
+</a>
+`;

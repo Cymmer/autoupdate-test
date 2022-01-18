@@ -1,0 +1,25 @@
+@import '../../../../scss/variables';
+
+@mixin base {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 140px;
+  border-radius: 8px;
+  box-shadow: $shadow-raised;
+  border: none;
+
+  @content;
+}
+
+.Dropdown {
+  @include base {
+    display: none;
+  }
+
+  &___toggled {
+    @include base;
+  }
+}

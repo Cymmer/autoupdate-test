@@ -1,0 +1,15 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.SampleProblemCard {
+  padding: 40px;
+  box-shadow: $shadow-normal;
+
+  @include breakpoint(sm) {
+    padding: 24px;
+  }
+
+  > p {
+    margin: 0 0 16px 0;
+  }
+}

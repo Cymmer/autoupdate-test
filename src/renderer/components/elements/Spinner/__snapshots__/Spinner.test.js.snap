@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Spinner should render the passed color 1`] = `
+<div
+  className="Spinner_container"
+>
+  <svg
+    className="Spinner___lg"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      className="Spinner_circle___white"
+      cx="50"
+      cy="50"
+      r="20"
+    />
+  </svg>
+</div>
+`;
+
+exports[`RENDERING - Spinner should render the passed size 1`] = `
+<div
+  className="Spinner_container"
+>
+  <svg
+    className="Spinner___sm"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      className="Spinner_circle___blue"
+      cx="50"
+      cy="50"
+      r="20"
+    />
+  </svg>
+</div>
+`;
+
+exports[`RENDERING - Spinner should render with default props 1`] = `
+<div
+  className="Spinner_container"
+>
+  <svg
+    className="Spinner___lg"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      className="Spinner_circle___blue"
+      cx="50"
+      cy="50"
+      r="20"
+    />
+  </svg>
+</div>
+`;

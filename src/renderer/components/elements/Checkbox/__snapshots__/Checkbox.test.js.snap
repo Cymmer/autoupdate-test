@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Checkbox should render with default props 1`] = `
+<div
+  className="Checkbox"
+>
+  <input
+    checked={false}
+    className="Checkbox_input"
+    data-test="checkbox"
+    disabled={false}
+    id="test"
+    name="test"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <Label
+    className="Checkbox_label"
+    disabled={false}
+    htmlFor="test"
+    id="test-label"
+  >
+    Test
+  </Label>
+</div>
+`;

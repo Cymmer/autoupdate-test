@@ -1,0 +1,21 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/variables';
+
+.LessonImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 128px;
+
+  @include breakpoint(sm) {
+    background-size: 56px;
+    width: 96px;
+  }
+
+  &___blue {
+    background-color: #2fa9e0;
+  }
+
+  &___gray {
+    background-color: $neutral-50;
+  }
+}

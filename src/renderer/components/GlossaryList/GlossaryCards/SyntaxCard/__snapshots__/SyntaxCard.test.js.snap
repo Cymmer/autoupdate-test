@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - GlossaryList > GlossaryCards > SyntaxCard should render all the codes depending on the programming language passed 1`] = `
+<Card
+  className="GlossaryCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="GlossaryCard_title"
+  >
+    <Text
+      className="GlossaryCard_title_text"
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Title
+    </Text>
+  </div>
+  <div
+    className="GlossaryCard_content"
+  >
+    <Connect(Code)
+      className="GlossaryCard_content_code"
+      key="0"
+      language="python"
+    >
+      Code1
+    </Connect(Code)>
+    <Connect(Code)
+      className="GlossaryCard_content_code"
+      key="1"
+      language="python"
+    >
+      Code2
+    </Connect(Code)>
+  </div>
+</Card>
+`;
+
+exports[`RENDERING - GlossaryList > GlossaryCards > SyntaxCard should render all the codes depending on the programming language passed 2`] = `
+<Card
+  className="GlossaryCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="GlossaryCard_title"
+  >
+    <Text
+      className="GlossaryCard_title_text"
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Title
+    </Text>
+  </div>
+  <div
+    className="GlossaryCard_content"
+  >
+    <Connect(Code)
+      className="GlossaryCard_content_code"
+      key="0"
+      language="c"
+    >
+      Code1
+    </Connect(Code)>
+    <Connect(Code)
+      className="GlossaryCard_content_code"
+      key="1"
+      language="c"
+    >
+      Code2
+    </Connect(Code)>
+  </div>
+</Card>
+`;
+
+exports[`RENDERING - GlossaryList > GlossaryCards > SyntaxCard should render with default props 1`] = `
+<Card
+  className="GlossaryCard"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="GlossaryCard_title"
+  >
+    <Text
+      className="GlossaryCard_title_text"
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="heading___xxs"
+    >
+      Dummy Title
+    </Text>
+  </div>
+  <div
+    className="GlossaryCard_content"
+  />
+</Card>
+`;

@@ -1,0 +1,26 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.ConnectionStatus {
+  display: flex;
+  align-items: center;
+  margin: 0 32px 0 0;
+
+  &_icon {
+    font-size: 1.5rem;
+
+    &___connected {
+      color: $green-300;
+    }
+
+    &___notConnected {
+      color: $orange-300;
+    }
+  }
+
+  &_text {
+    margin: 0 0 0 12px;
+    font-size: 0.75rem;
+  }
+}

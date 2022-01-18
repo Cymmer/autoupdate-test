@@ -1,0 +1,346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - InfoList > InfoCard should render all the syntaxes if there is/are 1`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+      <div
+        className="InfoCard_syntax"
+      >
+        <Text
+          className={null}
+          colorClass="n___500"
+          element={null}
+          id={null}
+          type="body___md"
+        >
+          Syntax:
+        </Text>
+        <Connect(Code)
+          className="InfoCard_syntax_code"
+          key="0"
+          language="text"
+        >
+          syntax1
+        </Connect(Code)>
+        <Connect(Code)
+          className="InfoCard_syntax_code"
+          key="1"
+          language="text"
+        >
+          syntax2
+        </Connect(Code)>
+      </div>
+    </div>
+  </Card>
+</Fragment>
+`;
+
+exports[`RENDERING - InfoList > InfoCard should render the actual sample code if there is 1`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+      <div
+        className="InfoCard_code"
+      >
+        <Connect(Code)
+          language="text"
+        >
+          Dummy Source Code
+        </Connect(Code)>
+      </div>
+    </div>
+  </Card>
+</Fragment>
+`;
+
+exports[`RENDERING - InfoList > InfoCard should render the additional information if there is an additional information 1`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+    </div>
+  </Card>
+  <Card
+    className="InfoCard_additional"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <Icon
+      className="InfoCard_additional_icon"
+      icon="info"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+    <Text
+      className="InfoCard_additional_text"
+      colorClass="n___700"
+      element={null}
+      id={null}
+      type="body___md"
+    >
+      Dummy Additional Info
+    </Text>
+  </Card>
+</Fragment>
+`;
+
+exports[`RENDERING - InfoList > InfoCard should render the output of the sample code if there is a sample code 1`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+    </div>
+  </Card>
+</Fragment>
+`;
+
+exports[`RENDERING - InfoList > InfoCard should render the output of the sample code if there is a sample code 2`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+      <div
+        className="InfoCard_code"
+      >
+        <Connect(Code)
+          language="text"
+        >
+          Dummy Source Code
+        </Connect(Code)>
+        <Text
+          className={null}
+          colorClass="n___700"
+          element={null}
+          id={null}
+          type="heading___xxxs"
+        >
+          Output:
+        </Text>
+        <Connect(Code)>
+          Dummy Output
+        </Connect(Code)>
+      </div>
+    </div>
+  </Card>
+</Fragment>
+`;
+
+exports[`RENDERING - InfoList > InfoCard should render with default props 1`] = `
+<Fragment>
+  <Card
+    className="InfoCard"
+    id={null}
+    onClick={null}
+    onMouseEnter={null}
+    onMouseLeave={null}
+  >
+    <div
+      className="InfoCard_accent"
+    />
+    <div
+      className="InfoCard_content"
+    >
+      <Text
+        className="InfoCard_subject"
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___xs"
+      >
+        Dummy Title
+      </Text>
+      <Text
+        className="InfoCard_description"
+        colorClass="n___600"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        <span
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Dummy Info",
+            }
+          }
+        />
+      </Text>
+    </div>
+  </Card>
+</Fragment>
+`;

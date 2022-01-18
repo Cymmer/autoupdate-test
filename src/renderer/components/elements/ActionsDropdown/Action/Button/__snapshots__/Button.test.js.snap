@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ActionsDropdown > Action > Button should render with default props 1`] = `
+<button
+  className="Action"
+  data-test="button"
+  onClick={[Function]}
+  type="button"
+>
+  <Icon
+    className="Action_icon"
+    icon="icon"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  Test
+</button>
+`;
+
+exports[`RENDERING - ActionsDropdown > Action > Button should render with tooltip 1`] = `
+<Tooltip
+  className={null}
+  content="Test Tooltip"
+  placement="left"
+>
+  <button
+    className="Action"
+    data-test="button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Icon
+      className="Action_icon"
+      icon="icon"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+    Test
+  </button>
+</Tooltip>
+`;
+
+exports[`RENDERING - ActionsDropdown > Action > Button should render without tooltip 1`] = `
+<button
+  className="Action"
+  data-test="button"
+  onClick={[Function]}
+  type="button"
+>
+  <Icon
+    className="Action_icon"
+    icon="icon"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  Test
+</button>
+`;

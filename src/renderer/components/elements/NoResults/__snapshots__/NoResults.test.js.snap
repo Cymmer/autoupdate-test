@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - NoResults should render a button if it has a action of type function 1`] = `
+<div
+  className="NoResults___large"
+>
+  <div
+    className="NoResults_imageContainer"
+  >
+    <Cody
+      className="NoResults_image"
+      src={null}
+      type="error"
+    />
+  </div>
+  <Text
+    className={null}
+    colorClass="n___700"
+    element={null}
+    id="noResultsFound"
+    type="heading___xs"
+  >
+    No Results Found
+  </Text>
+  <Button
+    className="NoResults_button"
+    dataTestId={null}
+    disabled={false}
+    icon={null}
+    id={null}
+    isLoading={false}
+    isLocked={false}
+    kind="button"
+    lockedIconClassName={null}
+    onClick={[Function]}
+    tabIndex={0}
+    type="primary___blue"
+    wrapperClassName={null}
+  >
+    Test
+  </Button>
+</div>
+`;
+
+exports[`RENDERING - NoResults should render a buttonlink if it has a action of type string 1`] = `
+<div
+  className="NoResults___large"
+>
+  <div
+    className="NoResults_imageContainer"
+  >
+    <Cody
+      className="NoResults_image"
+      src={null}
+      type="error"
+    />
+  </div>
+  <Text
+    className={null}
+    colorClass="n___700"
+    element={null}
+    id="noResultsFound"
+    type="heading___xs"
+  >
+    No Results Found
+  </Text>
+  <ButtonLink
+    className="NoResults_button"
+    disabled={false}
+    icon={null}
+    id={null}
+    isLocked={false}
+    onClick={null}
+    tabIndex={0}
+    to="https://www.codechum.com"
+    type="primary___blue"
+  >
+    Test
+  </ButtonLink>
+</div>
+`;
+
+exports[`RENDERING - NoResults should render the appropriate cody type 1`] = `
+<div
+  className="NoResults___large"
+>
+  <div
+    className="NoResults_imageContainer"
+  >
+    <Cody
+      className="NoResults_image"
+      src={null}
+      type="welcome"
+    />
+  </div>
+  <Text
+    className={null}
+    colorClass="n___700"
+    element={null}
+    id="noResultsFound"
+    type="heading___xs"
+  >
+    No Results Found
+  </Text>
+</div>
+`;
+
+exports[`RENDERING - NoResults should render the appropriate cody type 2`] = `
+<div
+  className="NoResults___large"
+>
+  <div
+    className="NoResults_imageContainer"
+  >
+    <Cody
+      className="NoResults_image"
+      src={null}
+      type="error"
+    />
+  </div>
+  <Text
+    className={null}
+    colorClass="n___700"
+    element={null}
+    id="noResultsFound"
+    type="heading___xs"
+  >
+    No Results Found
+  </Text>
+</div>
+`;
+
+exports[`RENDERING - NoResults should render with default props 1`] = `
+<div
+  className="NoResults___large"
+>
+  <div
+    className="NoResults_imageContainer"
+  >
+    <Cody
+      className="NoResults_image"
+      src={null}
+      type="error"
+    />
+  </div>
+  <Text
+    className={null}
+    colorClass="n___700"
+    element={null}
+    id="noResultsFound"
+    type="heading___xs"
+  >
+    No Results Found
+  </Text>
+</div>
+`;

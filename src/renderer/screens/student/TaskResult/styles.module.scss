@@ -1,0 +1,80 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.TaskResult {
+  @include theme {
+    background-color: t('cardBackgroundColor');
+  }
+  height: calc(100vh - 60px);
+
+  &_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15vh 0;
+    @include breakpoint(md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &_info {
+    width: 400px;
+
+    @include breakpoint(sm) {
+      width: auto;
+      margin: 0 32px;
+    }
+  }
+
+  &_cody {
+    width: 380px;
+    margin: 0 0 24px 0;
+
+    @include breakpoint(md) {
+      width: 120px;
+    }
+  }
+
+  &_heading {
+    margin: 42px 0 16px 0;
+  }
+
+  &_buttons {
+    display: grid;
+    grid-template-columns: 176px 176px;
+    grid-gap: 16px;
+    margin: 48px 0 0 0;
+
+    @include breakpoint(sm) {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  &_dataGroup {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 48px;
+  }
+
+  &_rank {
+    position: relative;
+
+    &_lockedIcon {
+      position: absolute;
+      font-size: 32px;
+      bottom: -4px;
+      left: 67px;
+      color: $yellow-400;
+
+      @include theme {
+        text-shadow: 0 0 2px t('cardBackgroundColor'),
+          -1px -1px t('cardBackgroundColor');
+      }
+    }
+  }
+
+  &_viewLeaderboardsButton {
+    width: 100%;
+  }
+}

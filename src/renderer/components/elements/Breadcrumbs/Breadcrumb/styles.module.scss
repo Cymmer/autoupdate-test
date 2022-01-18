@@ -1,0 +1,50 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+@mixin base {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover {
+    .Breadcrumb_text {
+      color: $blue-300;
+      text-decoration: underline;
+    }
+  }
+
+  @content;
+}
+
+@mixin text {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.Breadcrumb {
+  @include base {
+    @include theme {
+      color: t('textColor-400');
+    }
+    margin-right: 4px;
+  }
+
+  &___active {
+    @include base {
+      @include theme {
+        color: t('textColor-500');
+      }
+    }
+  }
+
+  &_text {
+    @include text;
+  }
+
+  &_icon {
+    margin-left: 4px;
+  }
+}

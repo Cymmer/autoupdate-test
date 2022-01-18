@@ -1,0 +1,639 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - CodeEditor should render the mobile editor on mobile devices (1) 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Component)
+    languageExtension="c"
+  >
+    <Connect(Component)
+      languageExtension="c"
+      reactReduxForwardedRef={null}
+    >
+      <ForwardRef(CodeEditor)
+        dispatch={[Function]}
+        isNightMode={false}
+        languageExtension="c"
+      >
+        <Editor
+          className="MobileEditor"
+          data-test="mobileCodeEditor"
+          highlight={[Function]}
+          id="mobileCodeEditor"
+          ignoreTabKey={false}
+          insertSpaces={true}
+          onValueChange={[Function]}
+          padding={12}
+          style={
+            Object {
+              "fontFamily": "\\"Monaco\\", monospace",
+              "fontSize": 14,
+              "height": "100%",
+              "outline": 0,
+            }
+          }
+          tabSize={2}
+          textareaId="codeArea"
+        >
+          <div
+            className="MobileEditor"
+            data-test="mobileCodeEditor"
+            id="mobileCodeEditor"
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "fontFamily": "\\"Monaco\\", monospace",
+                "fontSize": 14,
+                "height": "100%",
+                "outline": 0,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "relative",
+                "textAlign": "left",
+              }
+            }
+          >
+            <textarea
+              autoCapitalize="off"
+              autoComplete="off"
+              autoCorrect="off"
+              className="npm__react-simple-code-editor__textarea"
+              data-gramm={false}
+              id="codeArea"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              spellCheck={false}
+              style={
+                Object {
+                  "MozOsxFontSmoothing": "grayscale",
+                  "WebkitFontSmoothing": "antialiased",
+                  "WebkitTextFillColor": "transparent",
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "inherit",
+                  "color": "inherit",
+                  "display": "inherit",
+                  "fontFamily": "inherit",
+                  "fontSize": "inherit",
+                  "fontStyle": "inherit",
+                  "fontVariantLigatures": "inherit",
+                  "fontWeight": "inherit",
+                  "height": "100%",
+                  "left": 0,
+                  "letterSpacing": "inherit",
+                  "lineHeight": "inherit",
+                  "margin": 0,
+                  "overflow": "hidden",
+                  "overflowWrap": "break-word",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                  "position": "absolute",
+                  "resize": "none",
+                  "tabSize": "inherit",
+                  "textIndent": "inherit",
+                  "textRendering": "inherit",
+                  "textTransform": "inherit",
+                  "top": 0,
+                  "whiteSpace": "pre-wrap",
+                  "width": "100%",
+                  "wordBreak": "keep-all",
+                }
+              }
+            />
+            <pre
+              aria-hidden="true"
+              style={
+                Object {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "inherit",
+                  "display": "inherit",
+                  "fontFamily": "inherit",
+                  "fontSize": "inherit",
+                  "fontStyle": "inherit",
+                  "fontVariantLigatures": "inherit",
+                  "fontWeight": "inherit",
+                  "letterSpacing": "inherit",
+                  "lineHeight": "inherit",
+                  "margin": 0,
+                  "overflowWrap": "break-word",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                  "pointerEvents": "none",
+                  "position": "relative",
+                  "tabSize": "inherit",
+                  "textIndent": "inherit",
+                  "textRendering": "inherit",
+                  "textTransform": "inherit",
+                  "whiteSpace": "pre-wrap",
+                  "wordBreak": "keep-all",
+                }
+              }
+            />
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+",
+                }
+              }
+              type="text/css"
+            />
+          </div>
+        </Editor>
+      </ForwardRef(CodeEditor)>
+    </Connect(Component)>
+  </Connect(Component)>
+</Provider>
+`;
+
+exports[`RENDERING - CodeEditor should render the mobile editor on mobile devices (2) 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Component)
+    languageExtension="c"
+  >
+    <Connect(Component)
+      languageExtension="c"
+      reactReduxForwardedRef={null}
+    >
+      <ForwardRef(CodeEditor)
+        dispatch={[Function]}
+        isNightMode={false}
+        languageExtension="c"
+      >
+        <Editor
+          className="MobileEditor"
+          data-test="mobileCodeEditor"
+          highlight={[Function]}
+          id="mobileCodeEditor"
+          ignoreTabKey={false}
+          insertSpaces={true}
+          onValueChange={[Function]}
+          padding={12}
+          style={
+            Object {
+              "fontFamily": "\\"Monaco\\", monospace",
+              "fontSize": 14,
+              "height": "100%",
+              "outline": 0,
+            }
+          }
+          tabSize={2}
+          textareaId="codeArea"
+        >
+          <div
+            className="MobileEditor"
+            data-test="mobileCodeEditor"
+            id="mobileCodeEditor"
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "fontFamily": "\\"Monaco\\", monospace",
+                "fontSize": 14,
+                "height": "100%",
+                "outline": 0,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "relative",
+                "textAlign": "left",
+              }
+            }
+          >
+            <textarea
+              autoCapitalize="off"
+              autoComplete="off"
+              autoCorrect="off"
+              className="npm__react-simple-code-editor__textarea"
+              data-gramm={false}
+              id="codeArea"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              spellCheck={false}
+              style={
+                Object {
+                  "MozOsxFontSmoothing": "grayscale",
+                  "WebkitFontSmoothing": "antialiased",
+                  "WebkitTextFillColor": "transparent",
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "inherit",
+                  "color": "inherit",
+                  "display": "inherit",
+                  "fontFamily": "inherit",
+                  "fontSize": "inherit",
+                  "fontStyle": "inherit",
+                  "fontVariantLigatures": "inherit",
+                  "fontWeight": "inherit",
+                  "height": "100%",
+                  "left": 0,
+                  "letterSpacing": "inherit",
+                  "lineHeight": "inherit",
+                  "margin": 0,
+                  "overflow": "hidden",
+                  "overflowWrap": "break-word",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                  "position": "absolute",
+                  "resize": "none",
+                  "tabSize": "inherit",
+                  "textIndent": "inherit",
+                  "textRendering": "inherit",
+                  "textTransform": "inherit",
+                  "top": 0,
+                  "whiteSpace": "pre-wrap",
+                  "width": "100%",
+                  "wordBreak": "keep-all",
+                }
+              }
+            />
+            <pre
+              aria-hidden="true"
+              style={
+                Object {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "inherit",
+                  "display": "inherit",
+                  "fontFamily": "inherit",
+                  "fontSize": "inherit",
+                  "fontStyle": "inherit",
+                  "fontVariantLigatures": "inherit",
+                  "fontWeight": "inherit",
+                  "letterSpacing": "inherit",
+                  "lineHeight": "inherit",
+                  "margin": 0,
+                  "overflowWrap": "break-word",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                  "pointerEvents": "none",
+                  "position": "relative",
+                  "tabSize": "inherit",
+                  "textIndent": "inherit",
+                  "textRendering": "inherit",
+                  "textTransform": "inherit",
+                  "whiteSpace": "pre-wrap",
+                  "wordBreak": "keep-all",
+                }
+              }
+            />
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+",
+                }
+              }
+              type="text/css"
+            />
+          </div>
+        </Editor>
+      </ForwardRef(CodeEditor)>
+    </Connect(Component)>
+  </Connect(Component)>
+</Provider>
+`;
+
+exports[`RENDERING - CodeEditor should render the normal editor on desktop browsers 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Component)
+    languageExtension="c"
+  >
+    <Connect(Component)
+      languageExtension="c"
+      reactReduxForwardedRef={null}
+    >
+      <ForwardRef(CodeEditor)
+        dispatch={[Function]}
+        isNightMode={false}
+        languageExtension="c"
+      >
+        <Editor
+          language="c"
+          loading={
+            <Spinner
+              className={null}
+              colorName="blue"
+              size="lg"
+            />
+          }
+          onMount={[Function]}
+          options={
+            Object {
+              "fontFamily": "Monaco",
+              "fontSize": 14,
+              "readOnly": undefined,
+            }
+          }
+          theme="light"
+        >
+          <Memo(MonacoContainer)
+            _ref={
+              Object {
+                "current": <div
+                  style="width: 100%; display: none;"
+                />,
+              }
+            }
+            height="100%"
+            isEditorReady={false}
+            loading={
+              <Spinner
+                className={null}
+                colorName="blue"
+                size="lg"
+              />
+            }
+            width="100%"
+            wrapperProps={Object {}}
+          >
+            <section
+              style={
+                Object {
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "textAlign": "initial",
+                  "width": "100%",
+                }
+              }
+            >
+              <Loading
+                content={
+                  <Spinner
+                    className={null}
+                    colorName="blue"
+                    size="lg"
+                  />
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "display": "flex",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Spinner
+                    className={null}
+                    colorName="blue"
+                    size="lg"
+                  >
+                    <div
+                      className="Spinner_container"
+                    >
+                      <svg
+                        className="Spinner___lg"
+                        viewBox="25 25 50 50"
+                      >
+                        <circle
+                          className="Spinner_circle___blue"
+                          cx="50"
+                          cy="50"
+                          r="20"
+                        />
+                      </svg>
+                    </div>
+                  </Spinner>
+                </div>
+              </Loading>
+              <div
+                style={
+                  Object {
+                    "display": "none",
+                    "width": "100%",
+                  }
+                }
+              />
+            </section>
+          </Memo(MonacoContainer)>
+        </Editor>
+      </ForwardRef(CodeEditor)>
+    </Connect(Component)>
+  </Connect(Component)>
+</Provider>
+`;
+
+exports[`RENDERING - CodeEditor should render with default props 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Component)
+    languageExtension="c"
+  >
+    <Connect(Component)
+      languageExtension="c"
+      reactReduxForwardedRef={null}
+    >
+      <ForwardRef(CodeEditor)
+        dispatch={[Function]}
+        isNightMode={false}
+        languageExtension="c"
+      >
+        <Editor
+          language="c"
+          loading={
+            <Spinner
+              className={null}
+              colorName="blue"
+              size="lg"
+            />
+          }
+          onMount={[Function]}
+          options={
+            Object {
+              "fontFamily": "Monaco",
+              "fontSize": 14,
+              "readOnly": undefined,
+            }
+          }
+          theme="light"
+        >
+          <Memo(MonacoContainer)
+            _ref={
+              Object {
+                "current": <div
+                  style="width: 100%; display: none;"
+                />,
+              }
+            }
+            height="100%"
+            isEditorReady={false}
+            loading={
+              <Spinner
+                className={null}
+                colorName="blue"
+                size="lg"
+              />
+            }
+            width="100%"
+            wrapperProps={Object {}}
+          >
+            <section
+              style={
+                Object {
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "textAlign": "initial",
+                  "width": "100%",
+                }
+              }
+            >
+              <Loading
+                content={
+                  <Spinner
+                    className={null}
+                    colorName="blue"
+                    size="lg"
+                  />
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "display": "flex",
+                      "height": "100%",
+                      "justifyContent": "center",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Spinner
+                    className={null}
+                    colorName="blue"
+                    size="lg"
+                  >
+                    <div
+                      className="Spinner_container"
+                    >
+                      <svg
+                        className="Spinner___lg"
+                        viewBox="25 25 50 50"
+                      >
+                        <circle
+                          className="Spinner_circle___blue"
+                          cx="50"
+                          cy="50"
+                          r="20"
+                        />
+                      </svg>
+                    </div>
+                  </Spinner>
+                </div>
+              </Loading>
+              <div
+                style={
+                  Object {
+                    "display": "none",
+                    "width": "100%",
+                  }
+                }
+              />
+            </section>
+          </Memo(MonacoContainer)>
+        </Editor>
+      </ForwardRef(CodeEditor)>
+    </Connect(Component)>
+  </Connect(Component)>
+</Provider>
+`;

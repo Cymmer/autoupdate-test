@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Button > Group should render appropriate number of buttons 1`] = `
+<div
+  className="ButtonGroup___horizontal"
+>
+  <Button
+    className="ButtonGroup___horizontal_button"
+    dataTestId={null}
+    disabled={false}
+    icon={null}
+    id={null}
+    isLoading={false}
+    isLocked={false}
+    key="0"
+    kind="button"
+    lockedIconClassName={null}
+    onClick={[Function]}
+    tabIndex={0}
+    type="primary___blue"
+    wrapperClassName={null}
+  >
+    Button 1
+  </Button>
+  <Button
+    className="ButtonGroup___horizontal_button"
+    dataTestId={null}
+    disabled={false}
+    icon={null}
+    id={null}
+    isLoading={false}
+    isLocked={false}
+    key="1"
+    kind="submit"
+    lockedIconClassName={null}
+    onClick={[Function]}
+    tabIndex={0}
+    type="secondary___green"
+    wrapperClassName={null}
+  >
+    Button 2
+  </Button>
+  <Button
+    className="ButtonGroup___horizontal_button"
+    dataTestId={null}
+    disabled={true}
+    icon={null}
+    id={null}
+    isLoading={false}
+    isLocked={false}
+    key="2"
+    kind="reset"
+    lockedIconClassName={null}
+    onClick={[Function]}
+    tabIndex={0}
+    type="text___red"
+    wrapperClassName={null}
+  >
+    Button 3
+  </Button>
+  <ButtonLink
+    className="ButtonGroup___horizontal_button"
+    disabled={false}
+    icon="dummyIcon"
+    id="buttonLink1"
+    isLocked={false}
+    key="3"
+    onClick={null}
+    tabIndex={0}
+    to="www.codechum.com"
+    type="text___red"
+  >
+    ButtonLink 1
+  </ButtonLink>
+</div>
+`;
+
+exports[`RENDERING - Button > Group should render with default props 1`] = `
+<div
+  className="ButtonGroup___horizontal"
+/>
+`;

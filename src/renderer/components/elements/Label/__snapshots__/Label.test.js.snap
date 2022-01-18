@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Label should render the appropriate disabled class if disabled 1`] = `
+<label
+  className="Label___disabled"
+  htmlFor="test"
+  id={null}
+  type="radio"
+>
+  Test
+</label>
+`;
+
+exports[`RENDERING - Label should render with default props 1`] = `
+<label
+  className="Label"
+  htmlFor="test"
+  id={null}
+  type="radio"
+>
+  Test
+</label>
+`;

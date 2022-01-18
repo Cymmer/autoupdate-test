@@ -1,0 +1,19 @@
+@use '../../../scss' as *;
+
+.ProblemInput {
+  position: relative;
+  display: grid;
+  grid-row-gap: 8px;
+
+  &___hasContent {
+    padding: 0 0 16px 0;
+  }
+
+  &_title {
+    font-weight: 500;
+  }
+
+  &_description {
+    white-space: pre-wrap;
+  }
+}

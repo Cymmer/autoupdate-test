@@ -1,0 +1,121 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin base {
+  border-bottom: 1px solid;
+  @include theme {
+    background-color: t('cardBackgroundColor');
+    border-color: t('borderColor');
+  }
+  height: 60px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  transition: padding 0.4s;
+
+  @content;
+}
+
+@mixin link($font-size) {
+  @include ease(0.3s);
+  @include heading($font-size, 1.67);
+  text-decoration: none;
+  @include theme {
+    color: t('textColor-300');
+  }
+  margin: 0 0 0 24px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    @include theme {
+      color: $blue-300;
+    }
+  }
+
+  @content;
+}
+
+.StudentNavbar {
+  @include base {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+
+    @include breakpoint(sm) {
+      padding: 0 16px;
+    }
+  }
+
+  &_nav {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      width: auto;
+      justify-content: center;
+    }
+  }
+
+  &_link {
+    @include link(0.75rem);
+
+    &:nth-child(2) {
+      margin: 0 0 0 48px;
+    }
+
+    &___active {
+      @include theme {
+        color: $blue-300;
+      }
+      background-color: transparentize($blue-100, 0.85);
+    }
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      justify-content: right;
+    }
+  }
+
+  &_button {
+    margin: 0 24px 0 0;
+
+    &_icon {
+      transform: scaleX(-1) rotate(45deg);
+    }
+
+    &_sync {
+      margin: 0 2em 0 0;
+    }
+  }
+
+  &_cody {
+    margin: 0 24px 0 0;
+  }
+
+  &_back {
+    display: flex;
+    align-items: center;
+
+    &_button {
+      margin: 0 8px 0 0;
+    }
+  }
+
+  &_notifications {
+    margin: 0 24px 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0 16px 0 0;
+    }
+  }
+}

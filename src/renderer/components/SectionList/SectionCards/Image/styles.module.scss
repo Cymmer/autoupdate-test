@@ -1,0 +1,37 @@
+@mixin base($color) {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.SectionImage {
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &___blue {
+    background-color: #2fa9e0;
+  }
+
+  &___green {
+    background-color: #65d0b7;
+  }
+
+  &___purple {
+    background-color: #a688f2;
+  }
+
+  &___red {
+    background-color: #e86b6c;
+  }
+
+  &___yellow {
+    background-color: #ffdd4e;
+  }
+
+  &___large {
+    background-size: 136px;
+  }
+
+  &___small {
+    background-size: 64px;
+  }
+}

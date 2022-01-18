@@ -1,0 +1,32 @@
+@import '../../../scss/variables';
+
+.LessonSurveyModal {
+  padding: 40px;
+
+  &_body {
+    display: flex;
+    align-items: flex-start;
+
+    &_image {
+      width: 112px;
+      height: 116px;
+      flex-shrink: 0;
+    }
+
+    &_texts {
+      flex: 1;
+      margin: 0 0 0 24px;
+
+      &_question {
+        margin: 16px 0 0 0;
+      }
+    }
+  }
+
+  &_buttonContainer {
+    margin: 24px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+  }
+}

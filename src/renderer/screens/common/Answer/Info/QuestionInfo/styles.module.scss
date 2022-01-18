@@ -1,0 +1,66 @@
+@use '../../../../../scss' as *;
+
+.QuestionInfo {
+  padding: 24px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  max-height: calc(100vh - 221px);
+
+  @include breakpoint(sm) {
+    max-height: none;
+  }
+
+  &___active_onboarding {
+    box-shadow: $shadow-highlight-purple;
+  }
+
+  &_head {
+    @include flex-between;
+    flex-wrap: wrap;
+  }
+
+  &_description {
+    margin: 16px 0 40px 0;
+    line-height: 1.5;
+    font-size: 0.875rem;
+    overflow-wrap: break-word;
+
+    img {
+      width: 100%;
+    }
+
+    code {
+      color: $red-300;
+    }
+  }
+
+  &_format {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 16px;
+    margin: 0 0 24px 0;
+  }
+
+  &_label {
+    margin: 0 0 8px 0;
+  }
+
+  &_inputOutputFormat {
+    white-space: pre-wrap;
+  }
+
+  &_instructions {
+    margin: 32px 0 0 0;
+    line-height: 1.5;
+    font-size: 0.875rem;
+
+    ol {
+      margin-top: 0;
+    }
+
+    code {
+      color: $red-300;
+    }
+  }
+}

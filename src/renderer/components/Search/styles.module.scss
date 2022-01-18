@@ -1,0 +1,125 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/themes';
+
+.Search {
+  &___bare {
+    margin: 0 0 24px 0;
+  }
+
+  &___card {
+    padding: 8px 24px;
+    border-radius: 16px;
+    border: 1px solid;
+    @include theme {
+      background-color: t('cardBackgroundColor');
+      border-color: t('borderColor');
+    }
+    margin: 0 0 24px 0;
+  }
+
+  &_upper {
+    @include flex-between;
+
+    @include breakpoint(sm) {
+      flex-direction: column-reverse;
+    }
+
+    &_left {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+    }
+
+    &_dropdown {
+      max-width: 280px;
+      width: 100%;
+      margin: 0 32px 0 0;
+
+      @include breakpoint(sm) {
+        max-width: 100%;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &_lower {
+    margin: 16px 0 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0;
+    }
+
+    &_dropdown {
+      width: 100%;
+    }
+
+    &_exact {
+      margin: 0 4px 0 12px;
+    }
+  }
+
+  &_group {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      margin: 16px 0 0 0;
+      width: 100%;
+    }
+  }
+
+  &_button {
+    &___large {
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+
+    &___small {
+      display: none;
+
+      @include breakpoint(sm) {
+        display: flex;
+        margin: 0 16px 0 0;
+        border: none;
+      }
+    }
+  }
+
+  &_search {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 0 0 32px;
+
+    @include breakpoint(sm) {
+      max-width: 100%;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &_label {
+    white-space: nowrap;
+    margin: 0 16px 0 0;
+
+    @include breakpoint(xs) {
+      white-space: normal;
+      margin: 0;
+    }
+  }
+}

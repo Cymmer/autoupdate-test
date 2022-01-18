@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - NotificationsDropdown > Notification should render with default props 1`] = `
+<button
+  className="Notification"
+  data-test="notificationButton"
+  type="button"
+/>
+`;

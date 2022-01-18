@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Modal > Title should render the title if type is SMALL 1`] = `
+<div
+  className="ModalTitle"
+>
+  <Icon
+    className="ModalTitle___small_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  <div
+    className="ModalTitle_info"
+  >
+    <div
+      className="ModalTitle_title"
+    >
+      <Text
+        className={null}
+        colorClass="b___300"
+        element={null}
+        id={null}
+        type="heading___xxs"
+      >
+        Test
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Modal > Title should render the title, subject, and info if type is LARGE 1`] = `
+<div
+  className="ModalTitle"
+>
+  <Icon
+    className="ModalTitle___large_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  <div
+    className="ModalTitle_info"
+  >
+    <div
+      className="ModalTitle_title"
+    >
+      <Text
+        className="ModalTitle___large_title"
+        colorClass="n___400"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        Test
+      </Text>
+      <Text
+        className={null}
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___sm"
+      />
+    </div>
+    <Text
+      className="ModalTitle___large_info"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    />
+  </div>
+</div>
+`;
+
+exports[`RENDERING - Modal > Title should render with default props 1`] = `
+<div
+  className="ModalTitle"
+>
+  <Icon
+    className="ModalTitle___large_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  <div
+    className="ModalTitle_info"
+  >
+    <div
+      className="ModalTitle_title"
+    >
+      <Text
+        className="ModalTitle___large_title"
+        colorClass="n___400"
+        element={null}
+        id={null}
+        type="body___md"
+      >
+        Test
+      </Text>
+      <Text
+        className={null}
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="heading___sm"
+      />
+    </div>
+    <Text
+      className="ModalTitle___large_info"
+      colorClass="n___400"
+      element={null}
+      id={null}
+      type="body___sm"
+    />
+  </div>
+</div>
+`;

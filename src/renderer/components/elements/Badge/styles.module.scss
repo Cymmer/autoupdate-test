@@ -1,0 +1,89 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin base($bg-color, $color) {
+  @include flex-center;
+  background-color: $bg-color;
+  color: $color;
+  border-radius: 16px;
+  padding: 6px 8px;
+  margin: 4px;
+
+  @include breakpoint(sm) {
+    padding: 6px;
+  }
+}
+
+.Badge {
+  &___green {
+    @include base(transparentize($green-300, 0.9), $green-300);
+  }
+
+  &___red {
+    @include base(transparentize($red-300, 0.9), $red-300);
+  }
+
+  &___blue {
+    @include base(transparentize($blue-300, 0.9), $blue-300);
+  }
+
+  &___yellow {
+    @include base(transparentize($yellow-300, 0.9), $yellow-300);
+  }
+
+  &___darkYellow {
+    @include base($yellow-300, $neutral-700);
+  }
+
+  &___darkGreen {
+    @include base($green-300, $neutral-50);
+  }
+
+  &___darkBlue {
+    @include base($blue-300, $neutral-50);
+  }
+
+  &___gray {
+    @include flex-center;
+    @include theme {
+      color: t('tagColor');
+      background-color: t('tagBackgroundColor');
+    }
+    border-radius: 16px;
+    padding: 6px 8px;
+    margin: 4px;
+
+    @include breakpoint(sm) {
+      padding: 6px;
+    }
+  }
+
+  &_text {
+    &___withIcon {
+      font-size: 0.75rem;
+      font-weight: 600;
+
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+
+    &___noIcon {
+      font-size: 0.75rem;
+      font-weight: 600;
+
+      @include breakpoint(sm) {
+        font-size: 0.625rem;
+      }
+    }
+  }
+
+  &_icon {
+    margin: 0 4px 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0;
+    }
+  }
+}

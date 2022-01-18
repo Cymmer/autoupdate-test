@@ -1,0 +1,21 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/animations';
+
+.PreloaderLarge {
+  @include ease(0.4s);
+  overflow: hidden;
+
+  &_head {
+    padding: 24px 24px 16px;
+    height: 112px;
+  }
+
+  &_body {
+    padding: 16px 24px 24px;
+    height: 205px;
+  }
+
+  &_shine {
+    margin: 4px 0;
+  }
+}

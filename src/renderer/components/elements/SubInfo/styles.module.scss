@@ -1,0 +1,36 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+.SubInfo {
+  display: flex;
+  align-items: center;
+  margin: 2px 16px 2px 0;
+
+  &_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_icon {
+    margin: 0 8px 0 0;
+    @include theme {
+      color: t('textColor-400');
+    }
+  }
+
+  &_shine {
+    width: 144px;
+    margin: 4px;
+  }
+
+  &_link {
+    text-decoration: none;
+
+    &:hover {
+      > p {
+        color: #2cabe3;
+      }
+    }
+  }
+}

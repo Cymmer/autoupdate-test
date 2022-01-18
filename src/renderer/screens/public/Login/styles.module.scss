@@ -1,0 +1,64 @@
+@import '../../../scss/mixins';
+
+.Login {
+  max-width: 560px;
+  height: 100%;
+  width: 100%;
+  padding: 0 32px 48px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &_imageContainer {
+    margin: 0 0 56px;
+  }
+
+  &_text {
+    margin: 0 0 32px 0;
+  }
+
+  &_input {
+    margin: 0 0 24px 0;
+
+    &:nth-child(2) {
+      margin: 0;
+    }
+
+    &___error {
+      > input {
+        border-color: $red-300;
+      }
+    }
+  }
+
+  &_errorMessage {
+    margin: 16px 0 0 0;
+  }
+
+  &_options {
+    @include flex-between;
+    margin: 24px 0 56px 0;
+  }
+
+  &_buttonGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin: 48px 0 24px 0;
+
+    @include breakpoint(xs) {
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  &_buttonText {
+    @include flex-center;
+  }
+
+  &_spinner {
+    width: auto;
+    margin: 0 0 0 12px;
+  }
+}

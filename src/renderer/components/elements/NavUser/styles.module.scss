@@ -1,0 +1,102 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+@import '../../../scss/themes';
+
+@mixin dropdown($display) {
+  display: $display;
+  flex-direction: column;
+  position: absolute;
+  top: 52px;
+  right: 0;
+  box-shadow: $shadow-normal;
+  width: 150px;
+  z-index: 1;
+  border: none;
+
+  @content;
+}
+
+.NavUser {
+  position: relative;
+
+  &_image {
+    width: 36px;
+    margin: 0 8px 0 0;
+
+    @include breakpoint(sm) {
+      margin: 0;
+    }
+  }
+
+  &_caret {
+    margin: 0 0 0 4px;
+  }
+
+  &_name {
+    @include heading(0.75rem, 1.67);
+  }
+
+  &_caret,
+  &_name {
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  &_button {
+    @include flex-center;
+    @include ease(0.2s);
+    @include theme {
+      color: t('textColor-700');
+    }
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &_dropdown {
+    @include dropdown(none);
+
+    &___toggled {
+      @include dropdown(flex);
+    }
+
+    &_link {
+      @include heading(0.75rem, 1.67);
+      @include ease(0.3s);
+      text-decoration: none;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+
+      @include theme {
+        color: t('textColor-700');
+
+        &:hover {
+          background-color: t('cardBackgroundColor--hover');
+        }
+
+        &:focus,
+        &:active {
+          background-color: t('cardBackgroundColor--active');
+        }
+      }
+
+      &:first-child {
+        border-radius: 16px 16px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 16px 16px;
+      }
+
+      &_icon {
+        margin-right: 8px;
+        @include theme {
+          color: t('textColor-400');
+        }
+      }
+    }
+  }
+}

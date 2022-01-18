@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - RadioGroup > Controlled should render an icon if it has an icon 1`] = `
+<div
+  className="Radio___small"
+  id="testContainer"
+>
+  <input
+    checked={false}
+    className="Radio___small_input"
+    data-test="radio"
+    disabled={false}
+    id="test"
+    name="test"
+    onChange={[Function]}
+    type="radio"
+    value="test"
+  />
+  <Label
+    className="Radio___small_label"
+    disabled={false}
+    htmlFor="test"
+    id={null}
+  >
+    Test
+  </Label>
+</div>
+`;
+
+exports[`RENDERING - RadioGroup > Controlled should render with default props 1`] = `
+<div
+  className="Radio___small"
+  id="testContainer"
+>
+  <input
+    checked={false}
+    className="Radio___small_input"
+    data-test="radio"
+    disabled={false}
+    id="test"
+    name="test"
+    onChange={[Function]}
+    type="radio"
+    value="test"
+  />
+  <Label
+    className="Radio___small_label"
+    disabled={false}
+    htmlFor="test"
+    id={null}
+  >
+    Test
+  </Label>
+</div>
+`;

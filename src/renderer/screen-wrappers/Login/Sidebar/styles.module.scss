@@ -1,0 +1,41 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+@mixin sidebar {
+  position: relative;
+  width: 440px;
+  height: 100%;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+
+  @content;
+}
+
+.Sidebar {
+  &_watermark {
+    width: auto;
+    height: 400px;
+    position: fixed;
+    left: -56px;
+    bottom: 24px;
+  }
+
+  &___default {
+    @include sidebar {
+      @include blueGreenGradient(right);
+    }
+  }
+
+  &___mcl {
+    @include sidebar {
+      @include gradientBackground($mcl-primary, $mcl-secondary);
+
+      .Sidebar_watermark {
+        height: 467px;
+        bottom: -16px;
+      }
+    }
+  }
+}

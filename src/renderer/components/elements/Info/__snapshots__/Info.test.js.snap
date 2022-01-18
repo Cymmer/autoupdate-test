@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Info should render with default props 1`] = `
+<div
+  className={null}
+  id={null}
+>
+  <Text
+    className="Info_label"
+    colorClass="n___500"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    Test
+  </Text>
+  <Text
+    className="Info_text"
+    colorClass="n___700"
+    element={null}
+    id={null}
+    type="body___md"
+  >
+    <p>
+      Test
+    </p>
+  </Text>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ProblemList > Preloader should render the large preloader 1`] = `
+<Fragment>
+  <PreloaderLarge />
+  <PreloaderLarge />
+  <PreloaderLarge />
+</Fragment>
+`;
+
+exports[`RENDERING - ProblemList > Preloader should render the small preloader 1`] = `
+<Fragment>
+  <PreloaderSmall />
+  <PreloaderSmall />
+  <PreloaderSmall />
+  <PreloaderSmall />
+</Fragment>
+`;

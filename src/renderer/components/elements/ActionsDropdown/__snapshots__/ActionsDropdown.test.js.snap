@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ActionsDropdown should render with actions 1`] = `
+<div
+  className="ActionsDropdown"
+>
+  <IconButton
+    className={null}
+    colorName="blue"
+    disabled={false}
+    icon="more_horiz"
+    iconClassName={null}
+    id="ellipseDropdown"
+    isLocked={false}
+    kind="button"
+    onClick={[Function]}
+    style={null}
+    tabIndex={0}
+    type="solid___lg"
+  />
+  <Dropdown
+    actions={
+      Array [
+        Object {
+          "action": [Function],
+          "disabled": false,
+          "icon": "test",
+          "text": "Test",
+          "tooltip": "Test Tooltip",
+          "type": "button",
+        },
+        Object {
+          "action": [Function],
+          "disabled": false,
+          "icon": "test",
+          "text": "Test",
+          "tooltip": "Test Tooltip",
+          "type": "button",
+        },
+        Object {
+          "action": "www.codechum.com",
+          "disabled": false,
+          "icon": "test",
+          "text": "Test",
+          "tooltip": "Test Tooltip",
+          "type": "link",
+        },
+        Object {
+          "action": "www.codechum.com",
+          "disabled": false,
+          "icon": "test",
+          "text": "Test",
+          "tooltip": "Test Tooltip",
+          "type": "link",
+        },
+      ]
+    }
+    isToggled={false}
+  />
+</div>
+`;
+
+exports[`RENDERING - ActionsDropdown should render with default props (empty actions) 1`] = `""`;

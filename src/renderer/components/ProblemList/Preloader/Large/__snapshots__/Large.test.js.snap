@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ProblemList > Preloader > Large should render with default props 1`] = `
+<Card
+  className="PreloaderLarge"
+  id={null}
+  onClick={null}
+  onMouseEnter={null}
+  onMouseLeave={null}
+>
+  <div
+    className="PreloaderLarge_head"
+  >
+    <Shine
+      className="PreloaderLarge_shine"
+    />
+    <Shine
+      className="PreloaderLarge_shine"
+    />
+  </div>
+  <Separator
+    className={null}
+  />
+  <div
+    className="PreloaderLarge_body"
+  >
+    <Shine
+      className="PreloaderLarge_shine"
+    />
+    <Shine
+      className="PreloaderLarge_shine"
+    />
+    <Shine
+      className="PreloaderLarge_shine"
+    />
+  </div>
+</Card>
+`;

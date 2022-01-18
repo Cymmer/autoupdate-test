@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Container should render its children 1`] = `
+<div
+  className="Container"
+>
+  Test
+</div>
+`;
+
+exports[`RENDERING - Container should render with default props 1`] = `
+<div
+  className="Container"
+/>
+`;

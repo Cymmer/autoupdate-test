@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Text > Span should render its children 1`] = `
+<span
+  className=""
+>
+  Test
+</span>
+`;
+
+exports[`RENDERING - Text > Span should render with default props 1`] = `
+<span
+  className=""
+/>
+`;
+
+exports[`RENDERING - Text > Span should set its passed colorClass in its classname 1`] = `
+<span
+  className="Text___b___100"
+>
+  Test
+</span>
+`;
+
+exports[`RENDERING - Text > Span should set its passed colorClass in its classname 2`] = `
+<span
+  className="Text___r___500"
+>
+  Test
+</span>
+`;
+
+exports[`RENDERING - Text > Span should set its passed type in its classname 1`] = `
+<span
+  className="Text___heading___xxl"
+>
+  Test
+</span>
+`;
+
+exports[`RENDERING - Text > Span should set its passed type in its classname 2`] = `
+<span
+  className="Text___body___lg"
+>
+  Test
+</span>
+`;

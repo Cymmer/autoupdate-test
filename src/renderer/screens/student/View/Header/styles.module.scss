@@ -1,0 +1,20 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/themes';
+
+.Header {
+  @include theme {
+    border-bottom: 1px solid t('borderColor');
+    background-color: t('cardBackgroundColor');
+  }
+  margin: 0 0 32px 0;
+
+  &_breadcrumbs {
+    padding: 24px 0;
+  }
+
+  &_children {
+    @include flex-between;
+    margin: 0 0 16px 0;
+  }
+}

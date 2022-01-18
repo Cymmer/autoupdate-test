@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Text should render its children 1`] = `
+<p
+  className="Text___body___md Text___n___700"
+  id={null}
+>
+  Test
+</p>
+`;
+
+exports[`RENDERING - Text should render with default props 1`] = `
+<p
+  className="Text___body___md Text___n___700"
+  id={null}
+/>
+`;
+
+exports[`RENDERING - Text should set its passed colorClass in its classname 1`] = `
+<p
+  className="Text___body___md Text___b___100"
+  id={null}
+>
+  Test
+</p>
+`;
+
+exports[`RENDERING - Text should set its passed colorClass in its classname 2`] = `
+<p
+  className="Text___body___md Text___r___500"
+  id={null}
+>
+  Test
+</p>
+`;
+
+exports[`RENDERING - Text should set its passed type in its classname 1`] = `
+<h1
+  className="Text___heading___xxl Text___n___700"
+  id={null}
+>
+  Test
+</h1>
+`;
+
+exports[`RENDERING - Text should set its passed type in its classname 2`] = `
+<p
+  className="Text___body___lg Text___n___700"
+  id={null}
+>
+  Test
+</p>
+`;

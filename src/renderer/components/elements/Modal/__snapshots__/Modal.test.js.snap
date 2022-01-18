@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Modal should render close button if hasCloseButton is true 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="Modal_body___open"
+  className="Modal___md Modal___top"
+  closeTimeoutMS={0}
+  contentElement={[Function]}
+  contentLabel="Modal"
+  htmlOpenClassName="Modal_html___open"
+  id={null}
+  isOpen={true}
+  onRequestClose={null}
+  overlayClassName="Modal_overlay___top"
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="Modal_portal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <button
+    className="Modal_close"
+    data-test="closeButton"
+    id={null}
+    onClick={null}
+    type="button"
+  >
+    <Icon
+      className="Modal_close_icon"
+      icon="close"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+  </button>
+  Test
+</Modal>
+`;
+
+exports[`RENDERING - Modal should render the Spinner if it is loading 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="Modal_body___open"
+  className="Modal___md Modal___top"
+  closeTimeoutMS={0}
+  contentElement={[Function]}
+  contentLabel="Modal"
+  htmlOpenClassName="Modal_html___open"
+  id={null}
+  isOpen={true}
+  onRequestClose={null}
+  overlayClassName="Modal_overlay___top"
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="Modal_portal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <Spinner
+    className="Modal___loading_spinner"
+    colorName="blue"
+    size="lg"
+  />
+  <div
+    className="Modal___loading_background"
+  />
+  <button
+    className="Modal_close"
+    data-test="closeButton"
+    id={null}
+    onClick={null}
+    type="button"
+  >
+    <Icon
+      className="Modal_close_icon"
+      icon="close"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+  </button>
+  Test
+</Modal>
+`;
+
+exports[`RENDERING - Modal should render the actions if it has actions 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="Modal_body___open"
+  className="Modal___md Modal___top"
+  closeTimeoutMS={0}
+  contentElement={[Function]}
+  contentLabel="Modal"
+  htmlOpenClassName="Modal_html___open"
+  id={null}
+  isOpen={true}
+  onRequestClose={null}
+  overlayClassName="Modal_overlay___top"
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="Modal_portal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <button
+    className="Modal_close"
+    data-test="closeButton"
+    id={null}
+    onClick={null}
+    type="button"
+  >
+    <Icon
+      className="Modal_close_icon"
+      icon="close"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+  </button>
+  Test
+  <ButtonGroup
+    buttons={
+      Array [
+        Object {
+          "disabled": false,
+          "kind": "button",
+          "onClick": [Function],
+          "text": "Action 1",
+          "type": "primary___blue",
+        },
+        Object {
+          "kind": "button",
+          "onClick": [Function],
+          "text": "Action 2",
+          "type": "primary___green",
+        },
+      ]
+    }
+    className={null}
+    direction="horizontal"
+  />
+</Modal>
+`;
+
+exports[`RENDERING - Modal should render the contents if it is not loading 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="Modal_body___open"
+  className="Modal___md Modal___top"
+  closeTimeoutMS={0}
+  contentElement={[Function]}
+  contentLabel="Modal"
+  htmlOpenClassName="Modal_html___open"
+  id={null}
+  isOpen={true}
+  onRequestClose={null}
+  overlayClassName="Modal_overlay___top"
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="Modal_portal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <button
+    className="Modal_close"
+    data-test="closeButton"
+    id={null}
+    onClick={null}
+    type="button"
+  >
+    <Icon
+      className="Modal_close_icon"
+      icon="close"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+  </button>
+  Test
+</Modal>
+`;
+
+exports[`RENDERING - Modal should render with default props 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="Modal_body___open"
+  className="Modal___md Modal___top"
+  closeTimeoutMS={0}
+  contentElement={[Function]}
+  contentLabel="Modal"
+  htmlOpenClassName="Modal_html___open"
+  id={null}
+  isOpen={true}
+  onRequestClose={null}
+  overlayClassName="Modal_overlay___top"
+  overlayElement={[Function]}
+  parentSelector={[Function]}
+  portalClassName="Modal_portal"
+  preventScroll={false}
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <button
+    className="Modal_close"
+    data-test="closeButton"
+    id={null}
+    onClick={null}
+    type="button"
+  >
+    <Icon
+      className="Modal_close_icon"
+      icon="close"
+      id={null}
+      isPulsating={false}
+      style={null}
+    />
+  </button>
+  Test
+</Modal>
+`;

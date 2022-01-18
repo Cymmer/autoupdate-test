@@ -1,0 +1,154 @@
+@use '../../../scss' as *;
+
+@mixin base($size) {
+  border-radius: 16px;
+  border: 1px solid;
+  @include theme {
+    background-color: t('cardBackgroundColor');
+    border-color: t('borderColor');
+  }
+  outline: currentcolor none medium;
+  height: max-content;
+  position: relative;
+
+  @if $size == lg {
+    width: 1128px;
+  } @else if $size == md {
+    width: 960px;
+  } @else if $size == sm {
+    width: 560px;
+  } @else if $size == xs {
+    width: 320px;
+  }
+}
+
+@mixin overlay($position) {
+  @include theme {
+    background-color: t('modalOverlayColor');
+  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  @if ($position == center) {
+    align-items: center;
+  }
+}
+
+@mixin card($position) {
+  position: relative;
+
+  @if ($position == center) {
+    margin: 0 20px;
+  } @else {
+    margin: 40px 20px 0;
+
+    @include breakpoint(sm) {
+      margin: 20px 20px 0 0;
+    }
+  }
+
+  @content;
+}
+
+.Modal {
+  &___lg {
+    @include base(lg);
+  }
+
+  &___md {
+    @include base(md);
+  }
+
+  &___sm {
+    @include base(sm);
+  }
+
+  &___xs {
+    @include base(xs);
+  }
+
+  &___center {
+    @include card(center);
+  }
+
+  &___top {
+    @include card(top);
+  }
+
+  &___loading {
+    &_background {
+      border-radius: 16px;
+      @include theme {
+        background-color: t('cardBackgroundColor');
+      }
+      opacity: 0.8;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &_spinner {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  &_overlay {
+    &___center {
+      @include overlay(center);
+    }
+
+    &___top {
+      @include overlay(top);
+    }
+  }
+
+  &_close {
+    cursor: pointer;
+    position: absolute;
+    background-color: $neutral-700;
+    color: $neutral-0;
+    border-radius: 100%;
+    border: none;
+    padding: 10px;
+    top: -18px;
+    right: -18px;
+    height: 36px;
+    width: 36px;
+    z-index: 1;
+    outline: none;
+    @include flex-center;
+
+    &:hover {
+      background-color: lighten($neutral-700, 5%);
+    }
+
+    &:focus,
+    &:active {
+      background-color: lighten($neutral-700, 10%);
+    }
+
+    &_icon {
+      font-size: 1.25rem;
+    }
+  }
+}

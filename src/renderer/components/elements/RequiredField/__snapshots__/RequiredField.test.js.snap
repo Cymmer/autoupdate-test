@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - RequiredField should render with default props 1`] = `
+<Fragment>
+  <span
+    className="RequiredField"
+  >
+    *
+  </span>
+</Fragment>
+`;
+
+exports[`RENDERING - RequiredField should render the placeholder 1`] = `
+<Fragment>
+  Test
+  <span
+    className="RequiredField"
+  >
+    *
+  </span>
+</Fragment>
+`;

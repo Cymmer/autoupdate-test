@@ -1,0 +1,32 @@
+@import '../../scss/mixins';
+
+.LoginSignupContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  &_accent {
+    @include blueGreenGradient(right);
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+
+    @include breakpoint(md) {
+      visibility: visible;
+    }
+  }
+
+  &_container {
+    overflow: auto;
+    width: calc(100% - 440px);
+    padding: 64px 0;
+
+    @include breakpoint(md) {
+      padding: 74px 0 64px 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@use '../../../scss' as *;
+@use '../../../scss' as *;
+@use '../../../scss' as *;
+
+@mixin title {
+  @include flex-between;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+
+  @content;
+}
+
+@mixin status($content, $color) {
+  &:after {
+    content: $content;
+    font-family: Inter, sans-serif;
+    padding-left: 16px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $color;
+  }
+}
+
+.TestCase {
+  padding: 16px 24px;
+
+  &___timedOut {
+    @include status('Timed Out', $red-300);
+  }
+
+  &___hidden {
+    @include status('Hidden', $neutral-500);
+  }
+
+  &_title {
+    @include title {
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        .TestCase_text,
+        .TestCase_icon {
+          color: $blue-300;
+        }
+      }
+    }
+
+    &___disabled {
+      @include title {
+        .TestCase_icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_icon {
+    &___passed {
+      color: $green-300;
+      margin: 0 8px 0 0;
+    }
+
+    &___failed {
+      color: $red-300;
+      margin: 0 8px 0 0;
+    }
+
+    &___empty {
+      @include theme {
+        color: t('textColor-400');
+      }
+      margin: 0 8px 0 0;
+    }
+  }
+
+  &_text {
+    display: flex;
+    align-items: center;
+  }
+
+  &_group {
+    display: grid;
+    grid-template-columns: 79px minmax(0, 1fr);
+
+    @include breakpoint(sm) {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 24px 1fr;
+    }
+  }
+
+  &_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 16px;
+    margin: 16px 0 8px;
+
+    &___vertical {
+      display: grid;
+      grid-row-gap: 16px;
+      grid-template-columns: minmax(0, 1fr);
+      margin: 16px 0 8px;
+
+      &_title {
+        margin: 8px 0 12px 0;
+      }
+    }
+  }
+
+  &_caret {
+    @include theme {
+      color: t('textColor-400');
+    }
+  }
+}

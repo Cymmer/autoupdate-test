@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Comment should render 1`] = `
+<div
+  className="Comment"
+>
+  <UserImage
+    className={null}
+    id={null}
+    image="http://example.com"
+    imageClassName="Comment_userImage"
+  />
+  <div
+    className="Comment_info"
+  >
+    <div
+      className=""
+    >
+      <Text
+        className={null}
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="data___xs"
+      >
+        Male Teacher
+      </Text>
+      <Text
+        className=""
+        colorClass="n___400"
+        element={null}
+        id={null}
+        type="body___xs"
+      >
+        10 hours ago
+      </Text>
+    </div>
+    <div
+      className=""
+    >
+      <Text
+        className={null}
+        colorClass="n___700"
+        element={null}
+        id={null}
+        type="body___xs"
+      >
+        Good job
+      </Text>
+    </div>
+  </div>
+</div>
+`;

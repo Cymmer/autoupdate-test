@@ -1,0 +1,169 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin text($color) {
+  @include base {
+    color: $color;
+    background: none;
+    padding: 0;
+    border: none;
+
+    &:hover:not([disabled]) {
+      color: darken($color, 5%);
+    }
+
+    &:focus:not([disabled]),
+    &:active:not([disabled]) {
+      color: darken($color, 15%);
+    }
+
+    &:disabled {
+      @include theme {
+        color: t('textColor-200');
+      }
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.Button {
+  &___primary {
+    &___blue {
+      @include primary($blue-300, $blue-400, $blue-500, $neutral-0);
+    }
+
+    &___red {
+      @include primary($red-300, $red-400, $red-500, $neutral-0);
+    }
+
+    &___green {
+      @include primary($green-300, $green-400, $green-500, $neutral-0);
+    }
+
+    &___yellow {
+      @include primary($yellow-400, $yellow-400, $yellow-500, $neutral-0);
+    }
+
+    &___purple {
+      @include primary($purple-300, $purple-300, $purple-300, $neutral-0);
+    }
+  }
+
+  &___secondary {
+    &___blue {
+      @include secondary($blue-300);
+    }
+
+    &___red {
+      @include secondary($red-300);
+    }
+
+    &___green {
+      @include secondary($green-300);
+    }
+
+    &___yellow {
+      @include secondary($yellow-400);
+    }
+
+    &___purple {
+      @include secondary($purple-300);
+    }
+
+    &___white {
+      @include secondary($neutral-0);
+    }
+  }
+
+  &___tertiary {
+    @include base {
+      border-radius: 100px;
+      padding: 10px 24px;
+      border: none;
+
+      @include theme {
+        color: t('buttonTertiaryColor');
+        background-color: t('buttonTertiaryBackgroundColor');
+
+        &:hover:not([disabled]) {
+          background-color: t('buttonTertiaryBackgroundColor--hover');
+        }
+
+        &:focus:not([disabled]),
+        &:active:not([disabled]) {
+          background-color: t('buttonTertiaryBackgroundColor--active');
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  &___link {
+    display: block;
+  }
+
+  &___text {
+    &___blue {
+      @include text($blue-300);
+    }
+
+    &___red {
+      @include text($red-300);
+    }
+
+    &___green {
+      @include text($green-300);
+    }
+
+    &___yellow {
+      @include text($yellow-400);
+    }
+
+    &___purple {
+      @include text($purple-300);
+    }
+
+    &___gray {
+      @include text($neutral-300);
+    }
+  }
+
+  &___withIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_icon {
+      margin-right: 8px;
+    }
+  }
+
+  &___disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &_lockedIcon {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    font-size: 24px !important;
+    color: $yellow-400 !important;
+
+    @include theme {
+      text-shadow: 0 0 2px t('cardBackgroundColor'),
+        -1px -1px t('cardBackgroundColor');
+    }
+  }
+
+  &_wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

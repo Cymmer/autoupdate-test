@@ -1,5 +1,13 @@
 /* eslint global-require: off, no-console: off, promise/always-return: off */
 
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
+import { BrowserWindow, app, ipcMain, shell } from 'electron';
+import { exec, spawn } from 'child_process';
+
+import { AppImageUpdater } from 'electron-updater';
+import MenuBuilder from './menu';
 /**
  * This module executes inside of electron's main process. You can start
  * electron renderer process from here and communicate with the other processes
@@ -8,20 +16,16 @@
  * When running `npm run build` or `npm run build:main`, this file is compiled to
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-
-import { BrowserWindow, app, ipcMain, shell } from 'electron';
-
-import { AppImageUpdater } from 'electron-updater';
-import MenuBuilder from './menu';
 import axios from 'axios';
 import log from 'electron-log';
 import path from 'path';
 import { resolveHtmlPath } from './util';
 
-const autoUpdater = new AppImageUpdater();
+const controller = new AbortController();
+const { signal } = controller;
 
+const autoUpdater = new AppImageUpdater();
+ 
 autoUpdater.autoDownload = true;
 autoUpdater.checkForUpdatesAndNotify({ body: '123', title: 'abc' });
 
@@ -35,16 +39,16 @@ function sendStatusToWindow(text: string) {
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
-autoUpdater.on('update-available', (info) => {
+autoUpdater.on('update-available', (info: any) => {
   sendStatusToWindow('Update available.');
 });
-autoUpdater.on('update-not-available', (info) => {
+autoUpdater.on('update-not-available', (info: any) => {
   sendStatusToWindow('Update not available.');
 });
-autoUpdater.on('error', (err) => {
+autoUpdater.on('error', (err: string) => {
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
-autoUpdater.on('download-progress', (progressObj) => {
+autoUpdater.on('download-progress', (progressObj: { bytesPerSecond: string; percent: string; transferred: string; total: string; }) => {
   let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message =
@@ -112,6 +116,8 @@ const createWindow = async () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
+      contextIsolation: false,
+      webSecurity: false,
     },
   });
 
@@ -129,6 +135,7 @@ const createWindow = async () => {
   });
 
   mainWindow.on('closed', () => {
+    controller.abort();
     mainWindow = null;
   });
 
@@ -152,6 +159,7 @@ const createWindow = async () => {
 app.on('window-all-closed', () => {
   // Respect the OSX convention of having the application in memory even
   // after all windows have been closed
+  controller.abort();
   if (process.platform !== 'darwin') {
     app.quit();
   }

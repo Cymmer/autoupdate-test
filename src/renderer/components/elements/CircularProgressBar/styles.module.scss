@@ -1,0 +1,11 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.CircularProgressBar {
+  @include data(0.875rem, 1.2);
+  @include ease(0.3s);
+
+  &_container {
+    width: 90px;
+  }
+}

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Tabs > TabButton should render the close button if there is a close action and is active 1`] = `
+<button
+  className="Tab___horizontal___lg___active Tab___withClose"
+  data-test="tabButton"
+  id={null}
+  onClick={[Function]}
+  type="button"
+>
+  Test
+  <IconButton
+    className="Tab_close"
+    colorName="blue"
+    data-test="closeButton"
+    disabled={false}
+    icon="close"
+    iconClassName={null}
+    id={null}
+    isLocked={false}
+    kind="button"
+    onClick={[Function]}
+    style={null}
+    tabIndex={0}
+    type="solid___xs"
+  />
+</button>
+`;
+
+exports[`RENDERING - Tabs > TabButton should render with default props 1`] = `
+<button
+  className="Tab___horizontal___lg"
+  data-test="tabButton"
+  id={null}
+  onClick={[Function]}
+  type="button"
+>
+  Test
+</button>
+`;

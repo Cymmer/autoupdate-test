@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Header should render the breadcrumbs if it has breadcrumbs 1`] = `
+<div
+  className="Header"
+>
+  <Container
+    className={null}
+  >
+    <Breadcrumbs
+      className="Header_breadcrumbs"
+      links={
+        Array [
+          Object {
+            "link": "https://www.codechum.com/link-1",
+            "name": "Link 1",
+          },
+          Object {
+            "link": "https://www.codechum.com/link-2",
+            "name": "Link 2",
+          },
+        ]
+      }
+    />
+    <div
+      className="Header_children___noTabs"
+    >
+      <p>
+        Test
+      </p>
+    </div>
+  </Container>
+</div>
+`;
+
+exports[`RENDERING - Header should render the tabs if it has tabs 1`] = `
+<div
+  className="Header"
+>
+  <Container
+    className={null}
+  >
+    <div
+      className="Header_children"
+    >
+      <p>
+        Test
+      </p>
+    </div>
+    <Tabs
+      activeTab={null}
+      className="Header_tabs"
+      data-test="tabs"
+      id={null}
+      isLoading={false}
+      tabClassName={null}
+      tabs={
+        Array [
+          Object {
+            "action": [Function],
+            "kind": "button",
+            "name": "Tab 1",
+            "value": "tab-1",
+          },
+          Object {
+            "action": "https://www.codechum.com",
+            "kind": "link",
+            "name": "Tab 2",
+            "value": "tab-2",
+          },
+          Object {
+            "action": [Function],
+            "kind": "button",
+            "name": "Tab 3",
+            "value": "tab-3",
+          },
+        ]
+      }
+      type="horizontal___lg"
+    />
+  </Container>
+</div>
+`;
+
+exports[`RENDERING - Header should render with default props 1`] = `
+<div
+  className="Header"
+>
+  <Container
+    className={null}
+  >
+    <div
+      className="Header_children___noTabs"
+    >
+      <p>
+        Test
+      </p>
+    </div>
+  </Container>
+</div>
+`;

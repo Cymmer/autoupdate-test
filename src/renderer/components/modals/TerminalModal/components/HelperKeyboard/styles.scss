@@ -1,0 +1,46 @@
+@use '../../../../../scss' as *;
+
+.simple-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .hg-button {
+    span {
+      // NOTE: Set as `!important` to prevent being overridden by global theme styles.
+      color: $neutral-700 !important;
+    }
+  }
+}
+
+.simple-keyboard.hg-theme-ios.hg-theme-default.hg-layout-custom {
+  background-color: #e5e5e5;
+  padding: 5px;
+}
+
+.simple-keyboard.hg-theme-ios.hg-theme-default .hg-button {
+  border-radius: 5px;
+  border-bottom: 1px solid #b5b5b5;
+  height: 55px;
+}
+
+.simple-keyboard.hg-theme-ios.hg-theme-default .hg-button.hg-functionBtn {
+  background-color: #adb5bb;
+}
+
+.simple-keyboard.hg-theme-ios.hg-theme-default .hg-button.hg-button-space,
+.simple-keyboard.hg-theme-ios.hg-theme-default .hg-button.hg-button-shift,
+.simple-keyboard.hg-theme-ios.hg-theme-default
+  .hg-button.hg-button-shiftactivated {
+  background-color: #ffffff;
+}
+
+.simple-keyboard.hg-theme-ios.hg-theme-default .hg-button-space {
+  width: 50%;
+}
+
+.simple-keyboard.hg-theme-ios .hg-row:nth-child(2) {
+  margin-left: 18px;
+}

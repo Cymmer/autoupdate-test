@@ -1,0 +1,58 @@
+@use '../../../scss' as *;
+
+.Grid {
+  &___one {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &___two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &___three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &___four {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &___rowGap {
+    &___8 {
+      grid-row-gap: 8px;
+    }
+
+    &___16 {
+      grid-row-gap: 16px;
+    }
+  }
+}

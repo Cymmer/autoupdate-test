@@ -1,0 +1,37 @@
+@import '../../../../../../scss/variables';
+@import '../../../../../../scss/mixins';
+@import '../../../../../../scss/themes';
+
+.ProblemLink {
+  @include body(1rem, 1.5);
+  @include flex-between;
+  text-decoration: none;
+  padding: 16px;
+  border: 1px solid;
+  border-radius: 12px;
+  @include theme {
+    color: t('textColor-500');
+    border-color: t('borderColor');
+    background-color: t('cardBackgroundColor');
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: t('cardBackgroundColor--hover');
+    }
+  }
+
+  &___active {
+    background: $bg-gradient;
+
+    span {
+      color: $neutral-0 !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $bg-gradient;
+    }
+  }
+}

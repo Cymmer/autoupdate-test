@@ -1,0 +1,63 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+@mixin title {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+
+  @content;
+}
+
+.ExecutionCard {
+  padding: 16px 24px;
+
+  &_title {
+    @include title {
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:active {
+        .ExecutionCard_text,
+        .ExecutionCard_icon {
+          color: $blue-300;
+        }
+      }
+    }
+
+    &_label {
+      justify-self: start;
+
+      &_executionNumber {
+        display: inline-block;
+      }
+
+      &_mode {
+        margin-left: 16px;
+        display: inline-block;
+      }
+    }
+
+    &_actions {
+      @include flex-center;
+      justify-self: end;
+
+      &_caret {
+        margin-left: 56px;
+        @include theme {
+          color: t('textColor-400');
+        }
+      }
+    }
+  }
+
+  &_mainCode {
+    margin-top: 12px;
+  }
+}

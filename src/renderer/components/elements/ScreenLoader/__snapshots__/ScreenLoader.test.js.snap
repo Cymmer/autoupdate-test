@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - ScreenLoader should render with default props 1`] = `
+<div
+  className="ScreenLoader"
+>
+  <Spinner
+    className={null}
+    colorName="blue"
+    size="lg"
+  />
+</div>
+`;

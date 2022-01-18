@@ -1,0 +1,85 @@
+@import '../../../../../scss/variables';
+@import '../../../../../scss/mixins';
+
+.Comments {
+  padding: 24px 24px 0;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+
+  &___loading {
+    padding: 24px;
+  }
+
+  &_label {
+    margin: 0 0 12px 0;
+  }
+
+  &_body {
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  &_empty {
+    margin: 0 0 20px 0;
+  }
+
+  &_form {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 24px;
+    border-top: 1px solid;
+    @include theme {
+      border-color: t('borderColor');
+    }
+  }
+
+  &_addComment {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_button {
+    margin: 12px 0 0 0;
+  }
+
+  &_userImage {
+    display: flex;
+    margin: 0 12px 0 0;
+    max-width: 36px;
+  }
+
+  &_textArea {
+    @include textArea;
+    @include body(0.875rem, 1.5);
+    @include theme {
+      color: t('inputColor');
+      background-color: t('inputBackgroundColor');
+    }
+    height: 20px;
+    text-align: inherit;
+    resize: vertical;
+    max-width: inherit;
+    border-radius: 8px;
+    padding: 12px;
+    transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+      box-shadow 0.1s ease-in-out;
+
+    &:focus:not([disabled]),
+    &:active:not([disabled]) {
+      background-color: transparent !important;
+      border: 1px solid;
+      border-color: $blue-300 !important;
+      box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+    }
+
+    &:hover:not([disabled]) {
+      background-color: transparent;
+      box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+    }
+  }
+
+  &_errorMessage {
+    margin: 4px 0 0 0;
+  }
+}

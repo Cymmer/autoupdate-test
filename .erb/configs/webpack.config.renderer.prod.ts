@@ -25,12 +25,12 @@ const devtoolsConfig =
       }
     : {};
 
-const configuration: webpack.Configuration = {
+export default merge(baseConfig, {
   ...devtoolsConfig,
 
   mode: 'production',
 
-  target: ['web', 'electron-renderer'],
+  target: 'electron-renderer',
 
   entry: [
     'core-js',
@@ -42,9 +42,6 @@ const configuration: webpack.Configuration = {
     path: webpackPaths.distRendererPath,
     publicPath: './',
     filename: 'renderer.js',
-    library: {
-      type: 'umd',
-    },
   },
 
   module: {
@@ -128,6 +125,4 @@ const configuration: webpack.Configuration = {
       isDevelopment: process.env.NODE_ENV !== 'production',
     }),
   ],
-};
-
-export default merge(baseConfig, configuration);
+});

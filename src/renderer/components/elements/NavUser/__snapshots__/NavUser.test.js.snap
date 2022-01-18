@@ -1,0 +1,1189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - NavUser should have the proper links for the user type admin 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)
+        userType="A"
+      >
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+          userType="A"
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`RENDERING - NavUser should have the proper links for the user type manager 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)
+        userType="M"
+      >
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+          userType="M"
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`RENDERING - NavUser should have the proper links for the user type student 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)
+        userType="S"
+      >
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+          userType="S"
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`RENDERING - NavUser should have the proper links for the user type teacher 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)
+        userType="T"
+      >
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+          userType="T"
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`RENDERING - NavUser should render with default props 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)>
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`RENDERING - NavUser should update the classes on dropdown toggled on desktop 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "#/",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(NavUser)>
+        <NavUser
+          className={null}
+          dispatch={[Function]}
+          user={Object {}}
+        >
+          <div
+            className="NavUser"
+          >
+            <button
+              className="NavUser_button"
+              data-test="dropdownButton"
+              id="navUserButton"
+              onClick={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <UserImage
+                className="NavUser_image"
+                id={null}
+                image={null}
+                imageClassName={null}
+              >
+                <div
+                  className="NavUser_image"
+                >
+                  <img
+                    alt="User"
+                    className="UserImage_image"
+                    data-test="image"
+                    id={null}
+                    src="test-file-stub"
+                  />
+                </div>
+              </UserImage>
+              <span
+                className="NavUser_name"
+              />
+              <Icon
+                className="NavUser_caret"
+                icon="keyboard_arrow_down"
+                id={null}
+                isPulsating={false}
+                style={null}
+              >
+                <i
+                  className="Icon NavUser_caret"
+                  data-test="icon"
+                  id={null}
+                  style={null}
+                >
+                  keyboard_arrow_down
+                </i>
+              </Icon>
+            </button>
+            <Card
+              className="NavUser_dropdown___toggled"
+              id={null}
+              onClick={null}
+              onMouseEnter={null}
+              onMouseLeave={null}
+            >
+              <div
+                className="Card NavUser_dropdown___toggled"
+                data-test="card"
+                id={null}
+                onClick={null}
+                onKeyPress={null}
+                onMouseEnter={null}
+                onMouseLeave={null}
+                role={null}
+                tabIndex={null}
+              >
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="myAccountButton"
+                  onClick={[Function]}
+                  to="/student/account/personal-information"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/student/account/personal-information"
+                    id="myAccountButton"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/student/account/personal-information"
+                      id="myAccountButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="account_circle"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          account_circle
+                        </i>
+                      </Icon>
+                      My Account
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="NavUser_dropdown_link"
+                  id="logoutButton"
+                  to="/logout"
+                >
+                  <LinkAnchor
+                    className="NavUser_dropdown_link"
+                    href="/logout"
+                    id="logoutButton"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="NavUser_dropdown_link"
+                      href="/logout"
+                      id="logoutButton"
+                      onClick={[Function]}
+                    >
+                      <Icon
+                        className="NavUser_dropdown_link_icon"
+                        icon="exit_to_app"
+                        id={null}
+                        isPulsating={false}
+                        style={null}
+                      >
+                        <i
+                          className="Icon NavUser_dropdown_link_icon"
+                          data-test="icon"
+                          id={null}
+                          style={null}
+                        >
+                          exit_to_app
+                        </i>
+                      </Icon>
+                      Logout
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </NavUser>
+      </Connect(NavUser)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

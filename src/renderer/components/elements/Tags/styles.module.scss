@@ -1,0 +1,8 @@
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  &_tag {
+    margin: 2px 4px 2px 0;
+  }
+}

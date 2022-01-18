@@ -1,0 +1,16 @@
+@import '../../../scss/variables';
+
+.Locked {
+  text-align: center;
+  margin: 96px 0;
+
+  &_icon {
+    font-size: 10rem;
+    margin: 0 0 12px 0;
+    color: $yellow-400;
+  }
+
+  &_text {
+    line-height: 1.5;
+  }
+}

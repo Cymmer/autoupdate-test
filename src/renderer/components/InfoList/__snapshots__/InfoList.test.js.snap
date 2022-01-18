@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - InfoList should render with default props 1`] = `
+<Grid
+  className={null}
+  rowGap={16}
+  type="one"
+>
+  <p>
+    Dummy Child 1
+  </p>
+  <p>
+    Dummy Child 2
+  </p>
+</Grid>
+`;

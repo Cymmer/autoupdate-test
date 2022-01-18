@@ -1,0 +1,146 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '../../scss/themes';
+
+@mixin base {
+  display: flex;
+  overflow: hidden;
+  width: 500px;
+}
+
+@mixin baseAccent($color) {
+  width: 24px;
+  background-color: $color;
+}
+
+@mixin baseContent($width) {
+  width: $width;
+  padding: 24px;
+}
+
+.LessonCard {
+  &___locked {
+    @include base;
+
+    &_accent {
+      @include theme {
+        @include baseAccent(t('textColor-200'));
+      }
+    }
+
+    &_content {
+      &___lesson {
+        @include baseContent(calc(100% - 128px));
+
+        @include breakpoint(sm) {
+          width: calc(100% - 96px);
+        }
+      }
+
+      &___quiz {
+        @include baseContent(calc(100% - 24px));
+      }
+    }
+  }
+
+  &___unlocked {
+    @include base;
+
+    &_accent {
+      @include baseAccent($blue-400);
+    }
+
+    &_content {
+      &___lesson {
+        @include baseContent(calc(100% - 128px));
+
+        @include breakpoint(sm) {
+          width: calc(100% - 96px);
+        }
+      }
+
+      &___quiz {
+        @include baseContent(calc(100% - 24px));
+      }
+    }
+  }
+
+  &___next {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 480px;
+
+    &_accent {
+      width: 100%;
+      height: 153px;
+      background-color: $yellow-300;
+    }
+
+    &_content {
+      &___lesson {
+        padding: 24px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      &___quiz {
+        padding: 24px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    &_image {
+      height: 140px;
+      width: 100% !important;
+    }
+  }
+
+  &_title {
+    margin: 0 0 4px 0;
+  }
+
+  &_buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 12px 0 0 12px;
+
+    &_button {
+      width: 156px;
+
+      &___active_onboarding {
+        box-shadow: $shadow-highlight-purple;
+      }
+    }
+
+    &___multiple {
+      display: grid;
+      grid-template-rows: 44px 44px;
+      grid-gap: 8px;
+    }
+  }
+
+  &_progress {
+    margin: 4px 0 0 0;
+  }
+
+  &_finished {
+    font-family: Inter, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 2px 8px;
+    border-radius: 16px;
+    height: fit-content;
+    font-weight: 600;
+    background-color: $green-300;
+    color: $neutral-0;
+
+    &_container {
+      margin: 8px 0 0 0;
+    }
+  }
+}

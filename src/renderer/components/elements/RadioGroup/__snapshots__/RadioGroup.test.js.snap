@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - RadioGroup should render a label if it has a label 1`] = `
+<div
+  className="RadioGroup_container"
+>
+  <Text
+    className="RadioGroup_label"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="body___sm"
+  >
+    Test
+  </Text>
+  <div
+    className="RadioGroup"
+  />
+</div>
+`;
+
+exports[`RENDERING - RadioGroup should render an error if it has an error 1`] = `
+<div
+  className="RadioGroup_container"
+>
+  <div
+    className="RadioGroup"
+  />
+  <div
+    className="RadioGroup_helperTextContainer"
+  >
+    <Text
+      className={null}
+      colorClass="r___500"
+      element={null}
+      id={null}
+      type="body___xs"
+    >
+      Test
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`RENDERING - RadioGroup should render the appropriate number of options 1`] = `
+<div
+  className="RadioGroup_container"
+>
+  <Text
+    className="RadioGroup_label"
+    colorClass="n___400"
+    element={null}
+    id={null}
+    type="body___sm"
+  >
+    Test
+  </Text>
+  <div
+    className="RadioGroup"
+  >
+    <ControlledRadio
+      checked={false}
+      className="RadioGroup___small_radio"
+      disabled={false}
+      icon="test1"
+      id="test1"
+      key="test1"
+      label="Test 1"
+      name="testName"
+      onChange={[Function]}
+      type="small"
+      value="test1"
+    />
+    <ControlledRadio
+      checked={false}
+      className="RadioGroup___small_radio"
+      disabled={false}
+      icon="test2"
+      id="test2"
+      key="test2"
+      label="Test 2"
+      name="testName"
+      onChange={[Function]}
+      type="small"
+      value="test2"
+    />
+  </div>
+</div>
+`;
+
+exports[`RENDERING - RadioGroup should render with default props 1`] = `
+<div
+  className="RadioGroup_container"
+>
+  <div
+    className="RadioGroup"
+  />
+</div>
+`;

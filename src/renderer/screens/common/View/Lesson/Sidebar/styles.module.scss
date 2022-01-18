@@ -1,0 +1,88 @@
+@use '../../../../../scss' as *;
+
+@mixin base($width) {
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  @include theme {
+    background-color: t('cardBackgroundColor');
+    border-right: 1px solid t('borderColor');
+  }
+  width: $width;
+}
+
+@mixin line($color) {
+  background-color: $color;
+  width: 3px;
+  position: absolute;
+  right: 33.3px;
+  top: 0;
+  display: block;
+
+  @include breakpoint(md) {
+    right: 26px;
+  }
+
+  @content;
+}
+
+.Sidebar {
+  @include base(72px);
+
+  @include breakpoint(md) {
+    width: 56px;
+  }
+
+  &___toggled {
+    @include base(320px);
+  }
+
+  &_toggle {
+    padding: 8px 16px;
+    @include theme {
+      border-bottom: 1px solid t('borderColor');
+    }
+    @include flex-between;
+
+    @include breakpoint(md) {
+      padding: 8px;
+    }
+  }
+
+  &_lessonsContainer {
+    height: calc(100vh - 148px);
+  }
+
+  &_lessons {
+    @include flex-between;
+    margin: 32px 0 0;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+
+  &_line {
+    &___progress {
+      @include line($green-300) {
+        z-index: 3;
+      }
+    }
+
+    &___finished {
+      @include theme {
+        @include line(t('textColor-400')) {
+          z-index: 2;
+        }
+      }
+    }
+
+    &___total {
+      @include theme {
+        @include line(t('textColor-200')) {
+          height: 94%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

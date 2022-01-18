@@ -1,0 +1,59 @@
+@use '../../../scss' as *;
+
+@mixin shine {
+  width: 120px;
+  margin: 24px;
+  padding: 12px;
+}
+
+.Tabs {
+  &_button,
+  &_link {
+    text-transform: capitalize;
+  }
+
+  &___horizontal___lg,
+  &___horizontal___sm {
+    display: flex;
+    overflow: auto;
+
+    > .Tabs_shine {
+      @include shine;
+    }
+  }
+
+  &___vertical___lg,
+  &___vertical___sm {
+    > .Tabs_shine {
+      @include shine;
+    }
+  }
+
+  &___vertical___lg {
+    display: grid;
+    grid-gap: 12px;
+  }
+
+  &___vertical___sm {
+    display: flex;
+    flex-direction: column;
+
+    > .Tabs_button,
+    > .Tabs_link {
+      margin: 0 0 0.25em 0;
+      white-space: nowrap;
+
+      @include breakpoint(sm) {
+        margin: 0 0.5em 0 0;
+      }
+    }
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &___loading {
+    padding: 16px;
+  }
+}

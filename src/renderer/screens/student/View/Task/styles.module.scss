@@ -1,0 +1,42 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+@mixin accent($color) {
+  min-width: 6px;
+  border-radius: 16px;
+  background-color: $color;
+}
+
+.ViewTask {
+  &_accent {
+    &___green {
+      @include accent($green-300);
+    }
+
+    &___blue {
+      @include accent($blue-300);
+    }
+
+    &___red {
+      @include accent($red-300);
+    }
+  }
+
+  &_info {
+    display: flex;
+  }
+
+  &_name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &_text {
+      margin: 0 12px 0 0;
+    }
+  }
+
+  &_text {
+    margin: 0 0 0 16px;
+  }
+}

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Button should render a spinner if loading 1`] = `
+<button
+  className="Button___primary___blue Button___disabled"
+  data-test={null}
+  disabled={true}
+  id={null}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <Spinner
+    className={null}
+    colorName="white"
+    data-test="loadingSpinner"
+    size="sm"
+  />
+</button>
+`;
+
+exports[`RENDERING - Button should render an icon 1`] = `
+<button
+  className="Button___primary___blue Button___withIcon"
+  data-test={null}
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <Icon
+    className="Button___withIcon_icon"
+    icon="test"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  Test
+</button>
+`;
+
+exports[`RENDERING - Button should render with default props 1`] = `
+<button
+  className="Button___primary___blue"
+  data-test={null}
+  disabled={false}
+  id={null}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  Test
+</button>
+`;

@@ -1,0 +1,75 @@
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+.Compiler {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  margin: 0 0 16px 0;
+
+  &_buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &_run {
+    margin: 0 0 0 16px;
+  }
+
+  &_editorContainer {
+    height: 100%;
+  }
+
+  &_editor {
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 54px 0 0 0;
+    @include theme {
+      background-color: t('editorBackgroundColor');
+      border: 1px solid t('borderColor');
+    }
+
+    @include breakpoint(sm) {
+      overflow: visible;
+      padding: 40px 0 0 0;
+    }
+
+    &_tabs {
+      @include flex-between;
+      border-bottom: 1px solid;
+      @include theme {
+        border-color: t('borderColor');
+        background-color: t('cardBackgroundColor');
+      }
+      padding: 0 12px 0 0;
+      border-radius: 16px 16px 0 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      &_dropdown {
+        width: 112px;
+      }
+
+      &_button {
+        margin: 0 4px;
+      }
+
+      &_actions {
+        display: flex;
+        align-items: center;
+      }
+
+      &_tab {
+        text-transform: none;
+      }
+    }
+  }
+
+  &_label {
+    margin: 0 0 8px 0;
+  }
+}

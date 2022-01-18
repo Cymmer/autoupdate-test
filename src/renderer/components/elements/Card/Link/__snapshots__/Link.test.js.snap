@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Card > Link should render with default props 1`] = `
+<Link
+  className="Card Card___clickable"
+  data-test="cardContainer"
+  id={null}
+  tabIndex={0}
+  target={null}
+  to="#"
+>
+  Test
+</Link>
+`;

@@ -1,0 +1,177 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+@mixin solid($size) {
+  @include ease(0.3s);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 100px;
+  border: none;
+  text-transform: capitalize;
+  outline: none;
+  padding: 4px;
+  height: max-content;
+  text-decoration: none;
+  @include flex-center;
+
+  @include theme {
+    color: t('iconButtonColor');
+
+    &:hover {
+      background-color: t('iconButtonBackgroundColor--hover');
+      color: t('iconButtonColor--hover');
+    }
+
+    &:focus,
+    &:active {
+      background-color: t('iconButtonBackgroundColor--active');
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5 !important;
+      background-color: transparent !important;
+      color: $neutral-400 !important;
+    }
+  }
+
+  .IconButton_icon {
+    @if $size == xs {
+      font-size: 1rem;
+    } @else if $size == sm {
+      font-size: 1.25rem;
+    } @else if $size == md {
+      font-size: 1.5rem;
+    } @else if $size == lg {
+      font-size: 2rem;
+    }
+  }
+}
+
+@mixin outline($size) {
+  @include ease(0.3s);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 100px;
+  text-transform: capitalize;
+  outline: none;
+  padding: 4px;
+  height: max-content;
+  text-decoration: none;
+  @include flex-center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      background-color: transparent !important;
+    }
+  }
+
+  .IconButton_icon {
+    @if $size == xs {
+      font-size: 1rem;
+    } @else if $size == sm {
+      font-size: 1.25rem;
+    } @else if $size == md {
+      font-size: 1.5rem;
+    } @else if $size == lg {
+      font-size: 2rem;
+    }
+  }
+}
+
+@mixin buttonColor($color) {
+  color: $color;
+  border: 1px solid $color;
+
+  &:hover {
+    background-color: transparentize($color, 0.9);
+  }
+
+  &:focus,
+  &:active {
+    background-color: transparentize($color, 0.75);
+  }
+}
+
+.IconButton {
+  &___solid {
+    &___xs {
+      @include solid(xs);
+    }
+
+    &___sm {
+      @include solid(sm);
+    }
+
+    &___md {
+      @include solid(md);
+    }
+
+    &___lg {
+      @include solid(lg);
+    }
+  }
+
+  &___outline {
+    &___xs {
+      @include outline(xs);
+    }
+
+    &___sm {
+      @include outline(sm);
+    }
+
+    &___md {
+      @include outline(md);
+    }
+
+    &___lg {
+      @include outline(lg);
+    }
+  }
+
+  &___disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &___blue {
+    @include buttonColor($blue-300);
+  }
+
+  &___green {
+    @include buttonColor($green-300);
+  }
+
+  &___red {
+    @include buttonColor($red-300);
+  }
+
+  &_lockedIcon {
+    position: absolute;
+    bottom: 4px;
+    right: 0px;
+    font-size: 12px !important;
+    color: $yellow-400 !important;
+
+    @include theme {
+      text-shadow: 0 0 2px t('cardBackgroundColor'),
+        -1px -1px t('cardBackgroundColor');
+    }
+  }
+
+  &_wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Badge should render with default props 1`] = `
+<div
+  className="Badge___undefined"
+  id={null}
+>
+  <Span
+    className="Badge_text___noIcon"
+    colorClass={null}
+    id={null}
+    type={null}
+  />
+</div>
+`;
+
+exports[`RENDERING - Badge should render with icon 1`] = `
+<div
+  className="Badge___undefined"
+  id={null}
+>
+  <Icon
+    className="Badge_icon"
+    icon="icon"
+    id={null}
+    isPulsating={false}
+    style={null}
+  />
+  <Span
+    className="Badge_text___withIcon"
+    colorClass={null}
+    id={null}
+    type={null}
+  />
+</div>
+`;

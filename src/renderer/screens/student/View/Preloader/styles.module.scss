@@ -1,0 +1,6 @@
+@import '../../../../scss/mixins';
+
+.Preloader {
+  @include flex-center;
+  height: 80vh;
+}

@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Answer > Navbar > Info should render the lock state if locked 1`] = `
+<Text
+  className="Navbar_info_text"
+  colorClass="n___500"
+  element={null}
+  id={null}
+  type="body___sm"
+>
+  <Span
+    className="Navbar_info_text_label Navbar_info_text_label___locked"
+    colorClass={null}
+    type={null}
+  >
+    Dummy Label
+    : 
+  </Span>
+  <Tooltip
+    className={null}
+    content="This is a premium feature. Click the lock icon to learn more"
+    placement="bottom"
+  >
+    <a
+      className="Navbar_info_text_lockedIcon_link"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <Icon
+        className="Navbar_info_text_lockedIcon"
+        icon="lock"
+        id={null}
+        isPulsating={false}
+        style={null}
+      />
+    </a>
+  </Tooltip>
+</Text>
+`;
+
+exports[`RENDERING - Answer > Navbar > Info should render the unlocked state if locked 1`] = `
+<Text
+  className="Navbar_info_text"
+  colorClass="n___500"
+  element={null}
+  id={null}
+  type="body___sm"
+>
+  <Span
+    className="Navbar_info_text_label"
+    colorClass={null}
+    type={null}
+  >
+    Dummy Label
+    : 
+  </Span>
+  <Span
+    className={null}
+    colorClass="r___300"
+    type="data___sm"
+  >
+     
+    Dummy Value
+  </Span>
+</Text>
+`;
+
+exports[`RENDERING - Answer > Navbar > Info should render with default props 1`] = `
+<Text
+  className="Navbar_info_text"
+  colorClass="n___500"
+  element={null}
+  id={null}
+  type="body___sm"
+>
+  <Span
+    className="Navbar_info_text_label"
+    colorClass={null}
+    type={null}
+  >
+    Dummy Label
+    : 
+  </Span>
+  <Span
+    className={null}
+    colorClass="r___300"
+    type="data___sm"
+  >
+     
+    Dummy Value
+  </Span>
+</Text>
+`;

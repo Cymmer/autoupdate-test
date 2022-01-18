@@ -1,0 +1,311 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/themes';
+
+.Text {
+  &___heading {
+    &___xxl {
+      @include heading(4rem, 1.125);
+
+      @include breakpoint(sm) {
+        font-size: 3.5rem;
+      }
+    }
+
+    &___xl {
+      @include heading(3.5rem, 1.142);
+
+      @include breakpoint(sm) {
+        font-size: 3rem;
+      }
+    }
+
+    &___lg {
+      @include heading(3rem, 1.167);
+
+      @include breakpoint(sm) {
+        font-size: 2.5rem;
+      }
+    }
+
+    &___md {
+      @include heading(2.5rem, 1.1);
+
+      @include breakpoint(sm) {
+        font-size: 2rem;
+      }
+    }
+
+    &___sm {
+      @include heading(2rem, 1.125);
+
+      @include breakpoint(sm) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &___xs {
+      @include heading(1.5rem, 1.167);
+
+      @include breakpoint(sm) {
+        font-size: 1.25rem;
+      }
+    }
+
+    &___xxs {
+      @include heading(1.25rem, 1.2);
+
+      @include breakpoint(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &___xxxs {
+      @include heading(1rem, 1.25);
+
+      @include breakpoint(sm) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  &___body {
+    &___lg {
+      @include body(1.125rem, 2);
+
+      @include breakpoint(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &___md {
+      @include body(1rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.875rem;
+      }
+    }
+
+    &___sm {
+      @include body(0.875rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
+      }
+    }
+
+    &___xs {
+      @include body(0.75rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.625rem;
+      }
+    }
+  }
+
+  &___strong {
+    &___lg {
+      @include strong(1.125rem, 2);
+
+      @include breakpoint(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &___md {
+      @include strong(1rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.875rem;
+      }
+    }
+
+    &___sm {
+      @include strong(0.875rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
+      }
+    }
+
+    &___xs {
+      @include strong(0.75rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.625rem;
+      }
+    }
+  }
+
+  &___data {
+    &___lg {
+      @include data(1.125rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    &___md {
+      @include data(1rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.875rem;
+      }
+    }
+
+    &___sm {
+      @include data(0.875rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.75rem;
+      }
+    }
+
+    &___xs {
+      @include data(0.75rem, 1.5);
+
+      @include breakpoint(sm) {
+        font-size: 0.625rem;
+      }
+    }
+  }
+
+  &___code {
+    &___md {
+      @include code(0.875rem, 1.5);
+    }
+
+    &___sm {
+      @include code(0.75rem, 1.5);
+    }
+  }
+
+  &___misc {
+    &___button {
+      font-family: Montserrat;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  &___n___900 {
+    @include theme {
+      color: t('textColor-900');
+    }
+  }
+
+  &___n___800 {
+    @include theme {
+      color: t('textColor-800');
+    }
+  }
+
+  &___n___700 {
+    @include theme {
+      color: t('textColor-700');
+    }
+  }
+
+  &___n___600 {
+    @include theme {
+      color: t('textColor-600');
+    }
+  }
+
+  &___n___500 {
+    @include theme {
+      color: t('textColor-500');
+    }
+  }
+
+  &___n___400 {
+    @include theme {
+      color: t('textColor-400');
+    }
+  }
+
+  &___n___300 {
+    @include theme {
+      color: t('textColor-300');
+    }
+  }
+
+  &___n___200 {
+    @include theme {
+      color: t('textColor-200');
+    }
+  }
+
+  &___n___100 {
+    @include theme {
+      color: t('textColor-100');
+    }
+  }
+
+  &___n___50 {
+    @include theme {
+      color: t('textColor-50');
+    }
+  }
+
+  &___n___0 {
+    @include theme {
+      color: t('textColor-0');
+    }
+  }
+
+  &___b___500 {
+    color: $blue-500;
+  }
+
+  &___b___400 {
+    color: $blue-400;
+  }
+
+  &___b___300 {
+    color: $blue-300;
+  }
+
+  &___b___100 {
+    color: $blue-100;
+  }
+
+  &___g___500 {
+    color: $green-500;
+  }
+
+  &___g___300 {
+    color: $green-300;
+  }
+
+  &___g___100 {
+    color: $green-100;
+  }
+
+  &___r___500 {
+    color: $red-500;
+  }
+
+  &___r___300 {
+    color: $red-300;
+  }
+
+  &___r___100 {
+    color: $red-100;
+  }
+
+  &___p___300 {
+    color: $purple-300;
+  }
+
+  &___y___400 {
+    color: $yellow-400;
+  }
+
+  &___o___300 {
+    color: $orange-300;
+  }
+}

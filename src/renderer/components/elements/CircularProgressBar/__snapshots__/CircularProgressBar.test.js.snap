@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - CircularProgressBar should render in night mode 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(CircularProgressBar)
+    text="20/100"
+    value={20}
+  >
+    <CircularProgressBar
+      className={null}
+      colorHexCode="#2cabe3"
+      dispatch={[Function]}
+      isNightMode={true}
+      text="20/100"
+      value={20}
+    >
+      <div
+        className="CircularProgressBar_container"
+      >
+        <CircularProgressbar
+          background={false}
+          backgroundPadding={0}
+          circleRatio={1}
+          className="CircularProgressBar"
+          classes={
+            Object {
+              "background": "CircularProgressbar-background",
+              "path": "CircularProgressbar-path",
+              "root": "CircularProgressbar",
+              "text": "CircularProgressbar-text",
+              "trail": "CircularProgressbar-trail",
+            }
+          }
+          counterClockwise={false}
+          maxValue={100}
+          minValue={0}
+          strokeWidth={12}
+          styles={
+            Object {
+              "background": Object {},
+              "path": Object {
+                "stroke": "#2cabe3",
+              },
+              "root": Object {},
+              "text": Object {
+                "fill": "#2cabe3",
+                "fontSize": "18px",
+              },
+              "trail": Object {
+                "stroke": "#626b77",
+              },
+            }
+          }
+          text="20/100"
+          value={20}
+        >
+          <svg
+            className="CircularProgressbar CircularProgressBar"
+            data-test-id="CircularProgressbar"
+            style={Object {}}
+            viewBox="0 0 100 100"
+          >
+            <Path
+              className="CircularProgressbar-trail"
+              counterClockwise={false}
+              dashRatio={1}
+              pathRadius={44}
+              strokeWidth={12}
+              style={
+                Object {
+                  "stroke": "#626b77",
+                }
+              }
+            >
+              <path
+                className="CircularProgressbar-trail"
+                d="
+      M 50,50
+      m 0,-44
+      a 44,44 0 1 1 0,88
+      a 44,44 0 1 1 0,-88
+    "
+                fillOpacity={0}
+                strokeWidth={12}
+                style={
+                  Object {
+                    "stroke": "#626b77",
+                    "strokeDasharray": "276.46015351590177px 276.46015351590177px",
+                    "strokeDashoffset": "0px",
+                  }
+                }
+              />
+            </Path>
+            <Path
+              className="CircularProgressbar-path"
+              counterClockwise={false}
+              dashRatio={0.2}
+              pathRadius={44}
+              strokeWidth={12}
+              style={
+                Object {
+                  "stroke": "#2cabe3",
+                }
+              }
+            >
+              <path
+                className="CircularProgressbar-path"
+                d="
+      M 50,50
+      m 0,-44
+      a 44,44 0 1 1 0,88
+      a 44,44 0 1 1 0,-88
+    "
+                fillOpacity={0}
+                strokeWidth={12}
+                style={
+                  Object {
+                    "stroke": "#2cabe3",
+                    "strokeDasharray": "276.46015351590177px 276.46015351590177px",
+                    "strokeDashoffset": "221.16812281272144px",
+                  }
+                }
+              />
+            </Path>
+            <text
+              className="CircularProgressbar-text"
+              style={
+                Object {
+                  "fill": "#2cabe3",
+                  "fontSize": "18px",
+                }
+              }
+              x={50}
+              y={50}
+            >
+              20/100
+            </text>
+          </svg>
+        </CircularProgressbar>
+      </div>
+    </CircularProgressBar>
+  </Connect(CircularProgressBar)>
+</Provider>
+`;
+
+exports[`RENDERING - CircularProgressBar should render with default props 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(CircularProgressBar)
+    text="20/100"
+    value={20}
+  >
+    <CircularProgressBar
+      className={null}
+      colorHexCode="#2cabe3"
+      dispatch={[Function]}
+      isNightMode={false}
+      text="20/100"
+      value={20}
+    >
+      <div
+        className="CircularProgressBar_container"
+      >
+        <CircularProgressbar
+          background={false}
+          backgroundPadding={0}
+          circleRatio={1}
+          className="CircularProgressBar"
+          classes={
+            Object {
+              "background": "CircularProgressbar-background",
+              "path": "CircularProgressbar-path",
+              "root": "CircularProgressbar",
+              "text": "CircularProgressbar-text",
+              "trail": "CircularProgressbar-trail",
+            }
+          }
+          counterClockwise={false}
+          maxValue={100}
+          minValue={0}
+          strokeWidth={12}
+          styles={
+            Object {
+              "background": Object {},
+              "path": Object {
+                "stroke": "#2cabe3",
+              },
+              "root": Object {},
+              "text": Object {
+                "fill": "#2cabe3",
+                "fontSize": "18px",
+              },
+              "trail": Object {
+                "stroke": "#d1dadf",
+              },
+            }
+          }
+          text="20/100"
+          value={20}
+        >
+          <svg
+            className="CircularProgressbar CircularProgressBar"
+            data-test-id="CircularProgressbar"
+            style={Object {}}
+            viewBox="0 0 100 100"
+          >
+            <Path
+              className="CircularProgressbar-trail"
+              counterClockwise={false}
+              dashRatio={1}
+              pathRadius={44}
+              strokeWidth={12}
+              style={
+                Object {
+                  "stroke": "#d1dadf",
+                }
+              }
+            >
+              <path
+                className="CircularProgressbar-trail"
+                d="
+      M 50,50
+      m 0,-44
+      a 44,44 0 1 1 0,88
+      a 44,44 0 1 1 0,-88
+    "
+                fillOpacity={0}
+                strokeWidth={12}
+                style={
+                  Object {
+                    "stroke": "#d1dadf",
+                    "strokeDasharray": "276.46015351590177px 276.46015351590177px",
+                    "strokeDashoffset": "0px",
+                  }
+                }
+              />
+            </Path>
+            <Path
+              className="CircularProgressbar-path"
+              counterClockwise={false}
+              dashRatio={0.2}
+              pathRadius={44}
+              strokeWidth={12}
+              style={
+                Object {
+                  "stroke": "#2cabe3",
+                }
+              }
+            >
+              <path
+                className="CircularProgressbar-path"
+                d="
+      M 50,50
+      m 0,-44
+      a 44,44 0 1 1 0,88
+      a 44,44 0 1 1 0,-88
+    "
+                fillOpacity={0}
+                strokeWidth={12}
+                style={
+                  Object {
+                    "stroke": "#2cabe3",
+                    "strokeDasharray": "276.46015351590177px 276.46015351590177px",
+                    "strokeDashoffset": "221.16812281272144px",
+                  }
+                }
+              />
+            </Path>
+            <text
+              className="CircularProgressbar-text"
+              style={
+                Object {
+                  "fill": "#2cabe3",
+                  "fontSize": "18px",
+                }
+              }
+              x={50}
+              y={50}
+            >
+              20/100
+            </text>
+          </svg>
+        </CircularProgressbar>
+      </div>
+    </CircularProgressBar>
+  </Connect(CircularProgressBar)>
+</Provider>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RENDERING - Breadcrumbs should render appropriate number of links 1`] = `
+<div
+  className="Breadcrumbs"
+>
+  <Breadcrumb
+    active={false}
+    key="Link 1"
+    link="www.codechum.com"
+  >
+    Link 1
+  </Breadcrumb>
+  <Breadcrumb
+    active={true}
+    key="Link 2"
+    link="app.codechum.com"
+  >
+    Link 2
+  </Breadcrumb>
+</div>
+`;
+
+exports[`RENDERING - Breadcrumbs should render with default props 1`] = `
+<div
+  className="Breadcrumbs"
+/>
+`;
