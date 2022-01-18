@@ -21,6 +21,7 @@ import log from 'electron-log';
 import path from 'path';
 import { resolveHtmlPath } from './util';
 
+let mainWindow: BrowserWindow | null = null;
 const controller = new AbortController();
 const { signal } = controller;
 
@@ -65,7 +66,7 @@ const createWindow = async () => {
   if (isDevelopment) {
     await installExtensions();
   }
-  let mainWindow: BrowserWindow | null = null;
+  
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
     : path.join(__dirname, '../../assets');
@@ -85,10 +86,13 @@ const createWindow = async () => {
     },
   });
 
+  autoUpdater.quitAndInstall(undefined, true);
+
   function sendStatusToWindow(text: string) {
     log.info(text);
     mainWindow!.webContents.send('message', text);
   }
+
   autoUpdater.on('checking-for-update', () => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
@@ -96,12 +100,24 @@ const createWindow = async () => {
     );
     sendStatusToWindow('Checking for update...');
   });
+
+
   autoUpdater.on('update-available', (info: any) => {
     axios.post(
       'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
       { content: `AutoUpdater: Update available.` }
     );
     sendStatusToWindow('Update available.');
+    const win = new BrowserWindow({ width: 800, height: 600 });
+    win.loadURL('https://github.com');
+    win.on('ready-to-show', () => {
+      if(!win) {
+        throw new Error("subwindow not defined");
+      }
+      win.show();
+    })
+
+    
   });
   autoUpdater.on('update-not-available', (info: any) => {
     axios.post(
@@ -200,7 +216,7 @@ app
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
       // dock icon is clicked and there are no other windows open.
-      if (mainWindow === null) createWindow();
+      if (mainWindow === undefined || mainWindow === null) createWindow();
     });
   })
   .catch(console.log);
