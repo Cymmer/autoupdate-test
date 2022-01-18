@@ -25,94 +25,10 @@ const controller = new AbortController();
 const { signal } = controller;
 
 const autoUpdater = new AppImageUpdater();
-
 autoUpdater.autoDownload = true;
 autoUpdater.checkForUpdatesAndNotify({ body: '123', title: 'abc' });
 
-let mainWindow: BrowserWindow | null = new BrowserWindow();
-const RESOURCES_PATH = app.isPackaged
-  ? path.join(process.resourcesPath, 'assets')
-  : path.join(__dirname, '../../assets');
-const getAssetPath = (...paths: string[]): string => {
-  return path.join(RESOURCES_PATH, ...paths);
-};
-mainWindow = new BrowserWindow({
-  show: false,
-  width: 1024,
-  height: 728,
-  icon: getAssetPath('icon.png'),
-  webPreferences: {
-    preload: path.join(__dirname, 'preload.js'),
-    nodeIntegration: true,
-    contextIsolation: false,
-    webSecurity: false,
-  },
-});
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-
-function sendStatusToWindow(text: string) {
-  log.info(text);
-  mainWindow!.webContents.send('message', text);
-}
-autoUpdater.on('checking-for-update', () => {
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `AutoUpdater: Checking for update.` }
-  );
-  sendStatusToWindow('Checking for update...');
-});
-autoUpdater.on('update-available', (info: any) => {
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `AutoUpdater: Update available.` }
-  );
-  sendStatusToWindow('Update available.');
-});
-autoUpdater.on('update-not-available', (info: any) => {
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `Update not available` }
-  );
-  sendStatusToWindow('Update not available.');
-});
-autoUpdater.on('error', (err: string) => {
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `AutoUpdater: Error in auto-updater: ` + err }
-  );
-  sendStatusToWindow('Error in auto-updater. ' + err);
-});
-autoUpdater.on(
-  'download-progress',
-  (progressObj: {
-    bytesPerSecond: string;
-    percent: string;
-    transferred: string;
-    total: string;
-  }) => {
-    let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: log_message + ' - Downloaded ' + progressObj.percent + '%' }
-    );
-    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-    log_message =
-      log_message +
-      ' (' +
-      progressObj.transferred +
-      '/' +
-      progressObj.total +
-      ')';
-    sendStatusToWindow(log_message);
-  }
-);
-autoUpdater.on('update-downloaded', (info) => {
-  axios.post(
-    'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-    { content: `AutoUpdater: Update downloaded ` }
-  );
-  sendStatusToWindow('Update downloaded');
-});
 
 ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
@@ -149,6 +65,89 @@ const createWindow = async () => {
   if (isDevelopment) {
     await installExtensions();
   }
+  let mainWindow: BrowserWindow | null = null;
+  const RESOURCES_PATH = app.isPackaged
+    ? path.join(process.resourcesPath, 'assets')
+    : path.join(__dirname, '../../assets');
+  const getAssetPath = (...paths: string[]): string => {
+    return path.join(RESOURCES_PATH, ...paths);
+  };
+  mainWindow = new BrowserWindow({
+    show: false,
+    width: 1024,
+    height: 728,
+    icon: getAssetPath('icon.png'),
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      contextIsolation: false,
+      webSecurity: false,
+    },
+  });
+
+  function sendStatusToWindow(text: string) {
+    log.info(text);
+    mainWindow!.webContents.send('message', text);
+  }
+  autoUpdater.on('checking-for-update', () => {
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: `AutoUpdater: Checking for update.` }
+    );
+    sendStatusToWindow('Checking for update...');
+  });
+  autoUpdater.on('update-available', (info: any) => {
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: `AutoUpdater: Update available.` }
+    );
+    sendStatusToWindow('Update available.');
+  });
+  autoUpdater.on('update-not-available', (info: any) => {
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: `Update not available` }
+    );
+    sendStatusToWindow('Update not available.');
+  });
+  autoUpdater.on('error', (err: string) => {
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: `AutoUpdater: Error in auto-updater: ` + err }
+    );
+    sendStatusToWindow('Error in auto-updater. ' + err);
+  });
+  autoUpdater.on(
+    'download-progress',
+    (progressObj: {
+      bytesPerSecond: string;
+      percent: string;
+      transferred: string;
+      total: string;
+    }) => {
+      let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+      axios.post(
+        'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+        { content: log_message + ' - Downloaded ' + progressObj.percent + '%' }
+      );
+      log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+      log_message =
+        log_message +
+        ' (' +
+        progressObj.transferred +
+        '/' +
+        progressObj.total +
+        ')';
+      sendStatusToWindow(log_message);
+    }
+  );
+  autoUpdater.on('update-downloaded', (info) => {
+    axios.post(
+      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+      { content: `AutoUpdater: Update downloaded ` }
+    );
+    sendStatusToWindow('Update downloaded');
+  });
 
   mainWindow!.loadURL(resolveHtmlPath('index.html'));
 
