@@ -163,7 +163,13 @@ const createWindow = async () => {
         }
         win.show();
       });
-      return;
+      axios.post(
+        'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+        { content: `Manual update ongoing`}
+      );
+      autoUpdater.downloadUpdate();
+    } else {
+
     }
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
