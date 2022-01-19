@@ -157,6 +157,8 @@ const createWindow = async () => {
       }
     );
 
+    // Check if there is an update by checking the latest github release version
+    // and local package.json
     if (updates?.updateInfo.version !== currentAppVersion) {
       axios.post(
         'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
