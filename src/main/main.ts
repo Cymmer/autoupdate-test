@@ -3,39 +3,41 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import { BrowserWindow, app, ipcMain, shell } from 'electron';
-import { exec, spawn } from 'child_process';
+import { BrowserWindow, app, shell } from 'electron';
+import axios, { AxiosError } from 'axios';
 
 import { AppImageUpdater } from 'electron-updater';
+// eslint-disable-next-line import/order
 import MenuBuilder from './menu';
-/**
- * This module executes inside of electron's main process. You can start
- * electron renderer process from here and communicate with the other processes
- * through IPC.
- *
- * When running `npm run build` or `npm run build:main`, this file is compiled to
- * `./src/main.js` using webpack. This gives us some performance wins.
- */
-import axios from 'axios';
+// eslint-disable-next-line import/order
+import { version as currentAppVersion } from '../../release/app/package.json';
+// eslint-disable-next-line import/order
 import log from 'electron-log';
+// eslint-disable-next-line import/order
 import path from 'path';
 import { resolveHtmlPath } from './util';
-import { update } from 'lodash';
 
 let mainWindow: BrowserWindow | null = null;
 const controller = new AbortController();
-const { signal } = controller;
+const RESOURCES_PATH = app.isPackaged
+  ? path.join(process.resourcesPath, 'assets')
+  : path.join(__dirname, '../../assets');
 
+/**
+ * AutoUpdate Settings
+ */
 const autoUpdater = new AppImageUpdater();
 autoUpdater.autoDownload = false; // We allow users to choose whether to download or not
-// assuming the update is optional
 autoUpdater.autoInstallOnAppQuit = false; // set to `true` if there is a crucial update
-autoUpdater.checkForUpdatesAndNotify();
 
+/**
+ * Environment Settings
+ */
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();
 }
+
 const isDevelopment =
   process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true';
 
@@ -56,14 +58,22 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
+/**
+ * Utility Functions
+ */
+const sendStatusToWindow = (text: string) => {
+  log.info(text);
+  mainWindow?.webContents.send('message', text);
+};
+
+/**
+ * Main Processes
+ */
 const createWindow = async () => {
   if (isDevelopment) {
     await installExtensions();
   }
 
-  const RESOURCES_PATH = app.isPackaged
-    ? path.join(process.resourcesPath, 'assets')
-    : path.join(__dirname, '../../assets');
   const getAssetPath = (...paths: string[]): string => {
     return path.join(RESOURCES_PATH, ...paths);
   };
@@ -80,101 +90,168 @@ const createWindow = async () => {
       webSecurity: false,
     },
   });
+  mainWindow?.loadURL(resolveHtmlPath('index.html'));
 
-  function sendStatusToWindow(text: string) {
-    log.info(text);
-    mainWindow!.webContents.send('message', text);
-  }
-
-  autoUpdater.on('checking-for-update', () => {
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Checking for update.` }
-    );
-    sendStatusToWindow('Checking for update...');
-  });
-
-  let updateAvailable = false;
-  const win = new BrowserWindow({
+  const updateWindow = new BrowserWindow({
     width: 800,
     height: 600,
     parent: mainWindow,
+    show: false,
   });
-  win.loadURL('https://github.com');
-  autoUpdater.on('update-available', (info: any) => {
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Update available.` + info }
-    );
-    sendStatusToWindow('Update available.');
-    updateAvailable = true;
-  });
+  updateWindow.loadURL('https://github.com');
 
-  autoUpdater.on('update-not-available', (info: any) => {
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `Update not available: ` + info }
-    );
-    sendStatusToWindow('Update not available.');
+  // DUMMY
+  const dummyWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    parent: mainWindow,
+    show: false,
   });
-  autoUpdater.on('error', (err: string) => {
-    axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Error in auto-updater: ` + err }
-    );
-    sendStatusToWindow('Error in auto-updater. ' + err);
-  });
-  autoUpdater.on(
-    'download-progress',
-    (progressObj: {
-      bytesPerSecond: string;
-      percent: string;
-      transferred: string;
-      total: string;
-    }) => {
-      let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+  dummyWindow.loadURL('https://google.com');
+
+  mainWindow?.on('ready-to-show', async () => {
+    let hasInternet = true;
+
+    // Check Internet
+    try {
+      await axios.get('https://google.com');
+    } catch (error: unknown) {
+      // const err = error as AxiosError;
+      // For debugging
       axios.post(
         'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-        { content: log_message + ' - Downloaded ' + progressObj.percent + '%' }
+        {
+          content: `internet: hi`,
+        }
       );
-      log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-      log_message =
-        log_message +
-        ' (' +
-        progressObj.transferred +
-        '/' +
-        progressObj.total +
-        ')';
-      sendStatusToWindow(log_message);
+      hasInternet = false;
     }
-  );
-  autoUpdater.on('update-downloaded', (info) => {
+
+    if (!hasInternet) {
+      if (!mainWindow) {
+        throw new Error('"mainWindow" is not defined');
+      }
+      if (process.env.START_MINIMIZED) {
+        mainWindow.minimize();
+      } else {
+        mainWindow.show();
+      }
+      return;
+    }
+
+    if (isDevelopment) return;
+    // Check for updates
+    let updates;
+    try {
+      updates = await autoUpdater.checkForUpdates();
+      console.log(`UPDATES: ${JSON.stringify(updates)}`);
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        {
+          content: `updates: ${JSON.stringify(updates)}`,
+        }
+      );
+      // eslint-disable-next-line no-empty
+    } catch (e) {
+      console.log(`UPDATES error: ${JSON.stringify(e)}`);
+    }
+
+    // For debugging
     axios.post(
-      'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
-      { content: `AutoUpdater: Update downloaded ` + info }
+      'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+      {
+        content: `updates: ${updates?.updateInfo.version} ${updates?.updateInfo.releaseName}`,
+      }
     );
-    sendStatusToWindow('Update downloaded');
-    autoUpdater.quitAndInstall(undefined, true);
-  });
 
-  mainWindow!.loadURL(resolveHtmlPath('index.html'));
-
-  mainWindow!.on('ready-to-show', () => {
-    if (updateAvailable) {
-      win.on('ready-to-show', () => {
-        if (!win) {
+    if (updates?.updateInfo.version !== currentAppVersion) {
+      updateWindow.on('ready-to-show', () => {
+        if (!updateWindow) {
           throw new Error('subwindow not defined');
         }
-        win.show();
+        updateWindow.show();
       });
+    }
+
+    // There should be a prompt asking if the user wants to update if ever the update is optional
+    if (autoUpdater.autoDownload) {
+      autoUpdater.downloadUpdate();
+    }
+
+    autoUpdater.on('update-available', (info: unknown) => {
       axios.post(
-        'https://discord.com/api/webhooks/906911530820436010/Qh-u35ioUerJ925NnBkWTZ6l4RY1-M7sei7_EXxt_6l-nkRXmuxVNpHEC-P3hyzZji2m',
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        { content: `AutoUpdater: Update available. ${info}` }
+      );
+      sendStatusToWindow('Update available.');
+      autoUpdater.downloadUpdate();
+      // For debugging
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
         { content: `Manual update ongoing` }
       );
-      autoUpdater.downloadUpdate();
-      updateAvailable = false;
-    } 
-    
+    });
+
+    // AutoUpdater Listeners
+    autoUpdater.on('error', (err: string) => {
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        { content: `AutoUpdater: Error in auto-updater:${err}` }
+      );
+      sendStatusToWindow(`Error in auto-updater.:${err}`);
+    });
+    autoUpdater.on('update-not-available', (info: unknown) => {
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        { content: `Update not available: ${info}` }
+      );
+      sendStatusToWindow('Update not available.');
+      if (!mainWindow) {
+        throw new Error('"mainWindow" is not defined');
+      }
+      if (process.env.START_MINIMIZED) {
+        mainWindow.minimize();
+      } else {
+        mainWindow.show();
+      }
+    });
+    autoUpdater.on(
+      'download-progress',
+      (progressObj: {
+        bytesPerSecond: string;
+        percent: string;
+        transferred: string;
+        total: string;
+      }) => {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        let log_message = `Download speed: ${progressObj.bytesPerSecond}`;
+        axios.post(
+          'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+          { content: `${log_message} - Downloaded ${progressObj.percent}%` }
+        );
+        log_message = `${log_message} - Downloaded ${progressObj.percent}%`;
+        log_message = `${log_message} (${progressObj.transferred}/${progressObj.total})`;
+        sendStatusToWindow(log_message);
+      }
+    );
+    autoUpdater.on('update-downloaded', (info) => {
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        { content: `AutoUpdater: Update downloaded:${info}` }
+      );
+      sendStatusToWindow('Update downloaded');
+      autoUpdater.quitAndInstall(undefined, true);
+
+      if (!mainWindow) {
+        throw new Error('"mainWindow" is not defined');
+      }
+      if (process.env.START_MINIMIZED) {
+        mainWindow.minimize();
+      } else {
+        mainWindow.show();
+      }
+    });
+
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
@@ -185,22 +262,19 @@ const createWindow = async () => {
     }
   });
 
-  mainWindow!.on('closed', () => {
+  mainWindow?.on('closed', () => {
     controller.abort();
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow!);
+  const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();
 
   // Open urls in the user's browser
-  mainWindow!.webContents.on('new-window', (event, url) => {
+  mainWindow.webContents.on('new-window', (event, url) => {
     event.preventDefault();
     shell.openExternal(url);
   });
-
-  // Remove this if your app does not use auto updates
-  // eslint-disable-next-line
 };
 
 /**
