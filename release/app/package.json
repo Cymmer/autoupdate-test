@@ -1,6 +1,6 @@
 {
   "name": "codechum",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "main": "./dist/main/main.js",
   "scripts": {
     "electron-rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
