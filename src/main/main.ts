@@ -96,18 +96,15 @@ const createWindow = async () => {
     width: 800,
     height: 600,
     parent: mainWindow,
-    show: false,
   });
-  updateWindow.loadURL('https://github.com');
+  
 
   // DUMMY
   const dummyWindow = new BrowserWindow({
     width: 800,
     height: 600,
     parent: mainWindow,
-    show: false,
   });
-  dummyWindow.loadURL('https://google.com');
 
   mainWindow?.on('ready-to-show', async () => {
     let hasInternet = true;
@@ -115,6 +112,7 @@ const createWindow = async () => {
     // Check Internet
     try {
       await axios.get('https://google.com');
+      dummyWindow.loadURL('https://google.com');
     } catch (error: unknown) {
       // const err = error as AxiosError;
       // For debugging
@@ -179,6 +177,7 @@ const createWindow = async () => {
     }
 
     autoUpdater.on('update-available', (info: unknown) => {
+      updateWindow.loadURL('https://github.com');
       axios.post(
         'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
         { content: `AutoUpdater: Update available. ${info}` }
