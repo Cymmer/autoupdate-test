@@ -91,20 +91,17 @@ const createWindow = async () => {
     },
   });
   mainWindow?.loadURL(resolveHtmlPath('index.html'));
+  mainWindow?.webContents.on('did-finish-load', () => {
+    mainWindow?.show();
+  });
 
   const updateWindow = new BrowserWindow({
     width: 800,
     height: 600,
     parent: mainWindow,
+    show: false,
   });
-  
-
-  // DUMMY
-  const dummyWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    parent: mainWindow,
-  });
+  updateWindow.loadURL('https://google.com');
 
   mainWindow?.on('ready-to-show', async () => {
     let hasInternet = true;
@@ -112,7 +109,6 @@ const createWindow = async () => {
     // Check Internet
     try {
       await axios.get('https://google.com');
-      dummyWindow.loadURL('https://google.com');
     } catch (error: unknown) {
       // const err = error as AxiosError;
       // For debugging
@@ -129,11 +125,9 @@ const createWindow = async () => {
       if (!mainWindow) {
         throw new Error('"mainWindow" is not defined');
       }
-      if (process.env.START_MINIMIZED) {
-        mainWindow.minimize();
-      } else {
-        mainWindow.show();
-      }
+      mainWindow?.webContents.on('did-finish-load', () => {
+        mainWindow?.show();
+      });
       return;
     }
 
@@ -143,12 +137,6 @@ const createWindow = async () => {
     try {
       updates = await autoUpdater.checkForUpdates();
       console.log(`UPDATES: ${JSON.stringify(updates)}`);
-      axios.post(
-        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
-        {
-          content: `updates: ${JSON.stringify(updates)}`,
-        }
-      );
       // eslint-disable-next-line no-empty
     } catch (e) {
       console.log(`UPDATES error: ${JSON.stringify(e)}`);
@@ -162,12 +150,24 @@ const createWindow = async () => {
       }
     );
 
+    axios.post(
+      'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+      {
+        content: `Current App Version: ${currentAppVersion}`,
+      }
+    );
+
     if (updates?.updateInfo.version !== currentAppVersion) {
-      updateWindow.on('ready-to-show', () => {
-        if (!updateWindow) {
-          throw new Error('subwindow not defined');
-        }
-        updateWindow.show();
+      axios.post(
+        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
+        { content: `AutoUpdater: Update available.` }
+      );
+      updateWindow?.webContents.on('did-finish-load', () => {
+        updateWindow?.show();
+      });
+      await autoUpdater.downloadUpdate();
+      setImmediate(() => {
+        autoUpdater.quitAndInstall();
       });
     }
 
@@ -177,13 +177,7 @@ const createWindow = async () => {
     }
 
     autoUpdater.on('update-available', (info: unknown) => {
-      updateWindow.loadURL('https://github.com');
-      axios.post(
-        'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
-        { content: `AutoUpdater: Update available. ${info}` }
-      );
       sendStatusToWindow('Update available.');
-      autoUpdater.downloadUpdate();
       // For debugging
       axios.post(
         'https://discord.com/api/webhooks/933196539201998988/J3ISuEbkKqXUaE8aP9IX8WhkPAQB48bwgkgN_Hy-CXH1jlEkTOypwpjm8sfALpOD1i8I',
@@ -250,15 +244,6 @@ const createWindow = async () => {
         mainWindow.show();
       }
     });
-
-    if (!mainWindow) {
-      throw new Error('"mainWindow" is not defined');
-    }
-    if (process.env.START_MINIMIZED) {
-      mainWindow.minimize();
-    } else {
-      mainWindow.show();
-    }
   });
 
   mainWindow?.on('closed', () => {
